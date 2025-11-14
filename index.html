@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ULTIMATE PixelLab Prompt Generator - 50,000+ presets! Every possible game asset with special effects, materials, colors, and more!">
+    <meta name="description" content="ULTIMATE PixelLab Asset Generator - 50,000+ presets! Every possible game asset with special effects, materials, colors, and more!">
     <meta name="keywords" content="pixellab, pixel art, game assets, prompt generator, RPG Maker, isometric, dimetric, game development, sprites">
     <meta name="author" content="TheSyntheticFeed">
-    <title>ULTIMATE PixelLab Prompt Generator - 50,000+ Presets</title>
+    <title>ULTIMATE PixelLab Generator - 50,000+ Presets</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         * {
@@ -458,9 +458,9 @@
         <!-- Header -->
         <header class="header">
             <button id="matrixToggle" onclick="toggleMatrix()">Disable Matrix</button>
-            <h1>ULTIMATE PIXELLAB PROMPT GENERATOR</h1>
+            <h1>ULTIMATE PIXELLAB GENERATOR</h1>
             <p class="subtitle">50,000+ Presets for EVERY Game Asset Imaginable!</p>
-            <p class="stats">✨ 15 Asset Types • 1000+ Items • 30+ Colors • Special Effects • Materials • More!</p>
+            <p class="stats">15 Asset Types • 1000+ Items • 30+ Colors • Special Effects • Materials • More!</p>
         </header>
 
         <!-- Asset Type Selector -->
@@ -848,7 +848,7 @@
                     
                     <!-- Plain Text Output -->
                     <div style="margin-bottom: 20px;">
-                        <div style="color: #00ff41; font-size: 0.7em; margin-bottom: 10px;">📝 PLAIN TEXT</div>
+                        <div style="color: #00ff41; font-size: 0.7em; margin-bottom: 10px;">PLAIN TEXT</div>
                         <div class="prompt-output" id="plainOutput">
                             <span id="plainText">Select options and click Generate!</span>
                             <button class="copy-btn" onclick="copyPlain()" style="display: none;" id="copyPlainBtn">Copy Plain</button>
@@ -857,8 +857,8 @@
 
                     <!-- JSON Output -->
                     <div style="margin-bottom: 20px;">
-                        <div style="color: #00ff41; font-size: 0.7em; margin-bottom: 10px;">💻 JSON FORMAT</div>
-                        <div class="prompt-output" id="jsonOutput" style="font-family: monospace; font-size: 0.5em; background: #051005;">
+                        <div style="color: #00ff41; font-size: 0.7em; margin-bottom: 10px;">JSON FORMAT</div>
+                        <div class="prompt-output" id="jsonOutput" style="font-family: 'Courier New', monospace; font-size: 0.9em; background: #051005; color: #00ff41; line-height: 1.4;">
                             <span id="jsonText" style="white-space: pre-wrap;">Select options and click Generate!</span>
                             <button class="copy-btn" onclick="copyJSON()" style="display: none;" id="copyJSONBtn">Copy JSON</button>
                         </div>
@@ -866,7 +866,7 @@
 
                     <!-- Formatted Output -->
                     <div>
-                        <div style="color: #00ff41; font-size: 0.7em; margin-bottom: 10px;">✨ FORMATTED TEXT</div>
+                        <div style="color: #00ff41; font-size: 0.7em; margin-bottom: 10px;">FORMATTED TEXT</div>
                         <div class="prompt-output" id="formattedOutput">
                             <span id="formattedText">Select options and click Generate!</span>
                             <button class="copy-btn" onclick="copyFormatted()" style="display: none;" id="copyFormattedBtn">Copy Format</button>
@@ -1315,33 +1315,33 @@
             };
 
             // Generate FORMATTED text (with sections)
-            let formattedPrompt = '【PIXEL ART GENERATION】\n';
+            let formattedPrompt = 'PIXEL ART GENERATION\n';
             formattedPrompt += '━━━━━━━━━━━━━━━━━\n';
-            formattedPrompt += '📐 View: ' + components.perspective + ' ' + components.direction + '\n';
-            formattedPrompt += '🎮 Asset: ';
+            formattedPrompt += 'View: ' + components.perspective + ' ' + components.direction + '\n';
+            formattedPrompt += 'Asset: ';
             if (components.mainColor) formattedPrompt += components.mainColor + ' ';
             formattedPrompt += components.mainType;
             if (components.material) formattedPrompt += ' (' + components.material + ')';
             formattedPrompt += '\n';
             if (components.details.length > 0) {
-                formattedPrompt += '🔧 Details: ' + components.details.join(', ') + '\n';
+                formattedPrompt += 'Details: ' + components.details.join(', ') + '\n';
             }
             if (components.effect) {
-                formattedPrompt += '✨ Effect: ' + components.effect + '\n';
+                formattedPrompt += 'Effect: ' + components.effect + '\n';
             }
             if (components.atmosphere || components.colorPalette) {
-                formattedPrompt += '🎨 Style: ';
+                formattedPrompt += 'Style: ';
                 if (components.atmosphere) formattedPrompt += components.atmosphere + ' atmosphere';
                 if (components.atmosphere && components.colorPalette) formattedPrompt += ', ';
                 if (components.colorPalette) formattedPrompt += components.colorPalette + ' colors';
                 formattedPrompt += '\n';
             }
-            formattedPrompt += '🎯 Quality: ';
+            formattedPrompt += 'Quality: ';
             if (components.shading) formattedPrompt += components.shading + ', ';
             formattedPrompt += 'clean pixel lines';
             if (components.detailLevel) formattedPrompt += ', ' + components.detailLevel;
             formattedPrompt += '\n';
-            formattedPrompt += '🎮 Style: ' + components.artStyle;
+            formattedPrompt += 'Art Style: ' + components.artStyle;
 
             // Update all three outputs
             document.getElementById('plainText').textContent = plainPrompt;
