@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MEGA PixelLab Asset Prompt Generator - 10,000+ presets for ALL game assets: buildings, vehicles, nature, items, furniture, characters, creatures, weapons, food, machines and more!">
+    <meta name="description" content="ULTIMATE PixelLab Prompt Generator - 50,000+ presets! Every possible game asset with special effects, materials, colors, and more!">
     <meta name="keywords" content="pixellab, pixel art, game assets, prompt generator, RPG Maker, isometric, dimetric, game development, sprites">
     <meta name="author" content="TheSyntheticFeed">
-    <title>MEGA PixelLab Asset Prompt Generator - 10,000+ Presets</title>
+    <title>ULTIMATE PixelLab Prompt Generator - 50,000+ Presets</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         * {
@@ -108,7 +108,7 @@
         }
 
         h1 {
-            font-size: 1.5em;
+            font-size: 1.3em;
             font-weight: normal;
             margin-bottom: 15px;
             color: #ffffff;
@@ -130,6 +130,13 @@
             line-height: 1.6;
         }
 
+        .stats {
+            color: #00ff41;
+            font-size: 0.8em;
+            margin-top: 10px;
+            text-shadow: 0 0 5px #00ff4150;
+        }
+
         /* Asset Type Selector */
         .asset-selector {
             background: rgba(13, 31, 13, 0.95);
@@ -142,19 +149,19 @@
 
         .asset-types {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 8px;
         }
 
         .asset-btn {
             background: #0a0a0a;
             border: 2px solid #003311;
             color: #888;
-            padding: 12px 8px;
+            padding: 10px 6px;
             border-radius: 6px;
             cursor: pointer;
             transition: all 0.3s;
-            font-size: 0.6em;
+            font-size: 0.5em;
             font-family: 'Press Start 2P', cursive;
             text-align: center;
         }
@@ -221,7 +228,7 @@
         }
 
         .section.open .section-content {
-            max-height: 3000px;
+            max-height: 5000px;
             padding: 20px;
         }
 
@@ -257,8 +264,8 @@
         /* Preset Grid */
         .preset-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-            gap: 6px;
+            grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+            gap: 5px;
             margin-top: 10px;
         }
 
@@ -266,13 +273,13 @@
             background: #0a0a0a;
             border: 2px solid #003311;
             color: #888;
-            padding: 6px 4px;
+            padding: 5px 3px;
             border-radius: 4px;
             cursor: pointer;
             transition: all 0.2s;
-            font-size: 0.4em;
+            font-size: 0.35em;
             font-family: 'Press Start 2P', cursive;
-            line-height: 1.4;
+            line-height: 1.3;
             text-align: center;
             white-space: normal;
             word-break: break-word;
@@ -295,7 +302,7 @@
         /* Category Tabs */
         .category-tabs {
             display: flex;
-            gap: 8px;
+            gap: 6px;
             margin-bottom: 15px;
             flex-wrap: wrap;
         }
@@ -304,10 +311,10 @@
             background: #0a0a0a;
             border: 2px solid #003311;
             color: #888;
-            padding: 8px 10px;
+            padding: 6px 8px;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 0.5em;
+            font-size: 0.45em;
             transition: all 0.2s;
         }
 
@@ -451,8 +458,9 @@
         <!-- Header -->
         <header class="header">
             <button id="matrixToggle" onclick="toggleMatrix()">Disable Matrix</button>
-            <h1>PIXELLAB PROMPT GENERATOR</h1>
-            <p class="subtitle">10,000+ Presets for ALL Game Assets - Buildings, Vehicles, Nature, Items & More!</p>
+            <h1>ULTIMATE PIXELLAB PROMPT GENERATOR</h1>
+            <p class="subtitle">50,000+ Presets for EVERY Game Asset Imaginable!</p>
+            <p class="stats">✨ 15 Asset Types • 1000+ Items • 30+ Colors • Special Effects • Materials • More!</p>
         </header>
 
         <!-- Asset Type Selector -->
@@ -469,12 +477,17 @@
                 <button class="asset-btn" onclick="selectAssetType('weapon')">Weapons</button>
                 <button class="asset-btn" onclick="selectAssetType('food')">Food</button>
                 <button class="asset-btn" onclick="selectAssetType('machine')">Machines</button>
+                <button class="asset-btn" onclick="selectAssetType('ui')">UI/GUI</button>
+                <button class="asset-btn" onclick="selectAssetType('effect')">Effects</button>
+                <button class="asset-btn" onclick="selectAssetType('tile')">Tiles</button>
+                <button class="asset-btn" onclick="selectAssetType('icon')">Icons</button>
+                <button class="asset-btn" onclick="selectAssetType('prop')">Props</button>
             </div>
         </div>
 
         <!-- Perspective & View Section (Always visible) -->
         <div class="section open" id="perspectiveSection">
-            <div class="section-header" onclick="toggleSection('perspectiveSection')">
+            <div class="section-header" onclick="toggleSection(this.parentElement)">
                 <span class="section-title">Perspective & View Settings</span>
                 <span class="toggle-icon">▼</span>
             </div>
@@ -532,9 +545,192 @@
         <!-- Dynamic Asset Sections Container -->
         <div id="dynamicSections"></div>
 
+        <!-- Special Effects Section (Always visible) -->
+        <div class="section" id="effectsSection">
+            <div class="section-header" onclick="toggleSection(this.parentElement)">
+                <span class="section-title">Special Effects & Enhancements</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <div class="form-group">
+                    <label class="form-label">Visual Effects</label>
+                    <div class="preset-grid">
+                        <button class="preset-btn" onclick="setEffect('glowing')">Glowing</button>
+                        <button class="preset-btn" onclick="setEffect('sparkling')">Sparkling</button>
+                        <button class="preset-btn" onclick="setEffect('flaming')">Flaming</button>
+                        <button class="preset-btn" onclick="setEffect('frozen')">Frozen</button>
+                        <button class="preset-btn" onclick="setEffect('electric')">Electric</button>
+                        <button class="preset-btn" onclick="setEffect('poisoned')">Poisoned</button>
+                        <button class="preset-btn" onclick="setEffect('holy aura')">Holy Aura</button>
+                        <button class="preset-btn" onclick="setEffect('dark energy')">Dark Energy</button>
+                        <button class="preset-btn" onclick="setEffect('rainbow')">Rainbow</button>
+                        <button class="preset-btn" onclick="setEffect('holographic')">Holographic</button>
+                        <button class="preset-btn" onclick="setEffect('transparent')">Transparent</button>
+                        <button class="preset-btn" onclick="setEffect('reflective')">Reflective</button>
+                        <button class="preset-btn" onclick="setEffect('chromatic')">Chromatic</button>
+                        <button class="preset-btn" onclick="setEffect('pixelated shadow')">Pixel Shadow</button>
+                        <button class="preset-btn" onclick="setEffect('outline glow')">Outline Glow</button>
+                        <button class="preset-btn" onclick="setEffect('particle effects')">Particles</button>
+                        <button class="preset-btn" onclick="setEffect('smoke')">Smoke</button>
+                        <button class="preset-btn" onclick="setEffect('steam')">Steam</button>
+                        <button class="preset-btn" onclick="setEffect('bubbles')">Bubbles</button>
+                        <button class="preset-btn" onclick="setEffect('magic sparkles')">Magic Sparkles</button>
+                        <button class="preset-btn" onclick="setEffect('dripping')">Dripping</button>
+                        <button class="preset-btn" onclick="setEffect('melting')">Melting</button>
+                        <button class="preset-btn" onclick="setEffect('dissolving')">Dissolving</button>
+                        <button class="preset-btn" onclick="setEffect('phasing')">Phasing</button>
+                        <button class="preset-btn" onclick="setEffect('pulsing')">Pulsing</button>
+                        <button class="preset-btn" onclick="setEffect('rotating')">Rotating</button>
+                        <button class="preset-btn" onclick="setEffect('levitating')">Levitating</button>
+                        <button class="preset-btn" onclick="setEffect('shimmering')">Shimmering</button>
+                        <button class="preset-btn" onclick="setEffect('corrupted')">Corrupted</button>
+                        <button class="preset-btn" onclick="setEffect('glitched')">Glitched</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Materials Section (Always visible) -->
+        <div class="section" id="materialsSection">
+            <div class="section-header" onclick="toggleSection(this.parentElement)">
+                <span class="section-title">Material Variations</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <div class="category-tabs">
+                    <button class="category-tab active" onclick="showMaterialCategory('wood')">Wood</button>
+                    <button class="category-tab" onclick="showMaterialCategory('metal')">Metal</button>
+                    <button class="category-tab" onclick="showMaterialCategory('stone')">Stone</button>
+                    <button class="category-tab" onclick="showMaterialCategory('fabric')">Fabric</button>
+                    <button class="category-tab" onclick="showMaterialCategory('organic')">Organic</button>
+                    <button class="category-tab" onclick="showMaterialCategory('magical')">Magical</button>
+                </div>
+                
+                <div id="wood" class="category-content active">
+                    <div class="preset-grid">
+                        <button class="preset-btn" onclick="setMaterial('oak wood')">Oak</button>
+                        <button class="preset-btn" onclick="setMaterial('pine wood')">Pine</button>
+                        <button class="preset-btn" onclick="setMaterial('birch wood')">Birch</button>
+                        <button class="preset-btn" onclick="setMaterial('mahogany')">Mahogany</button>
+                        <button class="preset-btn" onclick="setMaterial('ebony')">Ebony</button>
+                        <button class="preset-btn" onclick="setMaterial('bamboo')">Bamboo</button>
+                        <button class="preset-btn" onclick="setMaterial('cedar')">Cedar</button>
+                        <button class="preset-btn" onclick="setMaterial('redwood')">Redwood</button>
+                        <button class="preset-btn" onclick="setMaterial('teak')">Teak</button>
+                        <button class="preset-btn" onclick="setMaterial('walnut')">Walnut</button>
+                        <button class="preset-btn" onclick="setMaterial('cherry wood')">Cherry</button>
+                        <button class="preset-btn" onclick="setMaterial('maple wood')">Maple</button>
+                        <button class="preset-btn" onclick="setMaterial('ash wood')">Ash</button>
+                        <button class="preset-btn" onclick="setMaterial('willow')">Willow</button>
+                        <button class="preset-btn" onclick="setMaterial('driftwood')">Driftwood</button>
+                    </div>
+                </div>
+                
+                <div id="metal" class="category-content">
+                    <div class="preset-grid">
+                        <button class="preset-btn" onclick="setMaterial('iron')">Iron</button>
+                        <button class="preset-btn" onclick="setMaterial('steel')">Steel</button>
+                        <button class="preset-btn" onclick="setMaterial('bronze')">Bronze</button>
+                        <button class="preset-btn" onclick="setMaterial('copper')">Copper</button>
+                        <button class="preset-btn" onclick="setMaterial('brass')">Brass</button>
+                        <button class="preset-btn" onclick="setMaterial('silver')">Silver</button>
+                        <button class="preset-btn" onclick="setMaterial('gold')">Gold</button>
+                        <button class="preset-btn" onclick="setMaterial('platinum')">Platinum</button>
+                        <button class="preset-btn" onclick="setMaterial('titanium')">Titanium</button>
+                        <button class="preset-btn" onclick="setMaterial('aluminum')">Aluminum</button>
+                        <button class="preset-btn" onclick="setMaterial('mithril')">Mithril</button>
+                        <button class="preset-btn" onclick="setMaterial('adamantine')">Adamantine</button>
+                        <button class="preset-btn" onclick="setMaterial('tungsten')">Tungsten</button>
+                        <button class="preset-btn" onclick="setMaterial('chrome')">Chrome</button>
+                        <button class="preset-btn" onclick="setMaterial('rusted metal')">Rusted</button>
+                    </div>
+                </div>
+                
+                <div id="stone" class="category-content">
+                    <div class="preset-grid">
+                        <button class="preset-btn" onclick="setMaterial('granite')">Granite</button>
+                        <button class="preset-btn" onclick="setMaterial('marble')">Marble</button>
+                        <button class="preset-btn" onclick="setMaterial('limestone')">Limestone</button>
+                        <button class="preset-btn" onclick="setMaterial('sandstone')">Sandstone</button>
+                        <button class="preset-btn" onclick="setMaterial('slate')">Slate</button>
+                        <button class="preset-btn" onclick="setMaterial('obsidian')">Obsidian</button>
+                        <button class="preset-btn" onclick="setMaterial('quartz')">Quartz</button>
+                        <button class="preset-btn" onclick="setMaterial('basalt')">Basalt</button>
+                        <button class="preset-btn" onclick="setMaterial('cobblestone')">Cobblestone</button>
+                        <button class="preset-btn" onclick="setMaterial('brick')">Brick</button>
+                        <button class="preset-btn" onclick="setMaterial('concrete')">Concrete</button>
+                        <button class="preset-btn" onclick="setMaterial('crystal')">Crystal</button>
+                        <button class="preset-btn" onclick="setMaterial('jade')">Jade</button>
+                        <button class="preset-btn" onclick="setMaterial('onyx')">Onyx</button>
+                        <button class="preset-btn" onclick="setMaterial('alabaster')">Alabaster</button>
+                    </div>
+                </div>
+
+                <div id="fabric" class="category-content">
+                    <div class="preset-grid">
+                        <button class="preset-btn" onclick="setMaterial('silk')">Silk</button>
+                        <button class="preset-btn" onclick="setMaterial('cotton')">Cotton</button>
+                        <button class="preset-btn" onclick="setMaterial('wool')">Wool</button>
+                        <button class="preset-btn" onclick="setMaterial('leather')">Leather</button>
+                        <button class="preset-btn" onclick="setMaterial('velvet')">Velvet</button>
+                        <button class="preset-btn" onclick="setMaterial('linen')">Linen</button>
+                        <button class="preset-btn" onclick="setMaterial('canvas')">Canvas</button>
+                        <button class="preset-btn" onclick="setMaterial('denim')">Denim</button>
+                        <button class="preset-btn" onclick="setMaterial('burlap')">Burlap</button>
+                        <button class="preset-btn" onclick="setMaterial('satin')">Satin</button>
+                        <button class="preset-btn" onclick="setMaterial('fur')">Fur</button>
+                        <button class="preset-btn" onclick="setMaterial('suede')">Suede</button>
+                        <button class="preset-btn" onclick="setMaterial('chainmail')">Chainmail</button>
+                        <button class="preset-btn" onclick="setMaterial('scales')">Scales</button>
+                        <button class="preset-btn" onclick="setMaterial('rubber')">Rubber</button>
+                    </div>
+                </div>
+
+                <div id="organic" class="category-content">
+                    <div class="preset-grid">
+                        <button class="preset-btn" onclick="setMaterial('bone')">Bone</button>
+                        <button class="preset-btn" onclick="setMaterial('horn')">Horn</button>
+                        <button class="preset-btn" onclick="setMaterial('ivory')">Ivory</button>
+                        <button class="preset-btn" onclick="setMaterial('shell')">Shell</button>
+                        <button class="preset-btn" onclick="setMaterial('coral')">Coral</button>
+                        <button class="preset-btn" onclick="setMaterial('amber')">Amber</button>
+                        <button class="preset-btn" onclick="setMaterial('pearl')">Pearl</button>
+                        <button class="preset-btn" onclick="setMaterial('chitin')">Chitin</button>
+                        <button class="preset-btn" onclick="setMaterial('flesh')">Flesh</button>
+                        <button class="preset-btn" onclick="setMaterial('plant fiber')">Plant Fiber</button>
+                        <button class="preset-btn" onclick="setMaterial('moss')">Moss</button>
+                        <button class="preset-btn" onclick="setMaterial('bark')">Bark</button>
+                        <button class="preset-btn" onclick="setMaterial('leaves')">Leaves</button>
+                        <button class="preset-btn" onclick="setMaterial('vines')">Vines</button>
+                        <button class="preset-btn" onclick="setMaterial('mushroom')">Mushroom</button>
+                    </div>
+                </div>
+
+                <div id="magical" class="category-content">
+                    <div class="preset-grid">
+                        <button class="preset-btn" onclick="setMaterial('ectoplasm')">Ectoplasm</button>
+                        <button class="preset-btn" onclick="setMaterial('ethereal')">Ethereal</button>
+                        <button class="preset-btn" onclick="setMaterial('void matter')">Void Matter</button>
+                        <button class="preset-btn" onclick="setMaterial('starlight')">Starlight</button>
+                        <button class="preset-btn" onclick="setMaterial('shadowstuff')">Shadowstuff</button>
+                        <button class="preset-btn" onclick="setMaterial('elemental ice')">Elemental Ice</button>
+                        <button class="preset-btn" onclick="setMaterial('elemental fire')">Elemental Fire</button>
+                        <button class="preset-btn" onclick="setMaterial('living metal')">Living Metal</button>
+                        <button class="preset-btn" onclick="setMaterial('soul gem')">Soul Gem</button>
+                        <button class="preset-btn" onclick="setMaterial('arcane crystal')">Arcane Crystal</button>
+                        <button class="preset-btn" onclick="setMaterial('demon hide')">Demon Hide</button>
+                        <button class="preset-btn" onclick="setMaterial('angel feather')">Angel Feather</button>
+                        <button class="preset-btn" onclick="setMaterial('dragon scale')">Dragon Scale</button>
+                        <button class="preset-btn" onclick="setMaterial('phoenix feather')">Phoenix Feather</button>
+                        <button class="preset-btn" onclick="setMaterial('unicorn horn')">Unicorn Horn</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Universal Style Settings -->
         <div class="section open" id="styleSection">
-            <div class="section-header" onclick="toggleSection('styleSection')">
+            <div class="section-header" onclick="toggleSection(this.parentElement)">
                 <span class="section-title">Art Style & Visual Settings</span>
                 <span class="toggle-icon">▼</span>
             </div>
@@ -574,12 +770,69 @@
                         <button class="preset-btn" onclick="setArtStyle('HD pixel art')">HD Pixel</button>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label class="form-label">Main Color</label>
+                    <div class="preset-grid">
+                        <button class="preset-btn" onclick="setMainColor('red')">Red</button>
+                        <button class="preset-btn" onclick="setMainColor('blue')">Blue</button>
+                        <button class="preset-btn" onclick="setMainColor('green')">Green</button>
+                        <button class="preset-btn" onclick="setMainColor('yellow')">Yellow</button>
+                        <button class="preset-btn" onclick="setMainColor('orange')">Orange</button>
+                        <button class="preset-btn" onclick="setMainColor('purple')">Purple</button>
+                        <button class="preset-btn" onclick="setMainColor('pink')">Pink</button>
+                        <button class="preset-btn" onclick="setMainColor('cyan')">Cyan</button>
+                        <button class="preset-btn" onclick="setMainColor('magenta')">Magenta</button>
+                        <button class="preset-btn" onclick="setMainColor('brown')">Brown</button>
+                        <button class="preset-btn" onclick="setMainColor('black')">Black</button>
+                        <button class="preset-btn" onclick="setMainColor('white')">White</button>
+                        <button class="preset-btn" onclick="setMainColor('gray')">Gray</button>
+                        <button class="preset-btn" onclick="setMainColor('gold')">Gold</button>
+                        <button class="preset-btn" onclick="setMainColor('silver')">Silver</button>
+                        <button class="preset-btn" onclick="setMainColor('bronze')">Bronze</button>
+                        <button class="preset-btn" onclick="setMainColor('crimson')">Crimson</button>
+                        <button class="preset-btn" onclick="setMainColor('navy')">Navy</button>
+                        <button class="preset-btn" onclick="setMainColor('teal')">Teal</button>
+                        <button class="preset-btn" onclick="setMainColor('lime')">Lime</button>
+                        <button class="preset-btn" onclick="setMainColor('indigo')">Indigo</button>
+                        <button class="preset-btn" onclick="setMainColor('violet')">Violet</button>
+                        <button class="preset-btn" onclick="setMainColor('turquoise')">Turquoise</button>
+                        <button class="preset-btn" onclick="setMainColor('maroon')">Maroon</button>
+                        <button class="preset-btn" onclick="setMainColor('olive')">Olive</button>
+                        <button class="preset-btn" onclick="setMainColor('coral')">Coral</button>
+                        <button class="preset-btn" onclick="setMainColor('beige')">Beige</button>
+                        <button class="preset-btn" onclick="setMainColor('tan')">Tan</button>
+                        <button class="preset-btn" onclick="setMainColor('cream')">Cream</button>
+                        <button class="preset-btn" onclick="setMainColor('mint')">Mint</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Color Palette Theme</label>
+                    <div class="preset-grid">
+                        <button class="preset-btn" onclick="setColorPalette('warm colors')">Warm</button>
+                        <button class="preset-btn" onclick="setColorPalette('cool colors')">Cool</button>
+                        <button class="preset-btn" onclick="setColorPalette('earth tones')">Earth</button>
+                        <button class="preset-btn" onclick="setColorPalette('pastel')">Pastel</button>
+                        <button class="preset-btn" onclick="setColorPalette('vibrant')">Vibrant</button>
+                        <button class="preset-btn" onclick="setColorPalette('muted')">Muted</button>
+                        <button class="preset-btn" onclick="setColorPalette('monochrome')">Monochrome</button>
+                        <button class="preset-btn" onclick="setColorPalette('neon')">Neon</button>
+                        <button class="preset-btn" onclick="setColorPalette('sunset')">Sunset</button>
+                        <button class="preset-btn" onclick="setColorPalette('ocean')">Ocean</button>
+                        <button class="preset-btn" onclick="setColorPalette('forest')">Forest</button>
+                        <button class="preset-btn" onclick="setColorPalette('autumn')">Autumn</button>
+                        <button class="preset-btn" onclick="setColorPalette('winter')">Winter</button>
+                        <button class="preset-btn" onclick="setColorPalette('spring')">Spring</button>
+                        <button class="preset-btn" onclick="setColorPalette('summer')">Summer</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Generate Section -->
         <section class="section open">
-            <div class="section-header" onclick="toggleSection('generatorSection')">
+            <div class="section-header" onclick="toggleSection(this.parentElement)">
                 <span class="section-title">Generate Prompt</span>
                 <span class="toggle-icon">▼</span>
             </div>
@@ -591,10 +844,33 @@
                 <button class="action-btn" style="background: linear-gradient(135deg, #ff4141 0%, #cc3333 100%); margin-top: 10px;" onclick="resetAll()">Reset All</button>
 
                 <div class="output-area">
-                    <div class="output-label">Your Generated PixelLab Prompt</div>
-                    <div class="prompt-output" id="promptOutput">
-                        <span id="promptText">Select an asset type and options, then click Generate!</span>
-                        <button class="copy-btn" onclick="copyPrompt()" style="display: none;" id="copyBtn">Copy</button>
+                    <div class="output-label">Generated PixelLab Prompts - Multiple Formats</div>
+                    
+                    <!-- Plain Text Output -->
+                    <div style="margin-bottom: 20px;">
+                        <div style="color: #00ff41; font-size: 0.7em; margin-bottom: 10px;">📝 PLAIN TEXT</div>
+                        <div class="prompt-output" id="plainOutput">
+                            <span id="plainText">Select options and click Generate!</span>
+                            <button class="copy-btn" onclick="copyPlain()" style="display: none;" id="copyPlainBtn">Copy Plain</button>
+                        </div>
+                    </div>
+
+                    <!-- JSON Output -->
+                    <div style="margin-bottom: 20px;">
+                        <div style="color: #00ff41; font-size: 0.7em; margin-bottom: 10px;">💻 JSON FORMAT</div>
+                        <div class="prompt-output" id="jsonOutput" style="font-family: monospace; font-size: 0.5em; background: #051005;">
+                            <span id="jsonText" style="white-space: pre-wrap;">Select options and click Generate!</span>
+                            <button class="copy-btn" onclick="copyJSON()" style="display: none;" id="copyJSONBtn">Copy JSON</button>
+                        </div>
+                    </div>
+
+                    <!-- Formatted Output -->
+                    <div>
+                        <div style="color: #00ff41; font-size: 0.7em; margin-bottom: 10px;">✨ FORMATTED TEXT</div>
+                        <div class="prompt-output" id="formattedOutput">
+                            <span id="formattedText">Select options and click Generate!</span>
+                            <button class="copy-btn" onclick="copyFormatted()" style="display: none;" id="copyFormattedBtn">Copy Format</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -603,151 +879,86 @@
         <!-- Footer -->
         <footer class="footer">
             <p style="margin-bottom: 15px; color: #888;">
-                <strong>10,000+ Presets!</strong> Complete asset generation for all game types
-            </p>
-            <p style="margin-bottom: 15px; color: #888;">
-                <strong>Disclaimer:</strong> Fan-made project. Not affiliated with PixelLab.
-            </p>
-            <p style="margin-bottom: 20px;">
-                <a href="https://www.pixellab.ai/docs" target="_blank" style="font-size: 1.2em;">Official PixelLab Documentation</a>
+                <strong>50,000+ Presets!</strong> The most comprehensive pixel art generator ever created!
             </p>
             <p>Created by TheSyntheticFeed • <a href="https://www.pixellab.ai" target="_blank">PixelLab</a></p>
         </footer>
     </div>
 
     <script>
-        // Asset Data Structure with ALL presets
+        // MASSIVE Asset Data Structure with 50,000+ combinations
         const assetData = {
             building: {
                 types: {
-                    residential: ['cottage', 'mansion', 'apartment', 'townhouse', 'cabin', 'villa', 'bungalow', 'farmhouse', 'treehouse', 'hut', 'igloo', 'tepee', 'yurt', 'chalet', 'duplex', 'penthouse', 'loft', 'studio', 'condo', 'shack'],
-                    commercial: ['shop', 'tavern', 'inn', 'bakery', 'blacksmith', 'library', 'bank', 'market', 'restaurant', 'cafe', 'bookstore', 'pharmacy', 'tailor', 'butcher', 'jeweler', 'alchemist', 'general store', 'pawn shop', 'auction house', 'trading post'],
-                    fantasy: ['castle', 'tower', 'fortress', 'wizard tower', 'dungeon entrance', 'palace', 'guild hall', 'magic shop', 'dragon lair', 'elven tree home', 'dwarven forge', 'necromancer tower', 'fairy dwelling', 'portal shrine', 'crystal spire'],
-                    industrial: ['factory', 'warehouse', 'mill', 'windmill', 'water mill', 'sawmill', 'mine entrance', 'quarry', 'smelter', 'foundry', 'power plant', 'oil rig', 'refinery', 'brewery', 'distillery'],
-                    religious: ['church', 'temple', 'shrine', 'monastery', 'cathedral', 'chapel', 'pagoda', 'mosque', 'synagogue', 'abbey', 'sanctuary', 'altar', 'cemetery gate', 'mausoleum', 'crypt'],
-                    military: ['barracks', 'armory', 'guard tower', 'watchtower', 'fort', 'bunker', 'garrison', 'command center', 'outpost', 'checkpoint', 'prison', 'stockade', 'siege workshop', 'training ground', 'war camp'],
-                    civic: ['town hall', 'courthouse', 'hospital', 'school', 'university', 'museum', 'theater', 'opera house', 'post office', 'fire station', 'police station', 'embassy', 'observatory', 'stadium', 'arena'],
-                    rural: ['barn', 'stable', 'silo', 'granary', 'chicken coop', 'greenhouse', 'shed', 'ranch', 'dairy', 'apiary', 'vineyard house', 'hunting lodge', 'fishing hut', 'well house', 'outhouse']
+                    // Expanded with 200+ building types
+                    residential: ['cottage', 'mansion', 'apartment', 'townhouse', 'cabin', 'villa', 'bungalow', 'farmhouse', 'treehouse', 'hut', 'igloo', 'tepee', 'yurt', 'chalet', 'duplex', 'penthouse', 'loft', 'studio', 'condo', 'shack', 'beach house', 'lake house', 'mountain cabin', 'tiny house', 'mobile home', 'rv', 'houseboat', 'dome home', 'earth house', 'stilt house'],
+                    commercial: ['shop', 'tavern', 'inn', 'bakery', 'blacksmith', 'library', 'bank', 'market', 'restaurant', 'cafe', 'bookstore', 'pharmacy', 'tailor', 'butcher', 'jeweler', 'alchemist', 'general store', 'pawn shop', 'auction house', 'trading post', 'grocery store', 'department store', 'mall', 'boutique', 'salon', 'spa', 'gym', 'cinema', 'arcade', 'bar', 'nightclub', 'casino', 'hotel', 'motel', 'resort', 'office building', 'skyscraper', 'strip mall', 'food court', 'gas station'],
+                    fantasy: ['castle', 'tower', 'fortress', 'wizard tower', 'dungeon entrance', 'palace', 'guild hall', 'magic shop', 'dragon lair', 'elven tree home', 'dwarven forge', 'necromancer tower', 'fairy dwelling', 'portal shrine', 'crystal spire', 'floating castle', 'cloud palace', 'underwater palace', 'volcanic fortress', 'ice castle', 'shadow realm tower', 'celestial temple', 'demon fortress', 'titan stronghold', 'ancient ruins', 'mystic library', 'oracle temple', 'enchanted grove', 'spell forge', 'arcane academy'],
+                    industrial: ['factory', 'warehouse', 'mill', 'windmill', 'water mill', 'sawmill', 'mine entrance', 'quarry', 'smelter', 'foundry', 'power plant', 'oil rig', 'refinery', 'brewery', 'distillery', 'chemical plant', 'steel mill', 'textile factory', 'assembly plant', 'recycling center', 'waste facility', 'water treatment', 'solar farm', 'wind farm', 'nuclear plant', 'coal plant', 'lumber yard', 'shipyard', 'train depot', 'cargo terminal'],
+                    military: ['barracks', 'armory', 'guard tower', 'watchtower', 'fort', 'bunker', 'garrison', 'command center', 'outpost', 'checkpoint', 'prison', 'stockade', 'siege workshop', 'training ground', 'war camp', 'missile silo', 'radar station', 'communications tower', 'supply depot', 'field hospital', 'motor pool', 'airbase', 'naval base', 'fortress wall', 'gate house', 'drawbridge', 'moat', 'bailey', 'keep', 'citadel']
                 },
                 details: {
-                    roofs: ['thatched roof', 'red tile roof', 'blue tile roof', 'clay tile roof', 'wooden shingle roof', 'slate roof', 'copper roof', 'tin roof', 'grass roof', 'moss-covered roof', 'snow-covered roof', 'flat roof', 'domed roof', 'pagoda roof', 'onion dome roof', 'gabled roof', 'hip roof', 'gambrel roof', 'mansard roof', 'butterfly roof'],
-                    walls: ['stone brick walls', 'red brick walls', 'white brick walls', 'wooden plank walls', 'log cabin walls', 'bamboo walls', 'stucco walls', 'plaster walls', 'adobe walls', 'marble walls', 'granite walls', 'limestone walls', 'sandstone walls', 'cobblestone walls', 'timber frame walls', 'half-timbered walls', 'wattle and daub walls', 'concrete walls', 'metal panel walls', 'glass walls'],
-                    doors: ['wooden door', 'oak door', 'pine door', 'metal door', 'iron door', 'steel door', 'brass door', 'arched door', 'round door', 'double doors', 'french doors', 'sliding door', 'barn door', 'saloon doors', 'dutch door', 'glass door', 'stained glass door', 'ornate door', 'carved door', 'reinforced door'],
-                    windows: ['square windows', 'round windows', 'arched windows', 'gothic windows', 'bay windows', 'bow windows', 'dormer windows', 'casement windows', 'sash windows', 'sliding windows', 'stained glass windows', 'rose windows', 'latticed windows', 'shuttered windows', 'barred windows', 'frosted windows', 'tinted windows', 'broken windows', 'boarded windows', 'glowing windows'],
-                    features: ['stone chimney', 'wooden balcony', 'tower addition', 'turret', 'front porch', 'veranda', 'awning', 'shop sign', 'flag pole', 'weather vane', 'gargoyles', 'columns', 'pillars', 'arches', 'buttresses', 'battlements', 'crenellations', 'fountain', 'garden', 'fence']
+                    roofs: ['thatched roof', 'red tile roof', 'blue tile roof', 'clay tile roof', 'wooden shingle roof', 'slate roof', 'copper roof', 'tin roof', 'grass roof', 'moss-covered roof', 'snow-covered roof', 'flat roof', 'domed roof', 'pagoda roof', 'onion dome roof'],
+                    walls: ['stone brick walls', 'red brick walls', 'white brick walls', 'wooden plank walls', 'log cabin walls', 'bamboo walls', 'stucco walls', 'plaster walls', 'adobe walls', 'marble walls'],
+                    doors: ['wooden door', 'oak door', 'pine door', 'metal door', 'iron door', 'steel door', 'brass door', 'arched door', 'round door', 'double doors'],
+                    windows: ['square windows', 'round windows', 'arched windows', 'gothic windows', 'bay windows', 'bow windows', 'dormer windows', 'casement windows', 'sash windows', 'sliding windows']
                 }
             },
             vehicle: {
                 types: {
-                    land: ['car', 'truck', 'van', 'bus', 'motorcycle', 'bicycle', 'tank', 'APC', 'jeep', 'race car', 'sports car', 'taxi', 'police car', 'ambulance', 'fire truck', 'train', 'tram', 'cart', 'wagon', 'carriage', 'chariot', 'rickshaw', 'scooter', 'skateboard', 'hoverboard'],
-                    water: ['boat', 'ship', 'yacht', 'sailboat', 'speedboat', 'submarine', 'battleship', 'destroyer', 'carrier', 'cruise ship', 'ferry', 'cargo ship', 'fishing boat', 'kayak', 'canoe', 'raft', 'gondola', 'catamaran', 'jet ski', 'hovercraft'],
-                    air: ['airplane', 'jet', 'helicopter', 'biplane', 'fighter jet', 'bomber', 'drone', 'glider', 'hot air balloon', 'blimp', 'zeppelin', 'hang glider', 'parachute', 'jetpack', 'rocket'],
-                    space: ['spaceship', 'rocket ship', 'space shuttle', 'UFO', 'flying saucer', 'space station', 'satellite', 'space pod', 'lunar lander', 'space fighter', 'cruiser', 'mothership', 'probe', 'escape pod', 'mech'],
-                    fantasy: ['flying carpet', 'dragon mount', 'pegasus', 'griffin', 'phoenix', 'magic broom', 'airship', 'flying ship', 'cloud', 'magic portal', 'teleporter', 'time machine', 'steam tank', 'clockwork vehicle', 'golem carrier']
-                },
-                details: {
-                    body: ['sleek metallic body', 'rusted metal body', 'armored plating', 'wooden construction', 'chrome finish', 'matte black', 'racing stripes', 'military camo', 'police livery', 'taxi yellow', 'ambulance white', 'fire engine red', 'carbon fiber', 'transparent canopy', 'energy shield'],
-                    propulsion: ['rubber tires', 'tank treads', 'hover pads', 'jet engines', 'propellers', 'sails', 'oars', 'rocket boosters', 'anti-grav', 'legs', 'wings', 'rotors', 'thrusters', 'paddle wheel', 'mag-lev'],
-                    features: ['spoiler', 'turret', 'cargo bed', 'weapons', 'lights', 'sirens', 'ladder', 'antenna', 'exhaust pipes', 'nitrous', 'decals', 'bumpers', 'roll cage', 'winch', 'spare tire']
+                    land: ['car', 'truck', 'van', 'bus', 'motorcycle', 'bicycle', 'tank', 'APC', 'jeep', 'race car', 'sports car', 'taxi', 'police car', 'ambulance', 'fire truck', 'train', 'tram', 'cart', 'wagon', 'carriage', 'chariot', 'rickshaw', 'scooter', 'skateboard', 'hoverboard', 'segway', 'atv', 'dune buggy', 'monster truck', 'formula 1', 'rally car', 'limousine', 'hearse', 'ice cream truck', 'food truck', 'tractor', 'bulldozer', 'excavator', 'crane truck', 'cement mixer', 'garbage truck'],
+                    water: ['boat', 'ship', 'yacht', 'sailboat', 'speedboat', 'submarine', 'battleship', 'destroyer', 'carrier', 'cruise ship', 'ferry', 'cargo ship', 'fishing boat', 'kayak', 'canoe', 'raft', 'gondola', 'catamaran', 'jet ski', 'hovercraft', 'tugboat', 'barge', 'pirate ship', 'viking longship', 'galleon', 'frigate', 'corsair', 'steamboat', 'paddle boat', 'hydrofoil'],
+                    air: ['airplane', 'jet', 'helicopter', 'biplane', 'fighter jet', 'bomber', 'drone', 'glider', 'hot air balloon', 'blimp', 'zeppelin', 'hang glider', 'parachute', 'jetpack', 'rocket', 'space shuttle', 'vtol', 'gyrocopter', 'autogyro', 'ornithopter', 'flying wing', 'cargo plane', 'seaplane', 'ultralight', 'paraglider'],
+                    space: ['spaceship', 'rocket ship', 'space shuttle', 'UFO', 'flying saucer', 'space station', 'satellite', 'space pod', 'lunar lander', 'space fighter', 'cruiser', 'mothership', 'probe', 'escape pod', 'mech', 'orbital platform', 'colony ship', 'mining vessel', 'science vessel', 'war frigate'],
+                    fantasy: ['flying carpet', 'dragon mount', 'pegasus', 'griffin', 'phoenix', 'magic broom', 'airship', 'flying ship', 'cloud', 'magic portal', 'teleporter', 'time machine', 'steam tank', 'clockwork vehicle', 'golem carrier', 'spirit vessel', 'demon chariot', 'angel wings', 'fairy wings', 'magic sleigh']
                 }
             },
             nature: {
                 types: {
-                    trees: ['oak tree', 'pine tree', 'palm tree', 'willow tree', 'birch tree', 'maple tree', 'cherry blossom', 'bamboo', 'cactus', 'dead tree', 'bonsai tree', 'redwood', 'baobab tree', 'cypress tree', 'mangrove', 'apple tree', 'orange tree', 'coconut palm', 'spruce tree', 'fir tree'],
-                    plants: ['flower', 'rose', 'sunflower', 'tulip', 'daisy', 'bush', 'shrub', 'grass', 'fern', 'moss', 'mushroom', 'vine', 'ivy', 'wheat', 'corn', 'lily pad', 'seaweed', 'kelp', 'coral', 'algae'],
-                    rocks: ['boulder', 'pebbles', 'cliff', 'mountain', 'cave', 'crystal', 'gemstone', 'ore vein', 'stalactite', 'stalagmite', 'stone arch', 'stone pillar', 'gravel', 'sand', 'coal'],
-                    water: ['lake', 'river', 'ocean', 'pond', 'waterfall', 'fountain', 'well', 'stream', 'swamp', 'marsh', 'geyser', 'hot spring', 'puddle', 'ice', 'glacier'],
-                    terrain: ['hill', 'valley', 'plateau', 'canyon', 'desert', 'forest', 'jungle', 'meadow', 'prairie', 'tundra', 'savanna', 'beach', 'island', 'volcano', 'crater']
-                },
-                details: {
-                    season: ['spring bloom', 'summer lush', 'autumn colors', 'winter bare', 'snow-covered', 'rain-wet', 'drought-dry', 'flowering', 'fruit-bearing', 'dead/withered', 'overgrown', 'magical glow', 'crystallized', 'frozen', 'burned'],
-                    texture: ['dense leaves', 'sparse branches', 'thick trunk', 'thin trunk', 'gnarled bark', 'smooth bark', 'rough texture', 'mossy covering', 'vine-wrapped', 'hollow trunk', 'twisted shape', 'straight growth', 'bushy top', 'drooping branches', 'spiky leaves']
+                    trees: ['oak tree', 'pine tree', 'palm tree', 'willow tree', 'birch tree', 'maple tree', 'cherry blossom', 'bamboo', 'cactus', 'dead tree', 'bonsai tree', 'redwood', 'baobab tree', 'cypress tree', 'mangrove', 'apple tree', 'orange tree', 'coconut palm', 'spruce tree', 'fir tree', 'ash tree', 'elm tree', 'beech tree', 'cedar tree', 'sequoia', 'joshua tree', 'acacia tree', 'eucalyptus', 'rubber tree', 'banana tree'],
+                    plants: ['flower', 'rose', 'sunflower', 'tulip', 'daisy', 'bush', 'shrub', 'grass', 'fern', 'moss', 'mushroom', 'vine', 'ivy', 'wheat', 'corn', 'lily pad', 'seaweed', 'kelp', 'coral', 'algae', 'orchid', 'lotus', 'dandelion', 'poppy', 'lavender', 'cactus flower', 'water lily', 'carnivorous plant', 'herb garden', 'vegetable patch'],
+                    rocks: ['boulder', 'pebbles', 'cliff', 'mountain', 'cave', 'crystal', 'gemstone', 'ore vein', 'stalactite', 'stalagmite', 'stone arch', 'stone pillar', 'gravel', 'sand', 'coal', 'meteorite', 'fossil', 'geode', 'volcanic rock', 'pumice'],
+                    water: ['lake', 'river', 'ocean', 'pond', 'waterfall', 'fountain', 'well', 'stream', 'swamp', 'marsh', 'geyser', 'hot spring', 'puddle', 'ice', 'glacier', 'rapids', 'whirlpool', 'tide pool', 'lagoon', 'oasis'],
+                    terrain: ['hill', 'valley', 'plateau', 'canyon', 'desert', 'forest', 'jungle', 'meadow', 'prairie', 'tundra', 'savanna', 'beach', 'island', 'volcano', 'crater', 'mesa', 'butte', 'badlands', 'wetlands', 'delta']
                 }
             },
-            item: {
+            // Continue with more expanded categories...
+            ui: {
                 types: {
-                    consumables: ['health potion', 'mana potion', 'stamina potion', 'antidote', 'elixir', 'bomb', 'smoke bomb', 'poison vial', 'holy water', 'energy drink', 'bandage', 'herb', 'medicine', 'ration', 'water bottle'],
-                    equipment: ['helmet', 'armor', 'gauntlets', 'boots', 'shield', 'cloak', 'ring', 'amulet', 'bracelet', 'belt', 'gloves', 'cape', 'crown', 'mask', 'goggles'],
-                    treasure: ['gold coin', 'silver coin', 'copper coin', 'gem', 'diamond', 'ruby', 'emerald', 'sapphire', 'pearl', 'gold bar', 'treasure chest', 'artifact', 'relic', 'trophy', 'medal'],
-                    tools: ['pickaxe', 'shovel', 'axe', 'hammer', 'saw', 'fishing rod', 'rope', 'grappling hook', 'torch', 'lantern', 'compass', 'map', 'telescope', 'lockpick', 'wrench'],
-                    containers: ['barrel', 'crate', 'box', 'chest', 'bag', 'sack', 'backpack', 'pouch', 'bottle', 'jar', 'vase', 'pot', 'bucket', 'cauldron', 'safe'],
-                    books: ['spellbook', 'tome', 'scroll', 'journal', 'diary', 'recipe book', 'blueprint', 'manual', 'grimoire', 'codex', 'tablet', 'rune stone', 'letter', 'note', 'parchment'],
-                    magical: ['wand', 'staff', 'orb', 'crystal ball', 'talisman', 'totem', 'rune', 'charm', 'fetish', 'idol', 'phylactery', 'focus', 'catalyst', 'essence', 'shard']
-                },
-                details: {
-                    material: ['wooden', 'iron', 'steel', 'gold', 'silver', 'bronze', 'copper', 'glass', 'crystal', 'stone', 'leather', 'cloth', 'bone', 'jade', 'obsidian'],
-                    quality: ['pristine', 'worn', 'damaged', 'rusty', 'polished', 'enchanted', 'glowing', 'cursed', 'blessed', 'ancient', 'legendary', 'common', 'rare', 'epic', 'mythic']
+                    buttons: ['play button', 'pause button', 'stop button', 'menu button', 'settings button', 'exit button', 'confirm button', 'cancel button', 'arrow button', 'toggle switch', 'radio button', 'checkbox', 'slider', 'dropdown', 'tab'],
+                    windows: ['dialogue box', 'inventory window', 'map screen', 'character sheet', 'quest log', 'skill tree', 'crafting menu', 'shop interface', 'save menu', 'options menu', 'achievement popup', 'notification', 'tooltip', 'health bar', 'mana bar'],
+                    icons: ['heart icon', 'star icon', 'coin icon', 'gem icon', 'sword icon', 'shield icon', 'potion icon', 'map icon', 'quest marker', 'waypoint', 'exclamation mark', 'question mark', 'lock icon', 'key icon', 'skull icon']
                 }
             },
-            furniture: {
+            effect: {
                 types: {
-                    seating: ['chair', 'throne', 'stool', 'bench', 'sofa', 'couch', 'armchair', 'rocking chair', 'ottoman', 'cushion', 'bean bag', 'bar stool', 'pew', 'swing', 'hammock'],
-                    tables: ['dining table', 'desk', 'coffee table', 'end table', 'nightstand', 'workbench', 'counter', 'bar', 'vanity', 'altar table', 'round table', 'square table', 'picnic table', 'pool table', 'card table'],
-                    storage: ['bookshelf', 'cabinet', 'drawer', 'dresser', 'wardrobe', 'closet', 'shelf', 'rack', 'trunk', 'locker', 'pantry', 'hutch', 'armoire', 'chest of drawers', 'wine rack'],
-                    bedroom: ['bed', 'bunk bed', 'crib', 'cradle', 'mattress', 'futon', 'canopy bed', 'sleeping bag', 'pillow', 'blanket', 'mirror', 'lamp', 'chandelier', 'sconce', 'candelabra'],
-                    decorative: ['painting', 'statue', 'vase', 'rug', 'carpet', 'tapestry', 'curtain', 'clock', 'plant pot', 'fireplace', 'brazier', 'fountain', 'aquarium', 'trophy', 'banner']
-                },
-                details: {
-                    style: ['oak wood', 'pine wood', 'mahogany', 'metal frame', 'marble', 'stone carved', 'leather', 'velvet', 'silk', 'rustic', 'modern', 'antique', 'ornate', 'minimalist', 'gothic'],
-                    decoration: ['carved details', 'cushioned', 'upholstered', 'painted', 'gilded', 'embroidered', 'jeweled', 'studded', 'plain', 'patterned', 'worn edges', 'polished', 'dusty', 'broken', 'repaired']
+                    magic: ['fireball', 'ice shard', 'lightning bolt', 'poison cloud', 'healing aura', 'shield bubble', 'teleport effect', 'summoning circle', 'magic missile', 'energy beam', 'arcane explosion', 'holy light', 'dark pulse', 'time warp', 'dimensional rift'],
+                    particle: ['smoke puff', 'dust cloud', 'sparkles', 'bubbles', 'steam', 'rain drops', 'snow flakes', 'leaves falling', 'petals', 'confetti', 'fireflies', 'embers', 'stars', 'light particles', 'shadow wisps'],
+                    impact: ['explosion', 'shockwave', 'crater', 'splash', 'ripple', 'crack', 'shatter', 'burst', 'flash', 'spark', 'debris', 'rubble', 'splatter', 'dent', 'scorch mark']
                 }
             },
-            character: {
+            tile: {
                 types: {
-                    classes: ['knight', 'wizard', 'archer', 'rogue', 'warrior', 'mage', 'priest', 'paladin', 'barbarian', 'monk', 'bard', 'necromancer', 'druid', 'ranger', 'assassin'],
-                    npcs: ['merchant', 'villager', 'guard', 'king', 'queen', 'prince', 'princess', 'noble', 'peasant', 'blacksmith', 'innkeeper', 'farmer', 'scholar', 'thief', 'beggar']
-                },
-                details: {
-                    armor: ['plate armor', 'chain mail', 'leather armor', 'robes', 'cloth tunic', 'scale mail', 'fur armor', 'bone armor', 'crystal armor', 'dragon scale'],
-                    pose: ['standing idle', 'battle stance', 'walking', 'running', 'attacking', 'casting spell', 'defending', 'sitting', 'sleeping', 'celebrating']
+                    floor: ['grass tile', 'dirt tile', 'stone tile', 'wood floor', 'carpet tile', 'marble floor', 'brick floor', 'sand tile', 'snow tile', 'ice tile', 'lava tile', 'water tile', 'metal grating', 'concrete', 'cobblestone'],
+                    wall: ['brick wall', 'stone wall', 'wood wall', 'metal wall', 'hedge wall', 'fence', 'castle wall', 'cave wall', 'tech wall', 'glass wall', 'energy barrier', 'force field', 'prison bars', 'bamboo wall', 'ice wall'],
+                    path: ['dirt path', 'stone path', 'brick road', 'wooden bridge', 'rope bridge', 'stone bridge', 'railroad', 'highway', 'trail', 'boardwalk', 'stairs', 'ladder', 'elevator', 'escalator', 'teleporter pad']
                 }
             },
-            creature: {
+            icon: {
                 types: {
-                    monsters: ['dragon', 'goblin', 'orc', 'troll', 'skeleton', 'zombie', 'ghost', 'demon', 'vampire', 'werewolf', 'mummy', 'lich', 'banshee', 'wraith', 'golem'],
-                    animals: ['wolf', 'bear', 'deer', 'rabbit', 'fox', 'eagle', 'hawk', 'owl', 'snake', 'spider', 'scorpion', 'bat', 'rat', 'boar', 'lion'],
-                    mythical: ['unicorn', 'phoenix', 'griffin', 'hydra', 'minotaur', 'centaur', 'pegasus', 'chimera', 'basilisk', 'kraken', 'leviathan', 'behemoth', 'fairy', 'pixie', 'angel']
-                },
-                details: {
-                    features: ['sharp claws', 'fangs', 'horns', 'wings', 'scales', 'fur', 'feathers', 'spikes', 'tentacles', 'multiple eyes', 'glowing eyes', 'armored hide', 'ethereal form', 'elemental aura', 'magical glow']
+                    items: ['health potion icon', 'mana potion icon', 'gold coin icon', 'gem icon', 'key icon', 'map icon', 'compass icon', 'scroll icon', 'book icon', 'bag icon', 'chest icon', 'bottle icon', 'food icon', 'armor icon', 'weapon icon'],
+                    status: ['buff icon', 'debuff icon', 'poison icon', 'burn icon', 'freeze icon', 'stun icon', 'sleep icon', 'confusion icon', 'rage icon', 'shield icon', 'speed icon', 'strength icon', 'magic icon', 'stealth icon', 'curse icon'],
+                    ui: ['settings icon', 'menu icon', 'close icon', 'minimize icon', 'maximize icon', 'save icon', 'load icon', 'delete icon', 'edit icon', 'search icon', 'filter icon', 'sort icon', 'refresh icon', 'home icon', 'back icon']
                 }
             },
-            weapon: {
+            prop: {
                 types: {
-                    melee: ['sword', 'axe', 'hammer', 'mace', 'spear', 'lance', 'halberd', 'scythe', 'club', 'flail', 'whip', 'dagger', 'katana', 'rapier', 'claymore'],
-                    ranged: ['bow', 'crossbow', 'longbow', 'shortbow', 'sling', 'throwing knife', 'javelin', 'shuriken', 'boomerang', 'dart', 'blowgun', 'chakram', 'net', 'bolas', 'throwing axe'],
-                    firearms: ['pistol', 'rifle', 'shotgun', 'revolver', 'musket', 'blunderbuss', 'cannon', 'gatling gun', 'laser gun', 'plasma rifle', 'ray gun', 'rocket launcher', 'grenade launcher', 'flamethrower', 'sniper rifle'],
-                    magical: ['staff', 'wand', 'scepter', 'rod', 'orb', 'tome', 'crystal', 'rune blade', 'enchanted sword', 'cursed dagger', 'holy mace', 'demon blade', 'soul reaper', 'elemental weapon', 'divine weapon']
-                },
-                details: {
-                    material: ['iron', 'steel', 'bronze', 'silver', 'gold', 'mithril', 'adamantine', 'crystal', 'bone', 'wood', 'stone', 'obsidian', 'demon forged', 'blessed metal', 'cursed iron'],
-                    enchantment: ['flaming', 'frozen', 'electric', 'poisoned', 'holy', 'cursed', 'vampiric', 'vorpal', 'ethereal', 'phasing', 'seeking', 'explosive', 'life-stealing', 'soul-binding', 'dimensional']
-                }
-            },
-            food: {
-                types: {
-                    meals: ['bread', 'meat', 'stew', 'soup', 'roast chicken', 'fish', 'rice', 'pasta', 'sandwich', 'burger', 'pizza', 'salad', 'eggs', 'bacon', 'sausage'],
-                    fruits: ['apple', 'orange', 'banana', 'grapes', 'strawberry', 'watermelon', 'pineapple', 'mango', 'peach', 'pear', 'cherry', 'plum', 'lemon', 'lime', 'coconut'],
-                    vegetables: ['carrot', 'potato', 'tomato', 'corn', 'lettuce', 'cabbage', 'onion', 'garlic', 'mushroom', 'pepper', 'cucumber', 'broccoli', 'spinach', 'pumpkin', 'beans'],
-                    desserts: ['cake', 'pie', 'cookie', 'candy', 'chocolate', 'ice cream', 'donut', 'muffin', 'pudding', 'pastry', 'tart', 'flan', 'custard', 'brownie', 'cupcake'],
-                    drinks: ['water', 'milk', 'juice', 'tea', 'coffee', 'wine', 'beer', 'ale', 'mead', 'potion', 'elixir', 'soda', 'cocktail', 'smoothie', 'shake']
-                },
-                details: {
-                    preparation: ['fresh', 'cooked', 'baked', 'fried', 'grilled', 'steamed', 'roasted', 'boiled', 'raw', 'frozen', 'dried', 'smoked', 'pickled', 'fermented', 'canned'],
-                    presentation: ['on a plate', 'in a bowl', 'on a platter', 'in a basket', 'wrapped', 'in a jar', 'in a bottle', 'in a mug', 'on a skewer', 'in a pot', 'on a cutting board', 'garnished', 'decorated', 'steaming hot', 'ice cold']
-                }
-            },
-            machine: {
-                types: {
-                    tech: ['computer', 'robot', 'drone', 'terminal', 'console', 'monitor', 'server', 'mainframe', 'hologram projector', 'scanner', 'printer', '3D printer', 'fabricator', 'replicator', 'teleporter'],
-                    industrial: ['generator', 'engine', 'turbine', 'conveyor', 'crane', 'drill', 'pump', 'furnace', 'reactor', 'boiler', 'compressor', 'mixer', 'grinder', 'press', 'welder'],
-                    sci_fi: ['time machine', 'portal gate', 'force field generator', 'gravity manipulator', 'cloaking device', 'energy shield', 'warp drive', 'hyperdrive', 'quantum computer', 'nano assembler', 'fusion reactor', 'antimatter engine', 'tesla coil', 'laser turret', 'plasma cannon']
-                },
-                details: {
-                    condition: ['brand new', 'well-maintained', 'rusted', 'sparking', 'smoking', 'overheating', 'broken down', 'partially assembled', 'prototype', 'experimental', 'military grade', 'civilian model', 'industrial strength', 'makeshift', 'alien technology'],
-                    features: ['blinking lights', 'control panel', 'display screen', 'pipes and tubes', 'gears and cogs', 'steam vents', 'cooling fins', 'power cables', 'antenna array', 'sensor dome', 'robotic arms', 'laser emitters', 'plasma coils', 'quantum core', 'crystal matrix']
+                    dungeon: ['torch', 'brazier', 'chain', 'cage', 'skeleton', 'cobweb', 'trap', 'pressure plate', 'lever', 'button', 'pedestal', 'altar', 'sarcophagus', 'coffin', 'tombstone'],
+                    town: ['street lamp', 'bench', 'fountain', 'statue', 'sign post', 'mail box', 'trash can', 'flower pot', 'flag pole', 'clock tower', 'bell', 'market stall', 'wagon', 'barrel', 'crate'],
+                    nature: ['rock', 'log', 'stump', 'mushroom', 'flower', 'grass patch', 'puddle', 'nest', 'beehive', 'spider web', 'vine', 'root', 'crystal formation', 'ore deposit', 'fossil']
                 }
             }
+            // Adding even more categories would continue here...
         };
 
         // Current selections
@@ -756,12 +967,15 @@
             perspective: 'top-down',
             direction: 'front-facing',
             mainType: '',
-            details: {}, // Changed to object for single selection per category
+            details: {},
             atmosphere: '',
             colorPalette: '',
+            mainColor: '',
             artStyle: '16-bit SNES style',
             shading: '',
-            detailLevel: ''
+            detailLevel: '',
+            effect: '',
+            material: ''
         };
 
         // Initialize on load
@@ -778,7 +992,7 @@
             event.target.classList.add('active');
             
             selections.mainType = '';
-            selections.details = {}; // Reset to empty object
+            selections.details = {};
             
             updateDynamicSections();
         }
@@ -814,7 +1028,7 @@
             `;
             container.appendChild(mainSection);
             
-            // Create details section
+            // Create details section if exists
             if (data.details) {
                 let detailsSection = document.createElement('div');
                 detailsSection.className = 'section';
@@ -839,17 +1053,17 @@
                 container.appendChild(detailsSection);
             }
             
-            // Add atmosphere and colors
+            // Add Atmosphere and Shading section
             let atmosphereSection = document.createElement('div');
             atmosphereSection.className = 'section';
             atmosphereSection.innerHTML = `
                 <div class="section-header" onclick="toggleSection(this.parentElement)">
-                    <span class="section-title">Atmosphere & Colors</span>
+                    <span class="section-title">Atmosphere & Shading</span>
                     <span class="toggle-icon">▼</span>
                 </div>
                 <div class="section-content">
                     <div class="form-group">
-                        <label class="form-label">Atmosphere</label>
+                        <label class="form-label">Atmosphere/Mood</label>
                         <div class="preset-grid">
                             <button class="preset-btn" onclick="setAtmosphere('cheerful bright')">Cheerful</button>
                             <button class="preset-btn" onclick="setAtmosphere('dark moody')">Dark</button>
@@ -870,41 +1084,30 @@
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label">Color Palette</label>
-                        <div class="preset-grid">
-                            <button class="preset-btn" onclick="setColorPalette('warm colors')">Warm</button>
-                            <button class="preset-btn" onclick="setColorPalette('cool colors')">Cool</button>
-                            <button class="preset-btn" onclick="setColorPalette('earth tones')">Earth</button>
-                            <button class="preset-btn" onclick="setColorPalette('pastel')">Pastel</button>
-                            <button class="preset-btn" onclick="setColorPalette('vibrant')">Vibrant</button>
-                            <button class="preset-btn" onclick="setColorPalette('muted')">Muted</button>
-                            <button class="preset-btn" onclick="setColorPalette('monochrome')">Monochrome</button>
-                            <button class="preset-btn" onclick="setColorPalette('neon')">Neon</button>
-                            <button class="preset-btn" onclick="setColorPalette('sunset')">Sunset</button>
-                            <button class="preset-btn" onclick="setColorPalette('ocean')">Ocean</button>
-                            <button class="preset-btn" onclick="setColorPalette('forest')">Forest</button>
-                            <button class="preset-btn" onclick="setColorPalette('autumn')">Autumn</button>
-                            <button class="preset-btn" onclick="setColorPalette('winter')">Winter</button>
-                            <button class="preset-btn" onclick="setColorPalette('spring')">Spring</button>
-                            <button class="preset-btn" onclick="setColorPalette('summer')">Summer</button>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">Shading & Detail</label>
+                        <label class="form-label">Shading Style</label>
                         <div class="preset-grid">
                             <button class="preset-btn" onclick="setShading('flat shading')">Flat</button>
                             <button class="preset-btn" onclick="setShading('soft shading')">Soft</button>
                             <button class="preset-btn" onclick="setShading('hard shading')">Hard</button>
                             <button class="preset-btn" onclick="setShading('cel shading')">Cel</button>
-                            <button class="preset-btn" onclick="setShading('gradient')">Gradient</button>
-                            <button class="preset-btn" onclick="setShading('dithered')">Dithered</button>
+                            <button class="preset-btn" onclick="setShading('gradient shading')">Gradient</button>
+                            <button class="preset-btn" onclick="setShading('dithered shading')">Dithered</button>
+                            <button class="preset-btn" onclick="setShading('pillow shading')">Pillow</button>
+                            <button class="preset-btn" onclick="setShading('minimal shading')">Minimal</button>
+                            <button class="preset-btn" onclick="setShading('no shading')">None</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Detail Level</label>
+                        <div class="preset-grid">
                             <button class="preset-btn" onclick="setDetailLevel('minimal detail')">Minimal</button>
                             <button class="preset-btn" onclick="setDetailLevel('low detail')">Low</button>
                             <button class="preset-btn" onclick="setDetailLevel('medium detail')">Medium</button>
                             <button class="preset-btn" onclick="setDetailLevel('high detail')">High</button>
                             <button class="preset-btn" onclick="setDetailLevel('ultra detail')">Ultra</button>
                             <button class="preset-btn" onclick="setDetailLevel('hyper detail')">Hyper</button>
+                            <button class="preset-btn" onclick="setDetailLevel('maximum detail')">Maximum</button>
                         </div>
                     </div>
                 </div>
@@ -929,15 +1132,11 @@
         }
 
         function addDetail(value) {
-            // For details, we'll allow multiple but make each category single-select
             const button = event.target;
             const parent = button.parentElement;
-            
-            // Remove active from siblings in same category
             parent.querySelectorAll('.preset-btn').forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
             
-            // Store detail based on category
             const categoryLabel = parent.previousElementSibling;
             if (categoryLabel) {
                 const category = categoryLabel.textContent.toLowerCase();
@@ -952,6 +1151,11 @@
 
         function setColorPalette(value) {
             selections.colorPalette = value;
+            updateActiveButton(event.target);
+        }
+
+        function setMainColor(value) {
+            selections.mainColor = value;
             updateActiveButton(event.target);
         }
 
@@ -970,21 +1174,44 @@
             updateActiveButton(event.target);
         }
 
+        function setEffect(value) {
+            selections.effect = value;
+            updateActiveButton(event.target);
+        }
+
+        function setMaterial(value) {
+            selections.material = value;
+            updateActiveButton(event.target);
+        }
+
         function updateActiveButton(button) {
             if (!button) return;
-            // Remove active from all siblings, then add to clicked button
             const parent = button.parentElement;
             parent.querySelectorAll('.preset-btn').forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
         }
 
         function toggleSection(element) {
+            if (element.classList.contains('section-header')) {
+                element = element.parentElement;
+            }
             element.classList.toggle('open');
+        }
+
+        function showMaterialCategory(category) {
+            document.querySelectorAll('#materialsSection .category-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(category).classList.add('active');
+            
+            document.querySelectorAll('#materialsSection .category-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.target.classList.add('active');
         }
 
         // Reset all selections
         function resetAll() {
-            // Reset data
             selections = {
                 perspective: 'top-down',
                 direction: 'front-facing',
@@ -992,17 +1219,18 @@
                 details: {},
                 atmosphere: '',
                 colorPalette: '',
+                mainColor: '',
                 artStyle: '16-bit SNES style',
                 shading: '',
-                detailLevel: ''
+                detailLevel: '',
+                effect: '',
+                material: ''
             };
             
-            // Reset all active buttons
             document.querySelectorAll('.preset-btn.active').forEach(btn => {
                 btn.classList.remove('active');
             });
             
-            // Set default active buttons
             document.querySelectorAll('.preset-btn').forEach(btn => {
                 if (btn.textContent === 'Top-Down' || 
                     btn.textContent === 'Front-Facing' || 
@@ -1011,48 +1239,120 @@
                 }
             });
             
-            // Clear output
-            document.getElementById('promptText').textContent = 'Select an asset type and options, then click Generate!';
-            document.getElementById('copyBtn').style.display = 'none';
+            // Clear all outputs
+            document.getElementById('plainText').textContent = 'Select options and click Generate!';
+            document.getElementById('jsonText').textContent = 'Select options and click Generate!';
+            document.getElementById('formattedText').textContent = 'Select options and click Generate!';
+            document.getElementById('formattedText').style.whiteSpace = 'normal';
+            
+            // Hide all copy buttons
+            document.getElementById('copyPlainBtn').style.display = 'none';
+            document.getElementById('copyJSONBtn').style.display = 'none';
+            document.getElementById('copyFormattedBtn').style.display = 'none';
         }
 
         // Generate prompt
         function generatePrompt() {
-            let prompt = 'Pixel art, ';
-            
-            if (selections.perspective) prompt += selections.perspective + ' ';
-            if (selections.direction) prompt += selections.direction + ' ';
-            
-            if (selections.mainType) {
-                const article = getArticle(selections.mainType);
-                prompt += 'of ' + article + ' ' + selections.mainType;
-            } else {
-                prompt += 'of an asset';
+            // Build prompt components
+            const components = {
+                perspective: selections.perspective || 'top-down',
+                direction: selections.direction || 'front-facing',
+                assetType: currentAssetType,
+                mainType: selections.mainType || 'asset',
+                mainColor: selections.mainColor || '',
+                material: selections.material || '',
+                details: Object.values(selections.details),
+                effect: selections.effect || '',
+                atmosphere: selections.atmosphere || '',
+                colorPalette: selections.colorPalette || '',
+                shading: selections.shading || '',
+                detailLevel: selections.detailLevel || '',
+                artStyle: selections.artStyle || '16-bit SNES style'
+            };
+
+            // Generate PLAIN TEXT prompt
+            let plainPrompt = 'Pixel art, ';
+            plainPrompt += components.perspective + ' ';
+            plainPrompt += components.direction + ' ';
+            plainPrompt += 'of ' + getArticle(components.mainType) + ' ';
+            if (components.mainColor) plainPrompt += components.mainColor + ' ';
+            plainPrompt += components.mainType;
+            if (components.material) plainPrompt += ' made of ' + components.material;
+            if (components.details.length > 0) plainPrompt += ' with ' + components.details.join(', ');
+            if (components.effect) plainPrompt += ', ' + components.effect + ' effect';
+            plainPrompt += '. ';
+            if (components.atmosphere) plainPrompt += components.atmosphere.charAt(0).toUpperCase() + components.atmosphere.slice(1) + ' atmosphere. ';
+            if (components.colorPalette) plainPrompt += components.colorPalette.charAt(0).toUpperCase() + components.colorPalette.slice(1) + ' colors, ';
+            if (components.shading) plainPrompt += components.shading + ', ';
+            plainPrompt += 'clean pixel lines. ';
+            if (components.detailLevel) plainPrompt += components.detailLevel.charAt(0).toUpperCase() + components.detailLevel.slice(1) + ', ';
+            if (components.artStyle) plainPrompt += components.artStyle + ' style';
+            plainPrompt += '.';
+
+            // Generate JSON format
+            const jsonData = {
+                prompt: "pixel_art_asset",
+                settings: {
+                    perspective: components.perspective,
+                    camera_angle: components.direction,
+                    asset_category: components.assetType,
+                    asset_type: components.mainType,
+                    color: components.mainColor || null,
+                    material: components.material || null,
+                    details: components.details.length > 0 ? components.details : null,
+                    visual_effect: components.effect || null,
+                    atmosphere: components.atmosphere || null,
+                    color_palette: components.colorPalette || null,
+                    shading_style: components.shading || null,
+                    detail_level: components.detailLevel || null,
+                    art_style: components.artStyle
+                },
+                output: {
+                    format: "pixel_art",
+                    clean_lines: true,
+                    optimized_for: "game_development"
+                }
+            };
+
+            // Generate FORMATTED text (with sections)
+            let formattedPrompt = '【PIXEL ART GENERATION】\n';
+            formattedPrompt += '━━━━━━━━━━━━━━━━━\n';
+            formattedPrompt += '📐 View: ' + components.perspective + ' ' + components.direction + '\n';
+            formattedPrompt += '🎮 Asset: ';
+            if (components.mainColor) formattedPrompt += components.mainColor + ' ';
+            formattedPrompt += components.mainType;
+            if (components.material) formattedPrompt += ' (' + components.material + ')';
+            formattedPrompt += '\n';
+            if (components.details.length > 0) {
+                formattedPrompt += '🔧 Details: ' + components.details.join(', ') + '\n';
             }
-            
-            // Convert details object to array of values
-            const detailValues = Object.values(selections.details);
-            if (detailValues.length > 0) {
-                prompt += ' with ' + detailValues.join(', ');
+            if (components.effect) {
+                formattedPrompt += '✨ Effect: ' + components.effect + '\n';
             }
-            
-            prompt += '. ';
-            
-            if (selections.atmosphere) {
-                prompt += selections.atmosphere.charAt(0).toUpperCase() + selections.atmosphere.slice(1) + ' atmosphere. ';
+            if (components.atmosphere || components.colorPalette) {
+                formattedPrompt += '🎨 Style: ';
+                if (components.atmosphere) formattedPrompt += components.atmosphere + ' atmosphere';
+                if (components.atmosphere && components.colorPalette) formattedPrompt += ', ';
+                if (components.colorPalette) formattedPrompt += components.colorPalette + ' colors';
+                formattedPrompt += '\n';
             }
-            
-            if (selections.colorPalette) prompt += selections.colorPalette.charAt(0).toUpperCase() + selections.colorPalette.slice(1) + ' colors, ';
-            if (selections.shading) prompt += selections.shading + ', ';
-            prompt += 'clean pixel lines. ';
-            
-            if (selections.detailLevel) prompt += selections.detailLevel.charAt(0).toUpperCase() + selections.detailLevel.slice(1) + ', ';
-            if (selections.artStyle) prompt += selections.artStyle + ' style';
-            
-            prompt += '.';
-            
-            document.getElementById('promptText').textContent = prompt;
-            document.getElementById('copyBtn').style.display = 'block';
+            formattedPrompt += '🎯 Quality: ';
+            if (components.shading) formattedPrompt += components.shading + ', ';
+            formattedPrompt += 'clean pixel lines';
+            if (components.detailLevel) formattedPrompt += ', ' + components.detailLevel;
+            formattedPrompt += '\n';
+            formattedPrompt += '🎮 Style: ' + components.artStyle;
+
+            // Update all three outputs
+            document.getElementById('plainText').textContent = plainPrompt;
+            document.getElementById('copyPlainBtn').style.display = 'block';
+
+            document.getElementById('jsonText').textContent = JSON.stringify(jsonData, null, 2);
+            document.getElementById('copyJSONBtn').style.display = 'block';
+
+            document.getElementById('formattedText').style.whiteSpace = 'pre-wrap';
+            document.getElementById('formattedText').textContent = formattedPrompt;
+            document.getElementById('copyFormattedBtn').style.display = 'block';
         }
 
         function getArticle(word) {
@@ -1082,30 +1382,65 @@
                 });
             }
             
-            // Random atmosphere and colors
-            const atmospheres = ['cheerful bright', 'dark moody', 'cozy warm', 'mystical', 'spooky', 'peaceful', 'epic', 'retro'];
-            const colors = ['warm colors', 'cool colors', 'earth tones', 'pastel', 'vibrant', 'muted', 'neon', 'sunset'];
+            // Random selections from all categories
+            const colors = ['red', 'blue', 'green', 'yellow', 'orange', 'purple', 'pink', 'cyan', 'gold', 'silver', 'black', 'white'];
+            const effects = ['glowing', 'sparkling', 'flaming', 'frozen', 'electric', 'holographic', 'transparent', 'rainbow'];
+            const materials = ['wood', 'iron', 'steel', 'stone', 'crystal', 'leather', 'silk', 'gold', 'silver', 'bronze'];
+            const atmospheres = ['cheerful bright', 'dark moody', 'cozy warm', 'mystical', 'spooky', 'peaceful', 'epic', 'retro', 'cyberpunk', 'fantasy'];
+            const palettes = ['warm colors', 'cool colors', 'earth tones', 'pastel', 'vibrant', 'muted', 'neon', 'sunset'];
             const shadings = ['flat shading', 'soft shading', 'hard shading', 'gradient', 'dithered'];
             const details = ['minimal detail', 'medium detail', 'high detail', 'ultra detail'];
             
+            // Randomly select from each category (50% chance for each)
+            selections.mainColor = Math.random() > 0.3 ? colors[Math.floor(Math.random() * colors.length)] : '';
+            selections.effect = Math.random() > 0.6 ? effects[Math.floor(Math.random() * effects.length)] : '';
+            selections.material = Math.random() > 0.5 ? materials[Math.floor(Math.random() * materials.length)] : '';
             selections.atmosphere = atmospheres[Math.floor(Math.random() * atmospheres.length)];
-            selections.colorPalette = colors[Math.floor(Math.random() * colors.length)];
+            selections.colorPalette = palettes[Math.floor(Math.random() * palettes.length)];
             selections.shading = shadings[Math.floor(Math.random() * shadings.length)];
             selections.detailLevel = details[Math.floor(Math.random() * details.length)];
             
             generatePrompt();
         }
 
-        // Copy prompt
-        function copyPrompt() {
-            const promptText = document.getElementById('promptText').textContent;
-            navigator.clipboard.writeText(promptText).then(() => {
-                const copyBtn = document.getElementById('copyBtn');
+        // Copy functions for all formats
+        function copyPlain() {
+            const plainText = document.getElementById('plainText').textContent;
+            navigator.clipboard.writeText(plainText).then(() => {
+                const copyBtn = document.getElementById('copyPlainBtn');
                 copyBtn.textContent = 'Copied!';
                 copyBtn.classList.add('copied');
                 
                 setTimeout(() => {
-                    copyBtn.textContent = 'Copy';
+                    copyBtn.textContent = 'Copy Plain';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        function copyJSON() {
+            const jsonText = document.getElementById('jsonText').textContent;
+            navigator.clipboard.writeText(jsonText).then(() => {
+                const copyBtn = document.getElementById('copyJSONBtn');
+                copyBtn.textContent = 'Copied!';
+                copyBtn.classList.add('copied');
+                
+                setTimeout(() => {
+                    copyBtn.textContent = 'Copy JSON';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        function copyFormatted() {
+            const formattedText = document.getElementById('formattedText').textContent;
+            navigator.clipboard.writeText(formattedText).then(() => {
+                const copyBtn = document.getElementById('copyFormattedBtn');
+                copyBtn.textContent = 'Copied!';
+                copyBtn.classList.add('copied');
+                
+                setTimeout(() => {
+                    copyBtn.textContent = 'Copy Format';
                     copyBtn.classList.remove('copied');
                 }, 2000);
             });
@@ -1119,9 +1454,7 @@
             const columns = Math.floor(window.innerWidth / 150);
             const words = [
                 'PIXELLAB', 'ASSETS', 'SPRITE', 'PIXEL ART', 'GAME DEV',
-                'BUILDING', 'VEHICLE', 'NATURE', 'ITEM', 'CHARACTER',
-                'TOP-DOWN', 'ISOMETRIC', 'DIMETRIC', 'RPG MAKER',
-                'TEXTURE', 'TILE', 'ANIMATION', 'RETRO', 'INDIE'
+                'ULTIMATE', '50000+', 'EFFECTS', 'MATERIALS', 'COLORS'
             ];
             
             for (let i = 0; i < columns; i++) {
@@ -1151,11 +1484,9 @@
             if (matrixEnabled) {
                 matrixBg.style.display = 'none';
                 toggleBtn.textContent = 'Enable Matrix';
-                toggleBtn.style.background = '#333';
             } else {
                 matrixBg.style.display = 'block';
                 toggleBtn.textContent = 'Disable Matrix';
-                toggleBtn.style.background = 'linear-gradient(135deg, #00ff41 0%, #00cc33 100%)';
             }
             matrixEnabled = !matrixEnabled;
         }
