@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ultimate PixelLab Prompt Generator - Create perfect pixel art prompts with 1000+ presets. Created by TheSyntheticFeed.">
-    <meta name="keywords" content="pixellab, pixel art, game development, prompt generator, building generator, indie game, retro art, RPG Maker">
+    <meta name="description" content="MEGA PixelLab Asset Prompt Generator - 10,000+ presets for ALL game assets: buildings, vehicles, nature, items, furniture, characters, creatures, weapons, food, machines and more!">
+    <meta name="keywords" content="pixellab, pixel art, game assets, prompt generator, RPG Maker, isometric, dimetric, game development, sprites">
     <meta name="author" content="TheSyntheticFeed">
-    <title>Ultimate PixelLab Prompt Generator - 1000+ Presets for Perfect Pixel Art</title>
+    <title>MEGA PixelLab Asset Prompt Generator - 10,000+ Presets</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         * {
@@ -25,7 +25,7 @@
             overflow-x: hidden;
         }
 
-        /* Matrix Background Animation */
+        /* Matrix Background */
         .matrix-bg {
             position: fixed;
             top: 0;
@@ -45,16 +45,11 @@
             color: #00ff41;
             text-shadow: 0 0 5px #00ff41;
             animation: matrix-fall linear infinite;
-            opacity: 0.4;
+            opacity: 0.3;
             writing-mode: vertical-rl;
             text-orientation: upright;
             letter-spacing: 10px;
             line-height: 1.2;
-        }
-
-        .matrix-column span {
-            display: block;
-            margin: 15px 0;
         }
 
         @keyframes matrix-fall {
@@ -63,10 +58,10 @@
                 opacity: 0;
             }
             10% {
-                opacity: 0.4;
+                opacity: 0.3;
             }
             90% {
-                opacity: 0.4;
+                opacity: 0.3;
             }
             100% {
                 transform: translateY(calc(100vh + 500px));
@@ -75,13 +70,14 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
             position: relative;
             z-index: 1;
         }
 
+        /* Header */
         .header {
             background: linear-gradient(135deg, #0d1f0d 0%, #1a2f1a 100%);
             padding: 40px 30px;
@@ -112,15 +108,12 @@
         }
 
         h1 {
-            font-size: 1.8em;
+            font-size: 1.5em;
             font-weight: normal;
             margin-bottom: 15px;
             color: #ffffff;
-            text-shadow: 3px 3px 0px #00ff41, 
-                         6px 6px 0px #00cc33,
-                         9px 9px 0px #008822;
+            text-shadow: 3px 3px 0px #00ff41, 6px 6px 0px #00cc33, 9px 9px 0px #008822;
             animation: glow 2s ease-in-out infinite alternate;
-            white-space: nowrap;
             text-align: center;
         }
 
@@ -132,20 +125,52 @@
         .subtitle {
             font-size: 0.7em;
             color: #aaa;
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
             line-height: 1.6;
         }
 
-        .author-credit {
-            color: #666;
-            font-size: 0.6em;
-            margin-top: 15px;
+        /* Asset Type Selector */
+        .asset-selector {
+            background: rgba(13, 31, 13, 0.95);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 2px solid #00ff41;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
         }
 
-        .author-credit span {
+        .asset-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+        }
+
+        .asset-btn {
+            background: #0a0a0a;
+            border: 2px solid #003311;
+            color: #888;
+            padding: 12px 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.6em;
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+        }
+
+        .asset-btn:hover {
+            border-color: #00ff41;
             color: #00ff41;
-            text-shadow: 0 0 5px #00ff4150;
+            background: #0d2f0d;
+            transform: scale(1.05);
+        }
+
+        .asset-btn.active {
+            background: #0d2f0d;
+            border-color: #00ff41;
+            color: #00ff41;
+            box-shadow: 0 0 15px #00ff4140;
         }
 
         /* Section Styles */
@@ -196,12 +221,21 @@
         }
 
         .section.open .section-content {
-            max-height: 2000px;
+            max-height: 3000px;
             padding: 20px;
         }
 
         .section.open .toggle-icon {
             transform: rotate(180deg);
+        }
+
+        /* Hidden sections by default */
+        .asset-section {
+            display: none;
+        }
+
+        .asset-section.active {
+            display: block;
         }
 
         /* Form Elements */
@@ -220,34 +254,10 @@
             text-align: center;
         }
 
-        .form-input, .form-textarea {
-            width: 100%;
-            background: #0a0a0a;
-            border: 2px solid #00ff41;
-            color: #e0e0e0;
-            padding: 12px;
-            border-radius: 6px;
-            font-size: 0.7em;
-            font-family: 'Press Start 2P', cursive;
-            transition: border-color 0.2s;
-            line-height: 1.4;
-        }
-
-        .form-textarea {
-            min-height: 60px;
-            resize: vertical;
-        }
-
-        .form-input:focus, .form-textarea:focus {
-            outline: none;
-            border-color: #00ff41;
-            box-shadow: 0 0 10px #00ff4130;
-        }
-
-        /* Preset Buttons */
+        /* Preset Grid */
         .preset-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
             gap: 6px;
             margin-top: 10px;
         }
@@ -260,10 +270,12 @@
             border-radius: 4px;
             cursor: pointer;
             transition: all 0.2s;
-            font-size: 0.45em;
+            font-size: 0.4em;
             font-family: 'Press Start 2P', cursive;
             line-height: 1.4;
             text-align: center;
+            white-space: normal;
+            word-break: break-word;
         }
 
         .preset-btn:hover {
@@ -271,11 +283,6 @@
             color: #00ff41;
             background: #0d2f0d;
             transform: scale(1.05);
-        }
-
-        .preset-btn:active {
-            background: #1a4f1a;
-            transform: scale(0.95);
         }
 
         .preset-btn.active {
@@ -288,7 +295,7 @@
         /* Category Tabs */
         .category-tabs {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             margin-bottom: 15px;
             flex-wrap: wrap;
         }
@@ -297,7 +304,7 @@
             background: #0a0a0a;
             border: 2px solid #003311;
             color: #888;
-            padding: 8px 12px;
+            padding: 8px 10px;
             border-radius: 4px;
             cursor: pointer;
             font-size: 0.5em;
@@ -390,6 +397,7 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 0.8em;
+            font-family: 'Press Start 2P', cursive;
             transition: background 0.2s;
         }
 
@@ -401,35 +409,6 @@
         .copy-btn.copied {
             background: #4caf50;
             color: white;
-        }
-
-        /* Template Section */
-        .template-section {
-            background: rgba(13, 31, 13, 0.95);
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 30px;
-            border: 2px solid #00ff41;
-            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
-            backdrop-filter: blur(5px);
-        }
-
-        .template-box {
-            background: #0a0a0a;
-            border: 2px solid #003311;
-            padding: 15px;
-            border-radius: 6px;
-            font-family: 'Press Start 2P', cursive;
-            color: #888;
-            margin-top: 15px;
-            line-height: 1.8;
-            font-size: 0.6em;
-        }
-
-        .template-var {
-            color: #00ff41;
-            font-weight: bold;
-            text-shadow: 0 0 3px #00ff4150;
         }
 
         /* Footer */
@@ -447,11 +426,6 @@
             text-decoration: none;
         }
 
-        .footer a:hover {
-            text-shadow: 0 0 5px #00ff41;
-        }
-
-        /* Matrix Toggle Button */
         #matrixToggle {
             position: absolute;
             top: 10px;
@@ -467,21 +441,6 @@
             z-index: 10;
             transition: all 0.3s;
         }
-
-        #matrixToggle:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
-        }
-
-        @media (max-width: 768px) {
-            .preset-grid {
-                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-            }
-            
-            h1 {
-                font-size: 1.2em;
-            }
-        }
     </style>
 </head>
 <body>
@@ -492,12 +451,28 @@
         <!-- Header -->
         <header class="header">
             <button id="matrixToggle" onclick="toggleMatrix()">Disable Matrix</button>
-            <h1>ULTIMATE PIXELLAB GENERATOR</h1>
-            <p class="subtitle">1000+ Presets for Perfect Pixel Art Prompts</p>
-            <p class="author-credit">by <span>TheSyntheticFeed</span></p>
+            <h1>PIXELLAB PROMPT GENERATOR</h1>
+            <p class="subtitle">10,000+ Presets for ALL Game Assets - Buildings, Vehicles, Nature, Items & More!</p>
         </header>
 
-        <!-- Perspective & View Section -->
+        <!-- Asset Type Selector -->
+        <div class="asset-selector">
+            <h2 style="font-size: 1em; color: #00ff41; margin-bottom: 15px; text-align: center;">SELECT ASSET TYPE</h2>
+            <div class="asset-types">
+                <button class="asset-btn active" onclick="selectAssetType('building')">Buildings</button>
+                <button class="asset-btn" onclick="selectAssetType('vehicle')">Vehicles</button>
+                <button class="asset-btn" onclick="selectAssetType('nature')">Nature</button>
+                <button class="asset-btn" onclick="selectAssetType('item')">Items</button>
+                <button class="asset-btn" onclick="selectAssetType('furniture')">Furniture</button>
+                <button class="asset-btn" onclick="selectAssetType('character')">Characters</button>
+                <button class="asset-btn" onclick="selectAssetType('creature')">Creatures</button>
+                <button class="asset-btn" onclick="selectAssetType('weapon')">Weapons</button>
+                <button class="asset-btn" onclick="selectAssetType('food')">Food</button>
+                <button class="asset-btn" onclick="selectAssetType('machine')">Machines</button>
+            </div>
+        </div>
+
+        <!-- Perspective & View Section (Always visible) -->
         <div class="section open" id="perspectiveSection">
             <div class="section-header" onclick="toggleSection('perspectiveSection')">
                 <span class="section-title">Perspective & View Settings</span>
@@ -505,479 +480,104 @@
             </div>
             <div class="section-content">
                 <div class="form-group">
-                    <label class="form-label">Perspective View</label>
+                    <label class="form-label">Perspective/Projection Type</label>
                     <div class="preset-grid">
                         <button class="preset-btn active" onclick="setPerspective('top-down')">Top-Down</button>
                         <button class="preset-btn" onclick="setPerspective('isometric')">Isometric</button>
-                        <button class="preset-btn" onclick="setPerspective('side-view')">Side View</button>
-                        <button class="preset-btn" onclick="setPerspective('three-quarter')">3/4 View</button>
-                        <button class="preset-btn" onclick="setPerspective('birds-eye')">Bird's Eye</button>
-                        <button class="preset-btn" onclick="setPerspective('low-angle')">Low Angle</button>
-                        <button class="preset-btn" onclick="setPerspective('high-angle')">High Angle</button>
-                        <button class="preset-btn" onclick="setPerspective('oblique')">Oblique</button>
-                        <button class="preset-btn" onclick="setPerspective('cabinet')">Cabinet</button>
-                        <button class="preset-btn" onclick="setPerspective('military')">Military</button>
-                        <button class="preset-btn" onclick="setPerspective('dimetric')">Dimetric</button>
+                        <button class="preset-btn" onclick="setPerspective('dimetric 2:1')">Dimetric 2:1</button>
                         <button class="preset-btn" onclick="setPerspective('trimetric')">Trimetric</button>
+                        <button class="preset-btn" onclick="setPerspective('side-view')">Side View</button>
+                        <button class="preset-btn" onclick="setPerspective('3/4 view')">3/4 View</button>
+                        <button class="preset-btn" onclick="setPerspective('oblique')">Oblique</button>
+                        <button class="preset-btn" onclick="setPerspective('cabinet projection')">Cabinet</button>
+                        <button class="preset-btn" onclick="setPerspective('military projection')">Military</button>
+                        <button class="preset-btn" onclick="setPerspective('cavalier projection')">Cavalier</button>
+                        <button class="preset-btn" onclick="setPerspective('birds-eye view')">Bird's Eye</button>
+                        <button class="preset-btn" onclick="setPerspective('worms-eye view')">Worm's Eye</button>
+                        <button class="preset-btn" onclick="setPerspective('platformer side-scroll')">Platformer</button>
+                        <button class="preset-btn" onclick="setPerspective('orthographic')">Orthographic</button>
+                        <button class="preset-btn" onclick="setPerspective('axonometric')">Axonometric</button>
+                        <button class="preset-btn" onclick="setPerspective('2.5D projection')">2.5D</button>
+                        <button class="preset-btn" onclick="setPerspective('pseudo-3D')">Pseudo-3D</button>
+                        <button class="preset-btn" onclick="setPerspective('RPG Maker perspective')">RPG Maker</button>
                     </div>
                 </div>
                 
                 <div class="form-group">
-                    <label class="form-label">Directional View</label>
+                    <label class="form-label">Camera Angle/Direction</label>
                     <div class="preset-grid">
                         <button class="preset-btn active" onclick="setDirection('front-facing')">Front-Facing</button>
                         <button class="preset-btn" onclick="setDirection('back-facing')">Back-Facing</button>
                         <button class="preset-btn" onclick="setDirection('left-facing')">Left-Facing</button>
                         <button class="preset-btn" onclick="setDirection('right-facing')">Right-Facing</button>
-                        <button class="preset-btn" onclick="setDirection('corner-view')">Corner View</button>
-                        <button class="preset-btn" onclick="setDirection('45-degree')">45 Degree</button>
-                        <button class="preset-btn" onclick="setDirection('30-degree')">30 Degree</button>
-                        <button class="preset-btn" onclick="setDirection('60-degree')">60 Degree</button>
+                        <button class="preset-btn" onclick="setDirection('corner view 45°')">Corner 45°</button>
+                        <button class="preset-btn" onclick="setDirection('corner view 30°')">Corner 30°</button>
+                        <button class="preset-btn" onclick="setDirection('corner view 60°')">Corner 60°</button>
+                        <button class="preset-btn" onclick="setDirection('diagonal view')">Diagonal</button>
                         <button class="preset-btn" onclick="setDirection('straight-on')">Straight On</button>
-                        <button class="preset-btn" onclick="setDirection('angled')">Angled</button>
-                        <button class="preset-btn" onclick="setDirection('diagonal')">Diagonal</button>
-                        <button class="preset-btn" onclick="setDirection('perpendicular')">Perpendicular</button>
+                        <button class="preset-btn" onclick="setDirection('angled 26.5°')">26.5° Angle</button>
+                        <button class="preset-btn" onclick="setDirection('north-facing')">North</button>
+                        <button class="preset-btn" onclick="setDirection('south-facing')">South</button>
+                        <button class="preset-btn" onclick="setDirection('east-facing')">East</button>
+                        <button class="preset-btn" onclick="setDirection('west-facing')">West</button>
+                        <button class="preset-btn" onclick="setDirection('northeast')">Northeast</button>
+                        <button class="preset-btn" onclick="setDirection('northwest')">Northwest</button>
+                        <button class="preset-btn" onclick="setDirection('southeast')">Southeast</button>
+                        <button class="preset-btn" onclick="setDirection('southwest')">Southwest</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Building Type Section -->
-        <div class="section" id="buildingSection">
-            <div class="section-header" onclick="toggleSection('buildingSection')">
-                <span class="section-title">Building Type (50+ Presets)</span>
-                <span class="toggle-icon">▼</span>
-            </div>
-            <div class="section-content">
-                <div class="category-tabs">
-                    <button class="category-tab active" onclick="showBuildingCategory('residential')">Residential</button>
-                    <button class="category-tab" onclick="showBuildingCategory('commercial')">Commercial</button>
-                    <button class="category-tab" onclick="showBuildingCategory('fantasy')">Fantasy</button>
-                    <button class="category-tab" onclick="showBuildingCategory('industrial')">Industrial</button>
-                    <button class="category-tab" onclick="showBuildingCategory('religious')">Religious</button>
-                </div>
-                
-                <div id="residential" class="category-content active">
-                    <div class="preset-grid">
-                        <button class="preset-btn" onclick="setBuildingType('cottage')">Cottage</button>
-                        <button class="preset-btn" onclick="setBuildingType('mansion')">Mansion</button>
-                        <button class="preset-btn" onclick="setBuildingType('apartment')">Apartment</button>
-                        <button class="preset-btn" onclick="setBuildingType('townhouse')">Townhouse</button>
-                        <button class="preset-btn" onclick="setBuildingType('cabin')">Cabin</button>
-                        <button class="preset-btn" onclick="setBuildingType('villa')">Villa</button>
-                        <button class="preset-btn" onclick="setBuildingType('bungalow')">Bungalow</button>
-                        <button class="preset-btn" onclick="setBuildingType('farmhouse')">Farmhouse</button>
-                        <button class="preset-btn" onclick="setBuildingType('treehouse')">Treehouse</button>
-                        <button class="preset-btn" onclick="setBuildingType('hut')">Hut</button>
-                    </div>
-                </div>
-                
-                <div id="commercial" class="category-content">
-                    <div class="preset-grid">
-                        <button class="preset-btn" onclick="setBuildingType('shop')">Shop</button>
-                        <button class="preset-btn" onclick="setBuildingType('tavern')">Tavern</button>
-                        <button class="preset-btn" onclick="setBuildingType('inn')">Inn</button>
-                        <button class="preset-btn" onclick="setBuildingType('bakery')">Bakery</button>
-                        <button class="preset-btn" onclick="setBuildingType('blacksmith')">Blacksmith</button>
-                        <button class="preset-btn" onclick="setBuildingType('library')">Library</button>
-                        <button class="preset-btn" onclick="setBuildingType('bank')">Bank</button>
-                        <button class="preset-btn" onclick="setBuildingType('market')">Market</button>
-                        <button class="preset-btn" onclick="setBuildingType('restaurant')">Restaurant</button>
-                        <button class="preset-btn" onclick="setBuildingType('cafe')">Cafe</button>
-                        <button class="preset-btn" onclick="setBuildingType('bookstore')">Bookstore</button>
-                        <button class="preset-btn" onclick="setBuildingType('pharmacy')">Pharmacy</button>
-                    </div>
-                </div>
-                
-                <div id="fantasy" class="category-content">
-                    <div class="preset-grid">
-                        <button class="preset-btn" onclick="setBuildingType('castle')">Castle</button>
-                        <button class="preset-btn" onclick="setBuildingType('tower')">Tower</button>
-                        <button class="preset-btn" onclick="setBuildingType('fortress')">Fortress</button>
-                        <button class="preset-btn" onclick="setBuildingType('wizard tower')">Wizard Tower</button>
-                        <button class="preset-btn" onclick="setBuildingType('dungeon')">Dungeon</button>
-                        <button class="preset-btn" onclick="setBuildingType('palace')">Palace</button>
-                        <button class="preset-btn" onclick="setBuildingType('guild hall')">Guild Hall</button>
-                        <button class="preset-btn" onclick="setBuildingType('alchemy shop')">Alchemy Shop</button>
-                        <button class="preset-btn" onclick="setBuildingType('magic school')">Magic School</button>
-                        <button class="preset-btn" onclick="setBuildingType('dragon lair')">Dragon Lair</button>
-                    </div>
-                </div>
-                
-                <div id="industrial" class="category-content">
-                    <div class="preset-grid">
-                        <button class="preset-btn" onclick="setBuildingType('factory')">Factory</button>
-                        <button class="preset-btn" onclick="setBuildingType('warehouse')">Warehouse</button>
-                        <button class="preset-btn" onclick="setBuildingType('mill')">Mill</button>
-                        <button class="preset-btn" onclick="setBuildingType('barn')">Barn</button>
-                        <button class="preset-btn" onclick="setBuildingType('silo')">Silo</button>
-                        <button class="preset-btn" onclick="setBuildingType('workshop')">Workshop</button>
-                        <button class="preset-btn" onclick="setBuildingType('forge')">Forge</button>
-                        <button class="preset-btn" onclick="setBuildingType('brewery')">Brewery</button>
-                    </div>
-                </div>
-                
-                <div id="religious" class="category-content">
-                    <div class="preset-grid">
-                        <button class="preset-btn" onclick="setBuildingType('church')">Church</button>
-                        <button class="preset-btn" onclick="setBuildingType('temple')">Temple</button>
-                        <button class="preset-btn" onclick="setBuildingType('shrine')">Shrine</button>
-                        <button class="preset-btn" onclick="setBuildingType('monastery')">Monastery</button>
-                        <button class="preset-btn" onclick="setBuildingType('cathedral')">Cathedral</button>
-                        <button class="preset-btn" onclick="setBuildingType('chapel')">Chapel</button>
-                        <button class="preset-btn" onclick="setBuildingType('pagoda')">Pagoda</button>
-                        <button class="preset-btn" onclick="setBuildingType('mosque')">Mosque</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Dynamic Asset Sections Container -->
+        <div id="dynamicSections"></div>
 
-        <!-- Building Details Section -->
-        <div class="section" id="detailsSection">
-            <div class="section-header" onclick="toggleSection('detailsSection')">
-                <span class="section-title">Building Details (100+ Options)</span>
-                <span class="toggle-icon">▼</span>
-            </div>
-            <div class="section-content">
-                <div class="category-tabs">
-                    <button class="category-tab active" onclick="showDetailCategory('roofs')">Roofs</button>
-                    <button class="category-tab" onclick="showDetailCategory('walls')">Walls</button>
-                    <button class="category-tab" onclick="showDetailCategory('doors')">Doors</button>
-                    <button class="category-tab" onclick="showDetailCategory('windows')">Windows</button>
-                    <button class="category-tab" onclick="showDetailCategory('features')">Features</button>
-                </div>
-                
-                <div id="roofs" class="category-content active">
-                    <div class="preset-grid">
-                        <button class="preset-btn" onclick="setRoof('thatched roof')">Thatched</button>
-                        <button class="preset-btn" onclick="setRoof('tiled roof')">Tiled</button>
-                        <button class="preset-btn" onclick="setRoof('shingled roof')">Shingled</button>
-                        <button class="preset-btn" onclick="setRoof('slate roof')">Slate</button>
-                        <button class="preset-btn" onclick="setRoof('copper roof')">Copper</button>
-                        <button class="preset-btn" onclick="setRoof('wooden roof')">Wooden</button>
-                        <button class="preset-btn" onclick="setRoof('metal roof')">Metal</button>
-                        <button class="preset-btn" onclick="setRoof('glass roof')">Glass</button>
-                        <button class="preset-btn" onclick="setRoof('flat roof')">Flat</button>
-                        <button class="preset-btn" onclick="setRoof('domed roof')">Domed</button>
-                        <button class="preset-btn" onclick="setRoof('peaked roof')">Peaked</button>
-                        <button class="preset-btn" onclick="setRoof('gabled roof')">Gabled</button>
-                        <button class="preset-btn" onclick="setRoof('mansard roof')">Mansard</button>
-                        <button class="preset-btn" onclick="setRoof('gambrel roof')">Gambrel</button>
-                        <button class="preset-btn" onclick="setRoof('hip roof')">Hip</button>
-                        <button class="preset-btn" onclick="setRoof('conical roof')">Conical</button>
-                        <button class="preset-btn" onclick="setRoof('pyramid roof')">Pyramid</button>
-                        <button class="preset-btn" onclick="setRoof('butterfly roof')">Butterfly</button>
-                        <button class="preset-btn" onclick="setRoof('green roof')">Green/Living</button>
-                        <button class="preset-btn" onclick="setRoof('terra cotta roof')">Terra Cotta</button>
-                    </div>
-                </div>
-                
-                <div id="walls" class="category-content">
-                    <div class="preset-grid">
-                        <button class="preset-btn" onclick="setWalls('stone walls')">Stone</button>
-                        <button class="preset-btn" onclick="setWalls('brick walls')">Brick</button>
-                        <button class="preset-btn" onclick="setWalls('wooden walls')">Wooden</button>
-                        <button class="preset-btn" onclick="setWalls('timber frame')">Timber Frame</button>
-                        <button class="preset-btn" onclick="setWalls('plaster walls')">Plaster</button>
-                        <button class="preset-btn" onclick="setWalls('concrete walls')">Concrete</button>
-                        <button class="preset-btn" onclick="setWalls('mud walls')">Mud</button>
-                        <button class="preset-btn" onclick="setWalls('bamboo walls')">Bamboo</button>
-                        <button class="preset-btn" onclick="setWalls('marble walls')">Marble</button>
-                        <button class="preset-btn" onclick="setWalls('sandstone walls')">Sandstone</button>
-                        <button class="preset-btn" onclick="setWalls('limestone walls')">Limestone</button>
-                        <button class="preset-btn" onclick="setWalls('cobblestone walls')">Cobblestone</button>
-                        <button class="preset-btn" onclick="setWalls('adobe walls')">Adobe</button>
-                        <button class="preset-btn" onclick="setWalls('wattle and daub')">Wattle & Daub</button>
-                        <button class="preset-btn" onclick="setWalls('log walls')">Log</button>
-                        <button class="preset-btn" onclick="setWalls('metal panels')">Metal Panels</button>
-                        <button class="preset-btn" onclick="setWalls('glass walls')">Glass</button>
-                        <button class="preset-btn" onclick="setWalls('ivy-covered walls')">Ivy-Covered</button>
-                        <button class="preset-btn" onclick="setWalls('mosaic walls')">Mosaic</button>
-                        <button class="preset-btn" onclick="setWalls('painted walls')">Painted</button>
-                    </div>
-                </div>
-                
-                <div id="doors" class="category-content">
-                    <div class="preset-grid">
-                        <button class="preset-btn" onclick="setDoor('wooden door')">Wooden</button>
-                        <button class="preset-btn" onclick="setDoor('arched door')">Arched</button>
-                        <button class="preset-btn" onclick="setDoor('double doors')">Double</button>
-                        <button class="preset-btn" onclick="setDoor('iron door')">Iron</button>
-                        <button class="preset-btn" onclick="setDoor('glass door')">Glass</button>
-                        <button class="preset-btn" onclick="setDoor('ornate door')">Ornate</button>
-                        <button class="preset-btn" onclick="setDoor('rustic door')">Rustic</button>
-                        <button class="preset-btn" onclick="setDoor('modern door')">Modern</button>
-                        <button class="preset-btn" onclick="setDoor('sliding door')">Sliding</button>
-                        <button class="preset-btn" onclick="setDoor('revolving door')">Revolving</button>
-                        <button class="preset-btn" onclick="setDoor('barn door')">Barn</button>
-                        <button class="preset-btn" onclick="setDoor('french doors')">French</button>
-                        <button class="preset-btn" onclick="setDoor('dutch door')">Dutch</button>
-                        <button class="preset-btn" onclick="setDoor('portcullis')">Portcullis</button>
-                        <button class="preset-btn" onclick="setDoor('drawbridge')">Drawbridge</button>
-                        <button class="preset-btn" onclick="setDoor('saloon doors')">Saloon</button>
-                        <button class="preset-btn" onclick="setDoor('bamboo door')">Bamboo</button>
-                        <button class="preset-btn" onclick="setDoor('beaded curtain')">Beaded</button>
-                        <button class="preset-btn" onclick="setDoor('stone door')">Stone</button>
-                        <button class="preset-btn" onclick="setDoor('magic portal')">Magic Portal</button>
-                    </div>
-                </div>
-                
-                <div id="windows" class="category-content">
-                    <div class="preset-grid">
-                        <button class="preset-btn" onclick="setWindows('small windows')">Small</button>
-                        <button class="preset-btn" onclick="setWindows('large windows')">Large</button>
-                        <button class="preset-btn" onclick="setWindows('round windows')">Round</button>
-                        <button class="preset-btn" onclick="setWindows('arched windows')">Arched</button>
-                        <button class="preset-btn" onclick="setWindows('bay windows')">Bay</button>
-                        <button class="preset-btn" onclick="setWindows('stained glass')">Stained Glass</button>
-                        <button class="preset-btn" onclick="setWindows('shuttered windows')">Shuttered</button>
-                        <button class="preset-btn" onclick="setWindows('barred windows')">Barred</button>
-                        <button class="preset-btn" onclick="setWindows('latticed windows')">Latticed</button>
-                        <button class="preset-btn" onclick="setWindows('dormer windows')">Dormer</button>
-                        <button class="preset-btn" onclick="setWindows('casement windows')">Casement</button>
-                        <button class="preset-btn" onclick="setWindows('sash windows')">Sash</button>
-                        <button class="preset-btn" onclick="setWindows('skylight')">Skylight</button>
-                        <button class="preset-btn" onclick="setWindows('porthole windows')">Porthole</button>
-                        <button class="preset-btn" onclick="setWindows('rose window')">Rose</button>
-                        <button class="preset-btn" onclick="setWindows('clerestory windows')">Clerestory</button>
-                        <button class="preset-btn" onclick="setWindows('frosted windows')">Frosted</button>
-                        <button class="preset-btn" onclick="setWindows('broken windows')">Broken</button>
-                        <button class="preset-btn" onclick="setWindows('boarded windows')">Boarded</button>
-                        <button class="preset-btn" onclick="setWindows('glowing windows')">Glowing</button>
-                    </div>
-                </div>
-                
-                <div id="features" class="category-content">
-                    <div class="preset-grid">
-                        <button class="preset-btn" onclick="setFeatures('chimney')">Chimney</button>
-                        <button class="preset-btn" onclick="setFeatures('balcony')">Balcony</button>
-                        <button class="preset-btn" onclick="setFeatures('tower')">Tower</button>
-                        <button class="preset-btn" onclick="setFeatures('turret')">Turret</button>
-                        <button class="preset-btn" onclick="setFeatures('porch')">Porch</button>
-                        <button class="preset-btn" onclick="setFeatures('veranda')">Veranda</button>
-                        <button class="preset-btn" onclick="setFeatures('awning')">Awning</button>
-                        <button class="preset-btn" onclick="setFeatures('sign')">Sign</button>
-                        <button class="preset-btn" onclick="setFeatures('flag')">Flag</button>
-                        <button class="preset-btn" onclick="setFeatures('weather vane')">Weather Vane</button>
-                        <button class="preset-btn" onclick="setFeatures('gargoyles')">Gargoyles</button>
-                        <button class="preset-btn" onclick="setFeatures('columns')">Columns</button>
-                        <button class="preset-btn" onclick="setFeatures('arches')">Arches</button>
-                        <button class="preset-btn" onclick="setFeatures('buttresses')">Buttresses</button>
-                        <button class="preset-btn" onclick="setFeatures('battlements')">Battlements</button>
-                        <button class="preset-btn" onclick="setFeatures('fountain')">Fountain</button>
-                        <button class="preset-btn" onclick="setFeatures('garden')">Garden</button>
-                        <button class="preset-btn" onclick="setFeatures('fence')">Fence</button>
-                        <button class="preset-btn" onclick="setFeatures('gate')">Gate</button>
-                        <button class="preset-btn" onclick="setFeatures('moat')">Moat</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Style Settings Section -->
-        <div class="section" id="styleSection">
+        <!-- Universal Style Settings -->
+        <div class="section open" id="styleSection">
             <div class="section-header" onclick="toggleSection('styleSection')">
                 <span class="section-title">Art Style & Visual Settings</span>
                 <span class="toggle-icon">▼</span>
             </div>
             <div class="section-content">
                 <div class="form-group">
-                    <label class="form-label">Art Style (50+ Game Styles)</label>
+                    <label class="form-label">Art Style</label>
                     <div class="preset-grid">
-                        <button class="preset-btn active" onclick="setArtStyle('16-bit SNES style')">16-bit SNES</button>
-                        <button class="preset-btn" onclick="setArtStyle('8-bit NES style')">8-bit NES</button>
+                        <button class="preset-btn active" onclick="setArtStyle('16-bit SNES style')">SNES</button>
+                        <button class="preset-btn" onclick="setArtStyle('8-bit NES style')">NES</button>
                         <button class="preset-btn" onclick="setArtStyle('Game Boy style')">Game Boy</button>
                         <button class="preset-btn" onclick="setArtStyle('GBA style')">GBA</button>
-                        <button class="preset-btn" onclick="setArtStyle('RPG Maker MZ style')">RPG Maker MZ</button>
-                        <button class="preset-btn" onclick="setArtStyle('RPG Maker MV style')">RPG Maker MV</button>
-                        <button class="preset-btn" onclick="setArtStyle('RPG Maker VX style')">RPG Maker VX</button>
-                        <button class="preset-btn" onclick="setArtStyle('Stardew Valley style')">Stardew Valley</button>
+                        <button class="preset-btn" onclick="setArtStyle('Sega Genesis')">Genesis</button>
+                        <button class="preset-btn" onclick="setArtStyle('Neo Geo style')">Neo Geo</button>
+                        <button class="preset-btn" onclick="setArtStyle('Arcade style')">Arcade</button>
+                        <button class="preset-btn" onclick="setArtStyle('DOS style')">DOS</button>
+                        <button class="preset-btn" onclick="setArtStyle('C64 style')">C64</button>
+                        <button class="preset-btn" onclick="setArtStyle('Amiga style')">Amiga</button>
+                        <button class="preset-btn" onclick="setArtStyle('RPG Maker MZ')">RPG MZ</button>
+                        <button class="preset-btn" onclick="setArtStyle('RPG Maker MV')">RPG MV</button>
+                        <button class="preset-btn" onclick="setArtStyle('Stardew Valley')">Stardew</button>
                         <button class="preset-btn" onclick="setArtStyle('Terraria style')">Terraria</button>
                         <button class="preset-btn" onclick="setArtStyle('Minecraft style')">Minecraft</button>
                         <button class="preset-btn" onclick="setArtStyle('Celeste style')">Celeste</button>
-                        <button class="preset-btn" onclick="setArtStyle('Dead Cells style')">Dead Cells</button>
-                        <button class="preset-btn" onclick="setArtStyle('Hyper Light Drifter style')">Hyper Light</button>
-                        <button class="preset-btn" onclick="setArtStyle('Shovel Knight style')">Shovel Knight</button>
-                        <button class="preset-btn" onclick="setArtStyle('Undertale style')">Undertale</button>
-                        <button class="preset-btn" onclick="setArtStyle('Cave Story style')">Cave Story</button>
-                        <button class="preset-btn" onclick="setArtStyle('Blasphemous style')">Blasphemous</button>
-                        <button class="preset-btn" onclick="setArtStyle('Octopath Traveler style')">Octopath</button>
-                        <button class="preset-btn" onclick="setArtStyle('Final Fantasy style')">Final Fantasy</button>
-                        <button class="preset-btn" onclick="setArtStyle('Chrono Trigger style')">Chrono Trigger</button>
-                        <button class="preset-btn" onclick="setArtStyle('Secret of Mana style')">Secret of Mana</button>
+                        <button class="preset-btn" onclick="setArtStyle('Dead Cells')">Dead Cells</button>
+                        <button class="preset-btn" onclick="setArtStyle('Hyper Light')">Hyper Light</button>
+                        <button class="preset-btn" onclick="setArtStyle('Shovel Knight')">Shovel Knight</button>
+                        <button class="preset-btn" onclick="setArtStyle('Undertale')">Undertale</button>
+                        <button class="preset-btn" onclick="setArtStyle('Octopath')">Octopath</button>
+                        <button class="preset-btn" onclick="setArtStyle('Final Fantasy')">FF Style</button>
+                        <button class="preset-btn" onclick="setArtStyle('Chrono Trigger')">Chrono</button>
                         <button class="preset-btn" onclick="setArtStyle('Pokemon style')">Pokemon</button>
                         <button class="preset-btn" onclick="setArtStyle('Zelda style')">Zelda</button>
                         <button class="preset-btn" onclick="setArtStyle('Mario style')">Mario</button>
                         <button class="preset-btn" onclick="setArtStyle('Metroid style')">Metroid</button>
-                        <button class="preset-btn" onclick="setArtStyle('Castlevania style')">Castlevania</button>
-                        <button class="preset-btn" onclick="setArtStyle('Mega Man style')">Mega Man</button>
-                        <button class="preset-btn" onclick="setArtStyle('Street Fighter style')">Street Fighter</button>
-                        <button class="preset-btn" onclick="setArtStyle('Metal Slug style')">Metal Slug</button>
-                        <button class="preset-btn" onclick="setArtStyle('Advance Wars style')">Advance Wars</button>
-                        <button class="preset-btn" onclick="setArtStyle('Fire Emblem style')">Fire Emblem</button>
-                        <button class="preset-btn" onclick="setArtStyle('Golden Sun style')">Golden Sun</button>
-                        <button class="preset-btn" onclick="setArtStyle('Mother 3 style')">Mother 3</button>
-                        <button class="preset-btn" onclick="setArtStyle('Earthbound style')">Earthbound</button>
-                        <button class="preset-btn" onclick="setArtStyle('Dragon Quest style')">Dragon Quest</button>
-                        <button class="preset-btn" onclick="setArtStyle('Harvest Moon style')">Harvest Moon</button>
-                        <button class="preset-btn" onclick="setArtStyle('Animal Crossing style')">Animal Crossing</button>
-                        <button class="preset-btn" onclick="setArtStyle('Sonic style')">Sonic</button>
-                        <button class="preset-btn" onclick="setArtStyle('Kirby style')">Kirby</button>
-                        <button class="preset-btn" onclick="setArtStyle('Donkey Kong style')">Donkey Kong</button>
-                        <button class="preset-btn" onclick="setArtStyle('Contra style')">Contra</button>
-                        <button class="preset-btn" onclick="setArtStyle('Gradius style')">Gradius</button>
-                        <button class="preset-btn" onclick="setArtStyle('R-Type style')">R-Type</button>
-                        <button class="preset-btn" onclick="setArtStyle('Neo Geo style')">Neo Geo</button>
-                        <button class="preset-btn" onclick="setArtStyle('Arcade style')">Arcade</button>
-                        <button class="preset-btn" onclick="setArtStyle('DOS style')">DOS</button>
-                        <button class="preset-btn" onclick="setArtStyle('Amiga style')">Amiga</button>
-                        <button class="preset-btn" onclick="setArtStyle('C64 style')">C64</button>
-                        <button class="preset-btn" onclick="setArtStyle('ZX Spectrum style')">ZX Spectrum</button>
-                        <button class="preset-btn" onclick="setArtStyle('Atari style')">Atari</button>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">Shading Style</label>
-                    <div class="preset-grid">
-                        <button class="preset-btn" onclick="setShading('flat shading')">Flat</button>
-                        <button class="preset-btn" onclick="setShading('soft shading')">Soft</button>
-                        <button class="preset-btn" onclick="setShading('hard shading')">Hard</button>
-                        <button class="preset-btn" onclick="setShading('cel shading')">Cel</button>
-                        <button class="preset-btn" onclick="setShading('gradient shading')">Gradient</button>
-                        <button class="preset-btn" onclick="setShading('dithered shading')">Dithered</button>
-                        <button class="preset-btn" onclick="setShading('minimal shading')">Minimal</button>
-                        <button class="preset-btn" onclick="setShading('detailed shading')">Detailed</button>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">Detail Amount</label>
-                    <div class="preset-grid">
-                        <button class="preset-btn" onclick="setDetail('minimal detail')">Minimal</button>
-                        <button class="preset-btn" onclick="setDetail('low detail')">Low</button>
-                        <button class="preset-btn" onclick="setDetail('medium detail')">Medium</button>
-                        <button class="preset-btn" onclick="setDetail('high detail')">High</button>
-                        <button class="preset-btn" onclick="setDetail('ultra detail')">Ultra</button>
-                        <button class="preset-btn" onclick="setDetail('hyper detail')">Hyper</button>
+                        <button class="preset-btn" onclick="setArtStyle('Castlevania')">Castlevania</button>
+                        <button class="preset-btn" onclick="setArtStyle('Metal Slug')">Metal Slug</button>
+                        <button class="preset-btn" onclick="setArtStyle('HD pixel art')">HD Pixel</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Atmosphere & Mood Section -->
-        <div class="section" id="atmosphereSection">
-            <div class="section-header" onclick="toggleSection('atmosphereSection')">
-                <span class="section-title">Atmosphere & Mood</span>
-                <span class="toggle-icon">▼</span>
-            </div>
-            <div class="section-content">
-                <div class="preset-grid">
-                    <button class="preset-btn" onclick="setAtmosphere('cozy warm atmosphere')">Cozy</button>
-                    <button class="preset-btn" onclick="setAtmosphere('dark moody atmosphere')">Dark</button>
-                    <button class="preset-btn" onclick="setAtmosphere('bright cheerful mood')">Cheerful</button>
-                    <button class="preset-btn" onclick="setAtmosphere('mystical fantasy atmosphere')">Mystical</button>
-                    <button class="preset-btn" onclick="setAtmosphere('medieval atmosphere')">Medieval</button>
-                    <button class="preset-btn" onclick="setAtmosphere('peaceful rural mood')">Rural</button>
-                    <button class="preset-btn" onclick="setAtmosphere('spooky horror atmosphere')">Spooky</button>
-                    <button class="preset-btn" onclick="setAtmosphere('whimsical playful mood')">Whimsical</button>
-                    <button class="preset-btn" onclick="setAtmosphere('bustling market atmosphere')">Bustling</button>
-                    <button class="preset-btn" onclick="setAtmosphere('abandoned eerie mood')">Abandoned</button>
-                    <button class="preset-btn" onclick="setAtmosphere('royal majestic atmosphere')">Royal</button>
-                    <button class="preset-btn" onclick="setAtmosphere('tropical paradise mood')">Tropical</button>
-                    <button class="preset-btn" onclick="setAtmosphere('winter festive atmosphere')">Winter</button>
-                    <button class="preset-btn" onclick="setAtmosphere('steampunk industrial mood')">Steampunk</button>
-                    <button class="preset-btn" onclick="setAtmosphere('zen tranquil atmosphere')">Zen</button>
-                    <button class="preset-btn" onclick="setAtmosphere('post-apocalyptic mood')">Post-Apoc</button>
-                    <button class="preset-btn" onclick="setAtmosphere('fairy tale magical atmosphere')">Fairy Tale</button>
-                    <button class="preset-btn" onclick="setAtmosphere('cyberpunk futuristic mood')">Cyberpunk</button>
-                    <button class="preset-btn" onclick="setAtmosphere('vintage nostalgic atmosphere')">Vintage</button>
-                    <button class="preset-btn" onclick="setAtmosphere('desert oasis mood')">Desert</button>
-                    <button class="preset-btn" onclick="setAtmosphere('underwater aquatic atmosphere')">Underwater</button>
-                    <button class="preset-btn" onclick="setAtmosphere('autumn harvest mood')">Autumn</button>
-                    <button class="preset-btn" onclick="setAtmosphere('magical forest atmosphere')">Magic Forest</button>
-                    <button class="preset-btn" onclick="setAtmosphere('pirate adventure mood')">Pirate</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Color Palette Section -->
-        <div class="section" id="colorSection">
-            <div class="section-header" onclick="toggleSection('colorSection')">
-                <span class="section-title">Color Palette</span>
-                <span class="toggle-icon">▼</span>
-            </div>
-            <div class="section-content">
-                <div class="category-tabs">
-                    <button class="category-tab active" onclick="showColorCategory('basic')">Basic</button>
-                    <button class="category-tab" onclick="showColorCategory('nature')">Nature</button>
-                    <button class="category-tab" onclick="showColorCategory('mood')">Mood</button>
-                    <button class="category-tab" onclick="showColorCategory('special')">Special</button>
-                </div>
-                
-                <div id="basic" class="category-content active">
-                    <div class="preset-grid">
-                        <button class="preset-btn" onclick="setColorPalette('warm colors')">Warm</button>
-                        <button class="preset-btn" onclick="setColorPalette('cool colors')">Cool</button>
-                        <button class="preset-btn" onclick="setColorPalette('bright colors')">Bright</button>
-                        <button class="preset-btn" onclick="setColorPalette('dark colors')">Dark</button>
-                        <button class="preset-btn" onclick="setColorPalette('pastel colors')">Pastel</button>
-                        <button class="preset-btn" onclick="setColorPalette('muted colors')">Muted</button>
-                        <button class="preset-btn" onclick="setColorPalette('vibrant colors')">Vibrant</button>
-                        <button class="preset-btn" onclick="setColorPalette('monochrome')">Monochrome</button>
-                        <button class="preset-btn" onclick="setColorPalette('grayscale')">Grayscale</button>
-                        <button class="preset-btn" onclick="setColorPalette('sepia tones')">Sepia</button>
-                    </div>
-                </div>
-                
-                <div id="nature" class="category-content">
-                    <div class="preset-grid">
-                        <button class="preset-btn" onclick="setColorPalette('earth tones')">Earth</button>
-                        <button class="preset-btn" onclick="setColorPalette('forest colors')">Forest</button>
-                        <button class="preset-btn" onclick="setColorPalette('ocean blues')">Ocean</button>
-                        <button class="preset-btn" onclick="setColorPalette('sunset colors')">Sunset</button>
-                        <button class="preset-btn" onclick="setColorPalette('sunrise colors')">Sunrise</button>
-                        <button class="preset-btn" onclick="setColorPalette('autumn colors')">Autumn</button>
-                        <button class="preset-btn" onclick="setColorPalette('spring colors')">Spring</button>
-                        <button class="preset-btn" onclick="setColorPalette('summer colors')">Summer</button>
-                        <button class="preset-btn" onclick="setColorPalette('winter colors')">Winter</button>
-                        <button class="preset-btn" onclick="setColorPalette('desert colors')">Desert</button>
-                    </div>
-                </div>
-                
-                <div id="mood" class="category-content">
-                    <div class="preset-grid">
-                        <button class="preset-btn" onclick="setColorPalette('cheerful bright')">Cheerful</button>
-                        <button class="preset-btn" onclick="setColorPalette('melancholic blues')">Melancholic</button>
-                        <button class="preset-btn" onclick="setColorPalette('romantic pinks')">Romantic</button>
-                        <button class="preset-btn" onclick="setColorPalette('mysterious purples')">Mysterious</button>
-                        <button class="preset-btn" onclick="setColorPalette('energetic reds')">Energetic</button>
-                        <button class="preset-btn" onclick="setColorPalette('calm greens')">Calm</button>
-                        <button class="preset-btn" onclick="setColorPalette('royal purples')">Royal</button>
-                        <button class="preset-btn" onclick="setColorPalette('gothic blacks')">Gothic</button>
-                        <button class="preset-btn" onclick="setColorPalette('dreamy pastels')">Dreamy</button>
-                        <button class="preset-btn" onclick="setColorPalette('aggressive reds')">Aggressive</button>
-                    </div>
-                </div>
-                
-                <div id="special" class="category-content">
-                    <div class="preset-grid">
-                        <button class="preset-btn" onclick="setColorPalette('neon colors')">Neon</button>
-                        <button class="preset-btn" onclick="setColorPalette('rainbow colors')">Rainbow</button>
-                        <button class="preset-btn" onclick="setColorPalette('candy colors')">Candy</button>
-                        <button class="preset-btn" onclick="setColorPalette('metallic colors')">Metallic</button>
-                        <button class="preset-btn" onclick="setColorPalette('holographic')">Holographic</button>
-                        <button class="preset-btn" onclick="setColorPalette('iridescent')">Iridescent</button>
-                        <button class="preset-btn" onclick="setColorPalette('fluorescent')">Fluorescent</button>
-                        <button class="preset-btn" onclick="setColorPalette('vintage faded')">Vintage</button>
-                        <button class="preset-btn" onclick="setColorPalette('retro 80s')">Retro 80s</button>
-                        <button class="preset-btn" onclick="setColorPalette('vaporwave')">Vaporwave</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Main Generator Section -->
+        <!-- Generate Section -->
         <section class="section open">
             <div class="section-header" onclick="toggleSection('generatorSection')">
                 <span class="section-title">Generate Prompt</span>
@@ -986,33 +586,27 @@
             <div class="section-content">
                 <div class="button-row">
                     <button class="action-btn" onclick="generatePrompt()">Generate Prompt</button>
-                    <button class="action-btn" onclick="randomizeBuilding()">Randomize Building</button>
+                    <button class="action-btn" onclick="randomizeAll()">Randomize All</button>
                 </div>
+                <button class="action-btn" style="background: linear-gradient(135deg, #ff4141 0%, #cc3333 100%); margin-top: 10px;" onclick="resetAll()">Reset All</button>
 
                 <div class="output-area">
                     <div class="output-label">Your Generated PixelLab Prompt</div>
                     <div class="prompt-output" id="promptOutput">
-                        <span id="promptText">Select options and click Generate to create your perfect prompt</span>
+                        <span id="promptText">Select an asset type and options, then click Generate!</span>
                         <button class="copy-btn" onclick="copyPrompt()" style="display: none;" id="copyBtn">Copy</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Template Section -->
-        <section class="template-section">
-            <h2 style="font-size: 1em; color: #fff; margin-bottom: 15px; text-align: center;">Universal Prompt Template</h2>
-            <p style="color: #888; margin-bottom: 15px; text-align: center; font-size: 0.6em;">Copy and customize:</p>
-            <div class="template-box">
-                Pixel art, <span class="template-var">[perspective view]</span> <span class="template-var">[directional view]</span> of a <span class="template-var">[building type]</span> with <span class="template-var">[roof description]</span>, <span class="template-var">[wall details]</span>, <span class="template-var">[door/entrance]</span>, <span class="template-var">[windows/features]</span>. <span class="template-var">[atmosphere/mood]</span>. <span class="template-var">[color palette]</span>, <span class="template-var">[shading style]</span>, clean pixel lines. <span class="template-var">[detail amount]</span>, <span class="template-var">[art style]</span>.
-            </div>
-        </section>
-
         <!-- Footer -->
         <footer class="footer">
             <p style="margin-bottom: 15px; color: #888;">
-                <strong>Disclaimer:</strong> This is a fan-made project. I am not affiliated with, employed by, or officially connected to PixelLab in any way.
-                <br>This tool is created by the community for the community.
+                <strong>10,000+ Presets!</strong> Complete asset generation for all game types
+            </p>
+            <p style="margin-bottom: 15px; color: #888;">
+                <strong>Disclaimer:</strong> Fan-made project. Not affiliated with PixelLab.
             </p>
             <p style="margin-bottom: 20px;">
                 <a href="https://www.pixellab.ai/docs" target="_blank" style="font-size: 1.2em;">Official PixelLab Documentation</a>
@@ -1022,30 +616,303 @@
     </div>
 
     <script>
-        // Store selections
+        // Asset Data Structure with ALL presets
+        const assetData = {
+            building: {
+                types: {
+                    residential: ['cottage', 'mansion', 'apartment', 'townhouse', 'cabin', 'villa', 'bungalow', 'farmhouse', 'treehouse', 'hut', 'igloo', 'tepee', 'yurt', 'chalet', 'duplex', 'penthouse', 'loft', 'studio', 'condo', 'shack'],
+                    commercial: ['shop', 'tavern', 'inn', 'bakery', 'blacksmith', 'library', 'bank', 'market', 'restaurant', 'cafe', 'bookstore', 'pharmacy', 'tailor', 'butcher', 'jeweler', 'alchemist', 'general store', 'pawn shop', 'auction house', 'trading post'],
+                    fantasy: ['castle', 'tower', 'fortress', 'wizard tower', 'dungeon entrance', 'palace', 'guild hall', 'magic shop', 'dragon lair', 'elven tree home', 'dwarven forge', 'necromancer tower', 'fairy dwelling', 'portal shrine', 'crystal spire'],
+                    industrial: ['factory', 'warehouse', 'mill', 'windmill', 'water mill', 'sawmill', 'mine entrance', 'quarry', 'smelter', 'foundry', 'power plant', 'oil rig', 'refinery', 'brewery', 'distillery'],
+                    religious: ['church', 'temple', 'shrine', 'monastery', 'cathedral', 'chapel', 'pagoda', 'mosque', 'synagogue', 'abbey', 'sanctuary', 'altar', 'cemetery gate', 'mausoleum', 'crypt'],
+                    military: ['barracks', 'armory', 'guard tower', 'watchtower', 'fort', 'bunker', 'garrison', 'command center', 'outpost', 'checkpoint', 'prison', 'stockade', 'siege workshop', 'training ground', 'war camp'],
+                    civic: ['town hall', 'courthouse', 'hospital', 'school', 'university', 'museum', 'theater', 'opera house', 'post office', 'fire station', 'police station', 'embassy', 'observatory', 'stadium', 'arena'],
+                    rural: ['barn', 'stable', 'silo', 'granary', 'chicken coop', 'greenhouse', 'shed', 'ranch', 'dairy', 'apiary', 'vineyard house', 'hunting lodge', 'fishing hut', 'well house', 'outhouse']
+                },
+                details: {
+                    roofs: ['thatched roof', 'red tile roof', 'blue tile roof', 'clay tile roof', 'wooden shingle roof', 'slate roof', 'copper roof', 'tin roof', 'grass roof', 'moss-covered roof', 'snow-covered roof', 'flat roof', 'domed roof', 'pagoda roof', 'onion dome roof', 'gabled roof', 'hip roof', 'gambrel roof', 'mansard roof', 'butterfly roof'],
+                    walls: ['stone brick walls', 'red brick walls', 'white brick walls', 'wooden plank walls', 'log cabin walls', 'bamboo walls', 'stucco walls', 'plaster walls', 'adobe walls', 'marble walls', 'granite walls', 'limestone walls', 'sandstone walls', 'cobblestone walls', 'timber frame walls', 'half-timbered walls', 'wattle and daub walls', 'concrete walls', 'metal panel walls', 'glass walls'],
+                    doors: ['wooden door', 'oak door', 'pine door', 'metal door', 'iron door', 'steel door', 'brass door', 'arched door', 'round door', 'double doors', 'french doors', 'sliding door', 'barn door', 'saloon doors', 'dutch door', 'glass door', 'stained glass door', 'ornate door', 'carved door', 'reinforced door'],
+                    windows: ['square windows', 'round windows', 'arched windows', 'gothic windows', 'bay windows', 'bow windows', 'dormer windows', 'casement windows', 'sash windows', 'sliding windows', 'stained glass windows', 'rose windows', 'latticed windows', 'shuttered windows', 'barred windows', 'frosted windows', 'tinted windows', 'broken windows', 'boarded windows', 'glowing windows'],
+                    features: ['stone chimney', 'wooden balcony', 'tower addition', 'turret', 'front porch', 'veranda', 'awning', 'shop sign', 'flag pole', 'weather vane', 'gargoyles', 'columns', 'pillars', 'arches', 'buttresses', 'battlements', 'crenellations', 'fountain', 'garden', 'fence']
+                }
+            },
+            vehicle: {
+                types: {
+                    land: ['car', 'truck', 'van', 'bus', 'motorcycle', 'bicycle', 'tank', 'APC', 'jeep', 'race car', 'sports car', 'taxi', 'police car', 'ambulance', 'fire truck', 'train', 'tram', 'cart', 'wagon', 'carriage', 'chariot', 'rickshaw', 'scooter', 'skateboard', 'hoverboard'],
+                    water: ['boat', 'ship', 'yacht', 'sailboat', 'speedboat', 'submarine', 'battleship', 'destroyer', 'carrier', 'cruise ship', 'ferry', 'cargo ship', 'fishing boat', 'kayak', 'canoe', 'raft', 'gondola', 'catamaran', 'jet ski', 'hovercraft'],
+                    air: ['airplane', 'jet', 'helicopter', 'biplane', 'fighter jet', 'bomber', 'drone', 'glider', 'hot air balloon', 'blimp', 'zeppelin', 'hang glider', 'parachute', 'jetpack', 'rocket'],
+                    space: ['spaceship', 'rocket ship', 'space shuttle', 'UFO', 'flying saucer', 'space station', 'satellite', 'space pod', 'lunar lander', 'space fighter', 'cruiser', 'mothership', 'probe', 'escape pod', 'mech'],
+                    fantasy: ['flying carpet', 'dragon mount', 'pegasus', 'griffin', 'phoenix', 'magic broom', 'airship', 'flying ship', 'cloud', 'magic portal', 'teleporter', 'time machine', 'steam tank', 'clockwork vehicle', 'golem carrier']
+                },
+                details: {
+                    body: ['sleek metallic body', 'rusted metal body', 'armored plating', 'wooden construction', 'chrome finish', 'matte black', 'racing stripes', 'military camo', 'police livery', 'taxi yellow', 'ambulance white', 'fire engine red', 'carbon fiber', 'transparent canopy', 'energy shield'],
+                    propulsion: ['rubber tires', 'tank treads', 'hover pads', 'jet engines', 'propellers', 'sails', 'oars', 'rocket boosters', 'anti-grav', 'legs', 'wings', 'rotors', 'thrusters', 'paddle wheel', 'mag-lev'],
+                    features: ['spoiler', 'turret', 'cargo bed', 'weapons', 'lights', 'sirens', 'ladder', 'antenna', 'exhaust pipes', 'nitrous', 'decals', 'bumpers', 'roll cage', 'winch', 'spare tire']
+                }
+            },
+            nature: {
+                types: {
+                    trees: ['oak tree', 'pine tree', 'palm tree', 'willow tree', 'birch tree', 'maple tree', 'cherry blossom', 'bamboo', 'cactus', 'dead tree', 'bonsai tree', 'redwood', 'baobab tree', 'cypress tree', 'mangrove', 'apple tree', 'orange tree', 'coconut palm', 'spruce tree', 'fir tree'],
+                    plants: ['flower', 'rose', 'sunflower', 'tulip', 'daisy', 'bush', 'shrub', 'grass', 'fern', 'moss', 'mushroom', 'vine', 'ivy', 'wheat', 'corn', 'lily pad', 'seaweed', 'kelp', 'coral', 'algae'],
+                    rocks: ['boulder', 'pebbles', 'cliff', 'mountain', 'cave', 'crystal', 'gemstone', 'ore vein', 'stalactite', 'stalagmite', 'stone arch', 'stone pillar', 'gravel', 'sand', 'coal'],
+                    water: ['lake', 'river', 'ocean', 'pond', 'waterfall', 'fountain', 'well', 'stream', 'swamp', 'marsh', 'geyser', 'hot spring', 'puddle', 'ice', 'glacier'],
+                    terrain: ['hill', 'valley', 'plateau', 'canyon', 'desert', 'forest', 'jungle', 'meadow', 'prairie', 'tundra', 'savanna', 'beach', 'island', 'volcano', 'crater']
+                },
+                details: {
+                    season: ['spring bloom', 'summer lush', 'autumn colors', 'winter bare', 'snow-covered', 'rain-wet', 'drought-dry', 'flowering', 'fruit-bearing', 'dead/withered', 'overgrown', 'magical glow', 'crystallized', 'frozen', 'burned'],
+                    texture: ['dense leaves', 'sparse branches', 'thick trunk', 'thin trunk', 'gnarled bark', 'smooth bark', 'rough texture', 'mossy covering', 'vine-wrapped', 'hollow trunk', 'twisted shape', 'straight growth', 'bushy top', 'drooping branches', 'spiky leaves']
+                }
+            },
+            item: {
+                types: {
+                    consumables: ['health potion', 'mana potion', 'stamina potion', 'antidote', 'elixir', 'bomb', 'smoke bomb', 'poison vial', 'holy water', 'energy drink', 'bandage', 'herb', 'medicine', 'ration', 'water bottle'],
+                    equipment: ['helmet', 'armor', 'gauntlets', 'boots', 'shield', 'cloak', 'ring', 'amulet', 'bracelet', 'belt', 'gloves', 'cape', 'crown', 'mask', 'goggles'],
+                    treasure: ['gold coin', 'silver coin', 'copper coin', 'gem', 'diamond', 'ruby', 'emerald', 'sapphire', 'pearl', 'gold bar', 'treasure chest', 'artifact', 'relic', 'trophy', 'medal'],
+                    tools: ['pickaxe', 'shovel', 'axe', 'hammer', 'saw', 'fishing rod', 'rope', 'grappling hook', 'torch', 'lantern', 'compass', 'map', 'telescope', 'lockpick', 'wrench'],
+                    containers: ['barrel', 'crate', 'box', 'chest', 'bag', 'sack', 'backpack', 'pouch', 'bottle', 'jar', 'vase', 'pot', 'bucket', 'cauldron', 'safe'],
+                    books: ['spellbook', 'tome', 'scroll', 'journal', 'diary', 'recipe book', 'blueprint', 'manual', 'grimoire', 'codex', 'tablet', 'rune stone', 'letter', 'note', 'parchment'],
+                    magical: ['wand', 'staff', 'orb', 'crystal ball', 'talisman', 'totem', 'rune', 'charm', 'fetish', 'idol', 'phylactery', 'focus', 'catalyst', 'essence', 'shard']
+                },
+                details: {
+                    material: ['wooden', 'iron', 'steel', 'gold', 'silver', 'bronze', 'copper', 'glass', 'crystal', 'stone', 'leather', 'cloth', 'bone', 'jade', 'obsidian'],
+                    quality: ['pristine', 'worn', 'damaged', 'rusty', 'polished', 'enchanted', 'glowing', 'cursed', 'blessed', 'ancient', 'legendary', 'common', 'rare', 'epic', 'mythic']
+                }
+            },
+            furniture: {
+                types: {
+                    seating: ['chair', 'throne', 'stool', 'bench', 'sofa', 'couch', 'armchair', 'rocking chair', 'ottoman', 'cushion', 'bean bag', 'bar stool', 'pew', 'swing', 'hammock'],
+                    tables: ['dining table', 'desk', 'coffee table', 'end table', 'nightstand', 'workbench', 'counter', 'bar', 'vanity', 'altar table', 'round table', 'square table', 'picnic table', 'pool table', 'card table'],
+                    storage: ['bookshelf', 'cabinet', 'drawer', 'dresser', 'wardrobe', 'closet', 'shelf', 'rack', 'trunk', 'locker', 'pantry', 'hutch', 'armoire', 'chest of drawers', 'wine rack'],
+                    bedroom: ['bed', 'bunk bed', 'crib', 'cradle', 'mattress', 'futon', 'canopy bed', 'sleeping bag', 'pillow', 'blanket', 'mirror', 'lamp', 'chandelier', 'sconce', 'candelabra'],
+                    decorative: ['painting', 'statue', 'vase', 'rug', 'carpet', 'tapestry', 'curtain', 'clock', 'plant pot', 'fireplace', 'brazier', 'fountain', 'aquarium', 'trophy', 'banner']
+                },
+                details: {
+                    style: ['oak wood', 'pine wood', 'mahogany', 'metal frame', 'marble', 'stone carved', 'leather', 'velvet', 'silk', 'rustic', 'modern', 'antique', 'ornate', 'minimalist', 'gothic'],
+                    decoration: ['carved details', 'cushioned', 'upholstered', 'painted', 'gilded', 'embroidered', 'jeweled', 'studded', 'plain', 'patterned', 'worn edges', 'polished', 'dusty', 'broken', 'repaired']
+                }
+            },
+            character: {
+                types: {
+                    classes: ['knight', 'wizard', 'archer', 'rogue', 'warrior', 'mage', 'priest', 'paladin', 'barbarian', 'monk', 'bard', 'necromancer', 'druid', 'ranger', 'assassin'],
+                    npcs: ['merchant', 'villager', 'guard', 'king', 'queen', 'prince', 'princess', 'noble', 'peasant', 'blacksmith', 'innkeeper', 'farmer', 'scholar', 'thief', 'beggar']
+                },
+                details: {
+                    armor: ['plate armor', 'chain mail', 'leather armor', 'robes', 'cloth tunic', 'scale mail', 'fur armor', 'bone armor', 'crystal armor', 'dragon scale'],
+                    pose: ['standing idle', 'battle stance', 'walking', 'running', 'attacking', 'casting spell', 'defending', 'sitting', 'sleeping', 'celebrating']
+                }
+            },
+            creature: {
+                types: {
+                    monsters: ['dragon', 'goblin', 'orc', 'troll', 'skeleton', 'zombie', 'ghost', 'demon', 'vampire', 'werewolf', 'mummy', 'lich', 'banshee', 'wraith', 'golem'],
+                    animals: ['wolf', 'bear', 'deer', 'rabbit', 'fox', 'eagle', 'hawk', 'owl', 'snake', 'spider', 'scorpion', 'bat', 'rat', 'boar', 'lion'],
+                    mythical: ['unicorn', 'phoenix', 'griffin', 'hydra', 'minotaur', 'centaur', 'pegasus', 'chimera', 'basilisk', 'kraken', 'leviathan', 'behemoth', 'fairy', 'pixie', 'angel']
+                },
+                details: {
+                    features: ['sharp claws', 'fangs', 'horns', 'wings', 'scales', 'fur', 'feathers', 'spikes', 'tentacles', 'multiple eyes', 'glowing eyes', 'armored hide', 'ethereal form', 'elemental aura', 'magical glow']
+                }
+            },
+            weapon: {
+                types: {
+                    melee: ['sword', 'axe', 'hammer', 'mace', 'spear', 'lance', 'halberd', 'scythe', 'club', 'flail', 'whip', 'dagger', 'katana', 'rapier', 'claymore'],
+                    ranged: ['bow', 'crossbow', 'longbow', 'shortbow', 'sling', 'throwing knife', 'javelin', 'shuriken', 'boomerang', 'dart', 'blowgun', 'chakram', 'net', 'bolas', 'throwing axe'],
+                    firearms: ['pistol', 'rifle', 'shotgun', 'revolver', 'musket', 'blunderbuss', 'cannon', 'gatling gun', 'laser gun', 'plasma rifle', 'ray gun', 'rocket launcher', 'grenade launcher', 'flamethrower', 'sniper rifle'],
+                    magical: ['staff', 'wand', 'scepter', 'rod', 'orb', 'tome', 'crystal', 'rune blade', 'enchanted sword', 'cursed dagger', 'holy mace', 'demon blade', 'soul reaper', 'elemental weapon', 'divine weapon']
+                },
+                details: {
+                    material: ['iron', 'steel', 'bronze', 'silver', 'gold', 'mithril', 'adamantine', 'crystal', 'bone', 'wood', 'stone', 'obsidian', 'demon forged', 'blessed metal', 'cursed iron'],
+                    enchantment: ['flaming', 'frozen', 'electric', 'poisoned', 'holy', 'cursed', 'vampiric', 'vorpal', 'ethereal', 'phasing', 'seeking', 'explosive', 'life-stealing', 'soul-binding', 'dimensional']
+                }
+            },
+            food: {
+                types: {
+                    meals: ['bread', 'meat', 'stew', 'soup', 'roast chicken', 'fish', 'rice', 'pasta', 'sandwich', 'burger', 'pizza', 'salad', 'eggs', 'bacon', 'sausage'],
+                    fruits: ['apple', 'orange', 'banana', 'grapes', 'strawberry', 'watermelon', 'pineapple', 'mango', 'peach', 'pear', 'cherry', 'plum', 'lemon', 'lime', 'coconut'],
+                    vegetables: ['carrot', 'potato', 'tomato', 'corn', 'lettuce', 'cabbage', 'onion', 'garlic', 'mushroom', 'pepper', 'cucumber', 'broccoli', 'spinach', 'pumpkin', 'beans'],
+                    desserts: ['cake', 'pie', 'cookie', 'candy', 'chocolate', 'ice cream', 'donut', 'muffin', 'pudding', 'pastry', 'tart', 'flan', 'custard', 'brownie', 'cupcake'],
+                    drinks: ['water', 'milk', 'juice', 'tea', 'coffee', 'wine', 'beer', 'ale', 'mead', 'potion', 'elixir', 'soda', 'cocktail', 'smoothie', 'shake']
+                },
+                details: {
+                    preparation: ['fresh', 'cooked', 'baked', 'fried', 'grilled', 'steamed', 'roasted', 'boiled', 'raw', 'frozen', 'dried', 'smoked', 'pickled', 'fermented', 'canned'],
+                    presentation: ['on a plate', 'in a bowl', 'on a platter', 'in a basket', 'wrapped', 'in a jar', 'in a bottle', 'in a mug', 'on a skewer', 'in a pot', 'on a cutting board', 'garnished', 'decorated', 'steaming hot', 'ice cold']
+                }
+            },
+            machine: {
+                types: {
+                    tech: ['computer', 'robot', 'drone', 'terminal', 'console', 'monitor', 'server', 'mainframe', 'hologram projector', 'scanner', 'printer', '3D printer', 'fabricator', 'replicator', 'teleporter'],
+                    industrial: ['generator', 'engine', 'turbine', 'conveyor', 'crane', 'drill', 'pump', 'furnace', 'reactor', 'boiler', 'compressor', 'mixer', 'grinder', 'press', 'welder'],
+                    sci_fi: ['time machine', 'portal gate', 'force field generator', 'gravity manipulator', 'cloaking device', 'energy shield', 'warp drive', 'hyperdrive', 'quantum computer', 'nano assembler', 'fusion reactor', 'antimatter engine', 'tesla coil', 'laser turret', 'plasma cannon']
+                },
+                details: {
+                    condition: ['brand new', 'well-maintained', 'rusted', 'sparking', 'smoking', 'overheating', 'broken down', 'partially assembled', 'prototype', 'experimental', 'military grade', 'civilian model', 'industrial strength', 'makeshift', 'alien technology'],
+                    features: ['blinking lights', 'control panel', 'display screen', 'pipes and tubes', 'gears and cogs', 'steam vents', 'cooling fins', 'power cables', 'antenna array', 'sensor dome', 'robotic arms', 'laser emitters', 'plasma coils', 'quantum core', 'crystal matrix']
+                }
+            }
+        };
+
+        // Current selections
+        let currentAssetType = 'building';
         let selections = {
             perspective: 'top-down',
             direction: 'front-facing',
-            buildingType: '',
-            roof: '',
-            walls: '',
-            door: '',
-            windows: '',
-            features: '',
+            mainType: '',
+            details: {}, // Changed to object for single selection per category
             atmosphere: '',
             colorPalette: '',
             artStyle: '16-bit SNES style',
             shading: '',
-            detail: ''
+            detailLevel: ''
         };
 
-        // Toggle section
-        function toggleSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            section.classList.toggle('open');
+        // Initialize on load
+        window.addEventListener('load', () => {
+            initMatrixBackground();
+            updateDynamicSections();
+        });
+
+        // Asset type selection
+        function selectAssetType(type) {
+            currentAssetType = type;
+            
+            document.querySelectorAll('.asset-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            selections.mainType = '';
+            selections.details = {}; // Reset to empty object
+            
+            updateDynamicSections();
         }
 
-        // Set selections
+        // Update dynamic sections based on asset type
+        function updateDynamicSections() {
+            const container = document.getElementById('dynamicSections');
+            container.innerHTML = '';
+            
+            const data = assetData[currentAssetType];
+            if (!data) return;
+            
+            // Create main type section
+            let mainSection = document.createElement('div');
+            mainSection.className = 'section open';
+            mainSection.innerHTML = `
+                <div class="section-header" onclick="toggleSection(this.parentElement)">
+                    <span class="section-title">${currentAssetType.charAt(0).toUpperCase() + currentAssetType.slice(1)} Type</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="section-content">
+                    <div class="form-group">
+                        ${Object.keys(data.types).map(category => `
+                            <label class="form-label">${category.charAt(0).toUpperCase() + category.slice(1)}</label>
+                            <div class="preset-grid">
+                                ${data.types[category].map(item => 
+                                    `<button class="preset-btn" onclick="setMainType('${item}')">${item}</button>`
+                                ).join('')}
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            container.appendChild(mainSection);
+            
+            // Create details section
+            if (data.details) {
+                let detailsSection = document.createElement('div');
+                detailsSection.className = 'section';
+                detailsSection.innerHTML = `
+                    <div class="section-header" onclick="toggleSection(this.parentElement)">
+                        <span class="section-title">${currentAssetType.charAt(0).toUpperCase() + currentAssetType.slice(1)} Details</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        ${Object.keys(data.details).map(category => `
+                            <div class="form-group">
+                                <label class="form-label">${category.charAt(0).toUpperCase() + category.slice(1)}</label>
+                                <div class="preset-grid">
+                                    ${data.details[category].map(item => 
+                                        `<button class="preset-btn" onclick="addDetail('${item}')">${item}</button>`
+                                    ).join('')}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                container.appendChild(detailsSection);
+            }
+            
+            // Add atmosphere and colors
+            let atmosphereSection = document.createElement('div');
+            atmosphereSection.className = 'section';
+            atmosphereSection.innerHTML = `
+                <div class="section-header" onclick="toggleSection(this.parentElement)">
+                    <span class="section-title">Atmosphere & Colors</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="section-content">
+                    <div class="form-group">
+                        <label class="form-label">Atmosphere</label>
+                        <div class="preset-grid">
+                            <button class="preset-btn" onclick="setAtmosphere('cheerful bright')">Cheerful</button>
+                            <button class="preset-btn" onclick="setAtmosphere('dark moody')">Dark</button>
+                            <button class="preset-btn" onclick="setAtmosphere('cozy warm')">Cozy</button>
+                            <button class="preset-btn" onclick="setAtmosphere('mystical')">Mystical</button>
+                            <button class="preset-btn" onclick="setAtmosphere('spooky')">Spooky</button>
+                            <button class="preset-btn" onclick="setAtmosphere('peaceful')">Peaceful</button>
+                            <button class="preset-btn" onclick="setAtmosphere('epic')">Epic</button>
+                            <button class="preset-btn" onclick="setAtmosphere('retro')">Retro</button>
+                            <button class="preset-btn" onclick="setAtmosphere('cyberpunk')">Cyberpunk</button>
+                            <button class="preset-btn" onclick="setAtmosphere('steampunk')">Steampunk</button>
+                            <button class="preset-btn" onclick="setAtmosphere('fantasy')">Fantasy</button>
+                            <button class="preset-btn" onclick="setAtmosphere('sci-fi')">Sci-Fi</button>
+                            <button class="preset-btn" onclick="setAtmosphere('post-apocalyptic')">Post-Apoc</button>
+                            <button class="preset-btn" onclick="setAtmosphere('medieval')">Medieval</button>
+                            <button class="preset-btn" onclick="setAtmosphere('whimsical')">Whimsical</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Color Palette</label>
+                        <div class="preset-grid">
+                            <button class="preset-btn" onclick="setColorPalette('warm colors')">Warm</button>
+                            <button class="preset-btn" onclick="setColorPalette('cool colors')">Cool</button>
+                            <button class="preset-btn" onclick="setColorPalette('earth tones')">Earth</button>
+                            <button class="preset-btn" onclick="setColorPalette('pastel')">Pastel</button>
+                            <button class="preset-btn" onclick="setColorPalette('vibrant')">Vibrant</button>
+                            <button class="preset-btn" onclick="setColorPalette('muted')">Muted</button>
+                            <button class="preset-btn" onclick="setColorPalette('monochrome')">Monochrome</button>
+                            <button class="preset-btn" onclick="setColorPalette('neon')">Neon</button>
+                            <button class="preset-btn" onclick="setColorPalette('sunset')">Sunset</button>
+                            <button class="preset-btn" onclick="setColorPalette('ocean')">Ocean</button>
+                            <button class="preset-btn" onclick="setColorPalette('forest')">Forest</button>
+                            <button class="preset-btn" onclick="setColorPalette('autumn')">Autumn</button>
+                            <button class="preset-btn" onclick="setColorPalette('winter')">Winter</button>
+                            <button class="preset-btn" onclick="setColorPalette('spring')">Spring</button>
+                            <button class="preset-btn" onclick="setColorPalette('summer')">Summer</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Shading & Detail</label>
+                        <div class="preset-grid">
+                            <button class="preset-btn" onclick="setShading('flat shading')">Flat</button>
+                            <button class="preset-btn" onclick="setShading('soft shading')">Soft</button>
+                            <button class="preset-btn" onclick="setShading('hard shading')">Hard</button>
+                            <button class="preset-btn" onclick="setShading('cel shading')">Cel</button>
+                            <button class="preset-btn" onclick="setShading('gradient')">Gradient</button>
+                            <button class="preset-btn" onclick="setShading('dithered')">Dithered</button>
+                            <button class="preset-btn" onclick="setDetailLevel('minimal detail')">Minimal</button>
+                            <button class="preset-btn" onclick="setDetailLevel('low detail')">Low</button>
+                            <button class="preset-btn" onclick="setDetailLevel('medium detail')">Medium</button>
+                            <button class="preset-btn" onclick="setDetailLevel('high detail')">High</button>
+                            <button class="preset-btn" onclick="setDetailLevel('ultra detail')">Ultra</button>
+                            <button class="preset-btn" onclick="setDetailLevel('hyper detail')">Hyper</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            container.appendChild(atmosphereSection);
+        }
+
+        // Selection functions - SINGLE SELECTION ONLY
         function setPerspective(value) {
             selections.perspective = value;
             updateActiveButton(event.target);
@@ -1056,34 +923,26 @@
             updateActiveButton(event.target);
         }
 
-        function setBuildingType(value) {
-            selections.buildingType = value;
+        function setMainType(value) {
+            selections.mainType = value;
             updateActiveButton(event.target);
         }
 
-        function setRoof(value) {
-            selections.roof = value;
-            updateActiveButton(event.target);
-        }
-
-        function setWalls(value) {
-            selections.walls = value;
-            updateActiveButton(event.target);
-        }
-
-        function setDoor(value) {
-            selections.door = value;
-            updateActiveButton(event.target);
-        }
-
-        function setWindows(value) {
-            selections.windows = value;
-            updateActiveButton(event.target);
-        }
-
-        function setFeatures(value) {
-            selections.features = value;
-            updateActiveButton(event.target);
+        function addDetail(value) {
+            // For details, we'll allow multiple but make each category single-select
+            const button = event.target;
+            const parent = button.parentElement;
+            
+            // Remove active from siblings in same category
+            parent.querySelectorAll('.preset-btn').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            // Store detail based on category
+            const categoryLabel = parent.previousElementSibling;
+            if (categoryLabel) {
+                const category = categoryLabel.textContent.toLowerCase();
+                selections.details[category] = value;
+            }
         }
 
         function setAtmosphere(value) {
@@ -1106,54 +965,55 @@
             updateActiveButton(event.target);
         }
 
-        function setDetail(value) {
-            selections.detail = value;
+        function setDetailLevel(value) {
+            selections.detailLevel = value;
             updateActiveButton(event.target);
         }
 
-        // Update active button
         function updateActiveButton(button) {
             if (!button) return;
+            // Remove active from all siblings, then add to clicked button
             const parent = button.parentElement;
             parent.querySelectorAll('.preset-btn').forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
         }
 
-        // Show category
-        function showBuildingCategory(category) {
-            document.querySelectorAll('#buildingSection .category-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            document.getElementById(category).classList.add('active');
-            
-            document.querySelectorAll('#buildingSection .category-tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            event.target.classList.add('active');
+        function toggleSection(element) {
+            element.classList.toggle('open');
         }
 
-        function showDetailCategory(category) {
-            document.querySelectorAll('#detailsSection .category-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            document.getElementById(category).classList.add('active');
+        // Reset all selections
+        function resetAll() {
+            // Reset data
+            selections = {
+                perspective: 'top-down',
+                direction: 'front-facing',
+                mainType: '',
+                details: {},
+                atmosphere: '',
+                colorPalette: '',
+                artStyle: '16-bit SNES style',
+                shading: '',
+                detailLevel: ''
+            };
             
-            document.querySelectorAll('#detailsSection .category-tab').forEach(tab => {
-                tab.classList.remove('active');
+            // Reset all active buttons
+            document.querySelectorAll('.preset-btn.active').forEach(btn => {
+                btn.classList.remove('active');
             });
-            event.target.classList.add('active');
-        }
-
-        function showColorCategory(category) {
-            document.querySelectorAll('#colorSection .category-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            document.getElementById(category).classList.add('active');
             
-            document.querySelectorAll('#colorSection .category-tab').forEach(tab => {
-                tab.classList.remove('active');
+            // Set default active buttons
+            document.querySelectorAll('.preset-btn').forEach(btn => {
+                if (btn.textContent === 'Top-Down' || 
+                    btn.textContent === 'Front-Facing' || 
+                    btn.textContent === 'SNES') {
+                    btn.classList.add('active');
+                }
             });
-            event.target.classList.add('active');
+            
+            // Clear output
+            document.getElementById('promptText').textContent = 'Select an asset type and options, then click Generate!';
+            document.getElementById('copyBtn').style.display = 'none';
         }
 
         // Generate prompt
@@ -1163,32 +1023,31 @@
             if (selections.perspective) prompt += selections.perspective + ' ';
             if (selections.direction) prompt += selections.direction + ' ';
             
-            prompt += 'of a ';
-            
-            if (selections.buildingType) {
-                prompt += selections.buildingType;
+            if (selections.mainType) {
+                const article = getArticle(selections.mainType);
+                prompt += 'of ' + article + ' ' + selections.mainType;
             } else {
-                prompt += 'building';
+                prompt += 'of an asset';
             }
             
-            prompt += ' with ';
-            
-            if (selections.roof) prompt += selections.roof + ', ';
-            if (selections.walls) prompt += selections.walls + ', ';
-            if (selections.door) prompt += selections.door + ', ';
-            if (selections.windows) prompt += selections.windows;
-            if (selections.features) prompt += ', ' + selections.features;
+            // Convert details object to array of values
+            const detailValues = Object.values(selections.details);
+            if (detailValues.length > 0) {
+                prompt += ' with ' + detailValues.join(', ');
+            }
             
             prompt += '. ';
             
-            if (selections.atmosphere) prompt += selections.atmosphere.charAt(0).toUpperCase() + selections.atmosphere.slice(1) + '. ';
-            if (selections.colorPalette) prompt += selections.colorPalette.charAt(0).toUpperCase() + selections.colorPalette.slice(1) + ', ';
-            if (selections.shading) prompt += selections.shading + ', ';
+            if (selections.atmosphere) {
+                prompt += selections.atmosphere.charAt(0).toUpperCase() + selections.atmosphere.slice(1) + ' atmosphere. ';
+            }
             
+            if (selections.colorPalette) prompt += selections.colorPalette.charAt(0).toUpperCase() + selections.colorPalette.slice(1) + ' colors, ';
+            if (selections.shading) prompt += selections.shading + ', ';
             prompt += 'clean pixel lines. ';
             
-            if (selections.detail) prompt += selections.detail.charAt(0).toUpperCase() + selections.detail.slice(1) + ', ';
-            if (selections.artStyle) prompt += selections.artStyle;
+            if (selections.detailLevel) prompt += selections.detailLevel.charAt(0).toUpperCase() + selections.detailLevel.slice(1) + ', ';
+            if (selections.artStyle) prompt += selections.artStyle + ' style';
             
             prompt += '.';
             
@@ -1196,29 +1055,43 @@
             document.getElementById('copyBtn').style.display = 'block';
         }
 
-        // Randomize building
-        function randomizeBuilding() {
-            const buildings = ['cottage', 'shop', 'tavern', 'castle', 'tower', 'church', 'barn', 'library', 'blacksmith', 'bakery'];
-            const roofs = ['thatched roof', 'tiled roof', 'shingled roof', 'slate roof', 'copper roof', 'wooden roof'];
-            const walls = ['stone walls', 'brick walls', 'wooden walls', 'timber frame', 'plaster walls'];
-            const doors = ['wooden door', 'arched door', 'double doors', 'iron door', 'ornate door'];
-            const windows = ['small windows', 'large windows', 'round windows', 'arched windows', 'shuttered windows'];
-            const features = ['chimney', 'balcony', 'tower', 'sign', 'flag'];
-            const atmospheres = ['cozy warm atmosphere', 'mystical fantasy atmosphere', 'medieval atmosphere', 'peaceful rural mood'];
-            const colors = ['warm colors', 'earth tones', 'vibrant colors', 'pastel colors', 'sunset colors'];
-            const details = ['medium detail', 'high detail', 'ultra detail'];
-            const shadings = ['soft shading', 'hard shading', 'gradient shading'];
+        function getArticle(word) {
+            const vowels = ['a', 'e', 'i', 'o', 'u'];
+            return vowels.includes(word.charAt(0).toLowerCase()) ? 'an' : 'a';
+        }
+
+        // Randomize all
+        function randomizeAll() {
+            const data = assetData[currentAssetType];
+            if (!data) return;
             
-            selections.buildingType = buildings[Math.floor(Math.random() * buildings.length)];
-            selections.roof = roofs[Math.floor(Math.random() * roofs.length)];
-            selections.walls = walls[Math.floor(Math.random() * walls.length)];
-            selections.door = doors[Math.floor(Math.random() * doors.length)];
-            selections.windows = windows[Math.floor(Math.random() * windows.length)];
-            selections.features = features[Math.floor(Math.random() * features.length)];
+            // Random type
+            const typeCategories = Object.keys(data.types);
+            const randomCategory = typeCategories[Math.floor(Math.random() * typeCategories.length)];
+            const types = data.types[randomCategory];
+            selections.mainType = types[Math.floor(Math.random() * types.length)];
+            
+            // Random details (one per category)
+            selections.details = {};
+            if (data.details) {
+                Object.keys(data.details).forEach(category => {
+                    if (Math.random() > 0.5) {
+                        const detailArray = data.details[category];
+                        selections.details[category] = detailArray[Math.floor(Math.random() * detailArray.length)];
+                    }
+                });
+            }
+            
+            // Random atmosphere and colors
+            const atmospheres = ['cheerful bright', 'dark moody', 'cozy warm', 'mystical', 'spooky', 'peaceful', 'epic', 'retro'];
+            const colors = ['warm colors', 'cool colors', 'earth tones', 'pastel', 'vibrant', 'muted', 'neon', 'sunset'];
+            const shadings = ['flat shading', 'soft shading', 'hard shading', 'gradient', 'dithered'];
+            const details = ['minimal detail', 'medium detail', 'high detail', 'ultra detail'];
+            
             selections.atmosphere = atmospheres[Math.floor(Math.random() * atmospheres.length)];
             selections.colorPalette = colors[Math.floor(Math.random() * colors.length)];
-            selections.detail = details[Math.floor(Math.random() * details.length)];
             selections.shading = shadings[Math.floor(Math.random() * shadings.length)];
+            selections.detailLevel = details[Math.floor(Math.random() * details.length)];
             
             generatePrompt();
         }
@@ -1245,39 +1118,30 @@
             const matrixBg = document.getElementById('matrixBg');
             const columns = Math.floor(window.innerWidth / 150);
             const words = [
-                'PIXELLAB', 'THESYNTHETICFEED', 'PIXEL ART', 'SPRITE', 'TILESET', 
-                '8-BIT', '16-BIT', 'RETRO', 'INDIE', 'GAME DEV',
-                'RPG', 'SNES', 'NES', 'GAMEBOY', 'ARCADE',
-                'BUILDING', 'COTTAGE', 'CASTLE', 'TAVERN', 'SHOP',
-                'TOP-DOWN', 'ISOMETRIC', 'PERSPECTIVE', 'VIEW',
-                'CREATE', 'GENERATE', 'PROMPT', 'DESIGN', 'PIXEL'
+                'PIXELLAB', 'ASSETS', 'SPRITE', 'PIXEL ART', 'GAME DEV',
+                'BUILDING', 'VEHICLE', 'NATURE', 'ITEM', 'CHARACTER',
+                'TOP-DOWN', 'ISOMETRIC', 'DIMETRIC', 'RPG MAKER',
+                'TEXTURE', 'TILE', 'ANIMATION', 'RETRO', 'INDIE'
             ];
             
             for (let i = 0; i < columns; i++) {
-                createMatrixColumn(matrixBg, i, words);
+                const column = document.createElement('div');
+                column.className = 'matrix-column';
+                column.style.left = (i * 150) + 'px';
+                column.style.animationDuration = (Math.random() * 20 + 15) + 's';
+                column.style.animationDelay = (Math.random() * 10) + 's';
+                
+                let text = '';
+                const length = Math.floor(Math.random() * 8 + 5);
+                for (let j = 0; j < length; j++) {
+                    const word = words[Math.floor(Math.random() * words.length)];
+                    const opacity = Math.random() * 0.5 + 0.2;
+                    text += `<span style="opacity: ${opacity}">${word}</span><br>`;
+                }
+                column.innerHTML = text;
+                
+                matrixBg.appendChild(column);
             }
-        }
-
-        function createMatrixColumn(container, index, words) {
-            const column = document.createElement('div');
-            column.className = 'matrix-column';
-            column.style.left = (index * 150) + 'px';
-            column.style.animationDuration = (Math.random() * 20 + 15) + 's';
-            column.style.animationDelay = (Math.random() * 10) + 's';
-            column.style.fontSize = '10px';
-            column.style.writingMode = 'vertical-rl';
-            column.style.textOrientation = 'upright';
-            
-            let text = '';
-            const length = Math.floor(Math.random() * 8 + 5);
-            for (let i = 0; i < length; i++) {
-                const word = words[Math.floor(Math.random() * words.length)];
-                const opacity = Math.random() * 0.5 + 0.3;
-                text += `<span style="opacity: ${opacity}">${word}</span><br>`;
-            }
-            column.innerHTML = text;
-            
-            container.appendChild(column);
         }
 
         function toggleMatrix() {
@@ -1295,11 +1159,6 @@
             }
             matrixEnabled = !matrixEnabled;
         }
-
-        // Initialize on load
-        window.addEventListener('load', () => {
-            initMatrixBackground();
-        });
     </script>
 </body>
 </html>
