@@ -3051,62 +3051,69 @@ This tool is created by the community for the community
             
             plainPrompt += '. Clean pixel lines.';
 
-            // Generate JSON format with professional structure
+            // Generate JSON format following 2024-2025 best practices
             const jsonData = {
-                prompt_type: "pixel_art_asset_generation",
-                core_subject: {
-                    asset_category: components.assetType,
-                    asset_type: components.mainType,
-                    quantity: 1
-                },
-                perspective_settings: {
-                    perspective_type: components.perspective,
-                    camera_angle: components.direction,
-                    depth_representation: getPerspectiveDepth(components.perspective)
+                prompt: buildMainPrompt(components),
+                style: components.artStyle,
+                perspective: `${components.perspective}, ${components.direction}`,
+                subject: {
+                    type: components.assetType,
+                    object: components.mainType
                 }
             };
 
-            // Add object_details only if there are non-empty values
-            const objectDetails = {};
-            if (components.mainColor) objectDetails.color = components.mainColor;
-            if (components.material) objectDetails.material = components.material;
-            if (components.details.length > 0) objectDetails.additional_details = components.details;
-            if (components.effect) objectDetails.visual_effect = components.effect;
-            if (Object.keys(objectDetails).length > 0) {
-                jsonData.object_details = objectDetails;
+            // Add optional styling parameters only if selected
+            if (components.mainColor) {
+                jsonData.color = components.mainColor;
             }
 
-            // Add surface_texture only if shading is selected
+            if (components.material) {
+                jsonData.material = components.material;
+            }
+
+            if (components.details.length > 0) {
+                jsonData.details = components.details;
+            }
+
             if (components.shading) {
-                jsonData.surface_texture = {
-                    shading_technique: components.shading,
-                    texture_quality: getTextureQuality(components.shading)
-                };
+                jsonData.shading = components.shading;
             }
 
-            // Add lighting only if light source is selected
             if (components.lightSource) {
-                jsonData.lighting = {
-                    light_source: components.lightSource,
-                    shadow_behavior: getShadowBehavior(components.lightSource)
-                };
+                jsonData.lighting = components.lightSource;
             }
 
-            // Add style_settings
-            const styleSettings = {
-                art_style: components.artStyle
-            };
-            if (components.atmosphere) styleSettings.atmosphere = components.atmosphere;
-            if (components.colorPalette) styleSettings.color_palette = components.colorPalette;
-            if (components.detailLevel) styleSettings.detail_level = components.detailLevel;
-            if (components.spriteScale) styleSettings.scale_resolution = components.spriteScale;
-            jsonData.style_settings = styleSettings;
+            if (components.effect) {
+                jsonData.effect = components.effect;
+            }
 
-            // Add technical_specs without optimized_for
-            jsonData.technical_specs = {
-                clean_pixel_lines: true,
-                pixel_perfect: true
-            };
+            if (components.atmosphere) {
+                jsonData.atmosphere = components.atmosphere;
+            }
+
+            if (components.colorPalette) {
+                jsonData.palette = components.colorPalette;
+            }
+
+            if (components.detailLevel) {
+                jsonData.quality = components.detailLevel;
+            }
+
+            if (components.spriteScale) {
+                jsonData.size = components.spriteScale;
+            }
+
+            // Always include these technical requirements
+            jsonData.format = "pixel art";
+            jsonData.requirements = ["clean pixel lines", "pixel perfect"];
+
+            // Helper function to build the main prompt
+            function buildMainPrompt(comp) {
+                let mainPrompt = `${comp.perspective}, ${comp.direction} `;
+                if (comp.mainColor) mainPrompt += `${comp.mainColor} `;
+                mainPrompt += `${comp.mainType} in ${comp.artStyle}`;
+                return mainPrompt;
+            }
 
             // Generate FORMATTED text following document structure
             let formattedPrompt = '';
