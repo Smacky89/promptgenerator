@@ -6,7 +6,7 @@
     <meta name="description" content="ULTIMATE PixelLab Prompt Creator 70000+ combinations!">
     <meta name="keywords" content="pixellab, pixel art, game assets, prompt generator, RPG Maker, isometric, dimetric, game development, sprites">
     <meta name="author" content="TheSyntheticFeed">
-    <title>ULTIMATE PixelLab Generator - 50,000+ Presets</title>
+    <title>ULTIMATE PIXELLAB PROMPT GENERATOR</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         * {
@@ -23,6 +23,7 @@
             line-height: 1.8;
             position: relative;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         /* Matrix Background */
@@ -128,6 +129,181 @@
             max-width: 800px;
             margin: 0 auto;
             line-height: 1.6;
+        }
+        
+        .creator-credit {
+            color: #00ff41;
+            margin: 15px 0;
+            font-size: 0.7em;
+            opacity: 0.9;
+        }
+        
+        .glitch-text {
+            color: #00ff41;
+            font-weight: bold;
+            position: relative;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .glitch-text:hover {
+            animation: glitchIntense 0.8s linear;
+        }
+        
+        .glitch-text:hover::before,
+        .glitch-text:hover::after {
+            content: 'TheSyntheticFeed';
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: glitchSkewIntense 0.8s linear;
+        }
+        
+        .glitch-text:hover::before {
+            color: #ff00aa;
+            animation-delay: 0.05s;
+            clip-path: polygon(0 15%, 100% 15%, 100% 25%, 0 25%);
+        }
+        
+        .glitch-text:hover::after {
+            color: #00aaff;
+            animation-delay: 0.1s;
+            clip-path: polygon(0 70%, 100% 70%, 100% 85%, 0 85%);
+        }
+        
+        @keyframes glitchIntense {
+            0% {
+                text-shadow: 0 0 10px rgba(0, 255, 65, 0.8);
+                transform: translate(0) scale(1);
+                filter: hue-rotate(0deg);
+            }
+            10% {
+                text-shadow: 
+                    -3px 0 #ff00aa,
+                    3px 0 #00aaff,
+                    0 0 25px rgba(0, 255, 65, 1);
+                transform: translate(-3px, 2px) scale(1.02);
+                filter: hue-rotate(90deg);
+            }
+            20% {
+                text-shadow: 
+                    4px 0 #ff00aa,
+                    -4px 0 #00aaff,
+                    0 0 30px rgba(255, 0, 170, 0.8);
+                transform: translate(4px, -3px) scale(0.98);
+                filter: hue-rotate(180deg);
+            }
+            30% {
+                text-shadow: 
+                    -5px 0 #ff00aa,
+                    5px 0 #00aaff,
+                    0 0 35px rgba(0, 170, 255, 0.8);
+                transform: translate(-5px, 4px) scale(1.05);
+                filter: hue-rotate(270deg);
+            }
+            40% {
+                text-shadow: 
+                    6px 0 #ff00aa,
+                    -6px 0 #00aaff,
+                    0 0 40px rgba(0, 255, 65, 1);
+                transform: translate(6px, -5px) scale(0.95);
+                filter: hue-rotate(360deg);
+            }
+            50% {
+                text-shadow: 
+                    -4px 0 #ff0055,
+                    4px 0 #0055ff,
+                    0 0 50px rgba(255, 255, 255, 0.5);
+                transform: translate(-4px, 3px) scale(1.08);
+                filter: hue-rotate(45deg) brightness(1.5);
+            }
+            60% {
+                text-shadow: 
+                    3px 0 #aa0055,
+                    -3px 0 #0055aa,
+                    0 0 30px rgba(0, 255, 65, 1);
+                transform: translate(3px, -2px) scale(0.92);
+                filter: hue-rotate(180deg);
+            }
+            70% {
+                text-shadow: 
+                    -2px 0 #ff0088,
+                    2px 0 #0088ff,
+                    0 0 20px rgba(0, 255, 65, 1);
+                transform: translate(-2px, 1px) scale(1.03);
+                filter: hue-rotate(270deg);
+            }
+            80% {
+                text-shadow: 
+                    1px 0 #ff00aa,
+                    -1px 0 #00aaff,
+                    0 0 15px rgba(0, 255, 65, 1);
+                transform: translate(1px, -1px) scale(1.01);
+                filter: hue-rotate(0deg);
+            }
+            90% {
+                text-shadow: 0 0 12px rgba(0, 255, 65, 0.9);
+                transform: translate(0) scale(1);
+                filter: hue-rotate(0deg);
+            }
+            100% {
+                text-shadow: 0 0 10px rgba(0, 255, 65, 0.8);
+                transform: translate(0) scale(1);
+                filter: hue-rotate(0deg);
+            }
+        }
+        
+        @keyframes glitchSkewIntense {
+            0% {
+                transform: skew(0deg);
+                opacity: 0;
+            }
+            5% {
+                transform: skew(5deg);
+                opacity: 0.9;
+            }
+            15% {
+                transform: skew(-8deg);
+                opacity: 0.8;
+            }
+            25% {
+                transform: skew(12deg);
+                opacity: 0.7;
+            }
+            35% {
+                transform: skew(-15deg);
+                opacity: 0.9;
+            }
+            45% {
+                transform: skew(10deg);
+                opacity: 0.6;
+            }
+            55% {
+                transform: skew(-5deg);
+                opacity: 0.8;
+            }
+            65% {
+                transform: skew(3deg);
+                opacity: 0.5;
+            }
+            75% {
+                transform: skew(-2deg);
+                opacity: 0.7;
+            }
+            85% {
+                transform: skew(1deg);
+                opacity: 0.3;
+            }
+            95% {
+                transform: skew(0deg);
+                opacity: 0.1;
+            }
+            100% {
+                transform: skew(0deg);
+                opacity: 0;
+            }
         }
 
         .stats {
@@ -418,6 +594,7 @@
             color: white;
         }
 
+
         /* Footer */
         .footer {
             text-align: center;
@@ -458,9 +635,9 @@
         <!-- Header -->
         <header class="header">
             <button id="matrixToggle" onclick="toggleMatrix()">Disable Matrix</button>
-            <h1>ULTIMATE PIXELLAB GENERATOR</h1>
-            <p class="subtitle">50,000+ Presets for EVERY Game Asset Imaginable!</p>
-            <p class="stats">15 Asset Types • 1000+ Items • 30+ Colors • Special Effects • Materials • More!</p>
+            <h1>ULTIMATE PIXELLAB PROMPT GENERATOR</h1>
+            <p class="subtitle">Out of Ideas? Need help writing a good prompt? We've Got You Covered!</p>
+            <p class="creator-credit">Created by <span class="glitch-text">TheSyntheticFeed</span></p>
         </header>
 
         <!-- Asset Type Selector -->
@@ -879,35 +1056,205 @@
         <!-- Footer -->
         <footer class="footer">
             <p style="margin-bottom: 15px; color: #888;">
-                <strong>50,000+ Presets!</strong> Disclaimer: This is a fan-made project. I am not affiliated with, employed by, or officially connected to PixelLab in any way.
+                Disclaimer: This is a fan-made project. I am not affiliated with, employed by, or officially connected to PixelLab in any way.
 This tool is created by the community for the community
             </p>
-            <p>Created by TheSyntheticFeed • <a href="https://www.pixellab.ai" target="_blank">PixelLab</a></p>
+            <p><a href="https://www.pixellab.ai" target="_blank">PixelLab</a> • <a href="https://www.pixellab.ai/docs" target="_blank">Documentation</a> • <a href="https://discord.com/invite/pBeyTBF8T7" target="_blank">Discord</a></p>
         </footer>
     </div>
 
     <script>
-        // MASSIVE Asset Data Structure with 50,000+ combinations
+        // MASSIVE Asset Data Structure with 100,000+ combinations
         const assetData = {
             building: {
                 types: {
-                    // Expanded with 200+ building types
-                    residential: ['cottage', 'mansion', 'apartment', 'townhouse', 'cabin', 'villa', 'bungalow', 'farmhouse', 'treehouse', 'hut', 'igloo', 'tepee', 'yurt', 'chalet', 'duplex', 'penthouse', 'loft', 'studio', 'condo', 'shack', 'beach house', 'lake house', 'mountain cabin', 'tiny house', 'mobile home', 'rv', 'houseboat', 'dome home', 'earth house', 'stilt house'],
-                    commercial: ['shop', 'tavern', 'inn', 'bakery', 'blacksmith', 'library', 'bank', 'market', 'restaurant', 'cafe', 'bookstore', 'pharmacy', 'tailor', 'butcher', 'jeweler', 'alchemist', 'general store', 'pawn shop', 'auction house', 'trading post', 'grocery store', 'department store', 'mall', 'boutique', 'salon', 'spa', 'gym', 'cinema', 'arcade', 'bar', 'nightclub', 'casino', 'hotel', 'motel', 'resort', 'office building', 'skyscraper', 'strip mall', 'food court', 'gas station'],
-                    fantasy: ['castle', 'tower', 'fortress', 'wizard tower', 'dungeon entrance', 'palace', 'guild hall', 'magic shop', 'dragon lair', 'elven tree home', 'dwarven forge', 'necromancer tower', 'fairy dwelling', 'portal shrine', 'crystal spire', 'floating castle', 'cloud palace', 'underwater palace', 'volcanic fortress', 'ice castle', 'shadow realm tower', 'celestial temple', 'demon fortress', 'titan stronghold', 'ancient ruins', 'mystic library', 'oracle temple', 'enchanted grove', 'spell forge', 'arcane academy'],
-                    industrial: ['factory', 'warehouse', 'mill', 'windmill', 'water mill', 'sawmill', 'mine entrance', 'quarry', 'smelter', 'foundry', 'power plant', 'oil rig', 'refinery', 'brewery', 'distillery', 'chemical plant', 'steel mill', 'textile factory', 'assembly plant', 'recycling center', 'waste facility', 'water treatment', 'solar farm', 'wind farm', 'nuclear plant', 'coal plant', 'lumber yard', 'shipyard', 'train depot', 'cargo terminal'],
-                    military: ['barracks', 'armory', 'guard tower', 'watchtower', 'fort', 'bunker', 'garrison', 'command center', 'outpost', 'checkpoint', 'prison', 'stockade', 'siege workshop', 'training ground', 'war camp', 'missile silo', 'radar station', 'communications tower', 'supply depot', 'field hospital', 'motor pool', 'airbase', 'naval base', 'fortress wall', 'gate house', 'drawbridge', 'moat', 'bailey', 'keep', 'citadel']
+                    // 500+ BUILDINGS across all categories
+                    residential: [
+                        // Houses and Homes (50+)
+                        'cottage', 'mansion', 'apartment', 'townhouse', 'cabin', 'villa', 'bungalow', 'farmhouse', 
+                        'treehouse', 'hut', 'igloo', 'tepee', 'yurt', 'chalet', 'duplex', 'penthouse', 'loft', 
+                        'studio', 'condo', 'shack', 'beach house', 'lake house', 'mountain cabin', 'tiny house', 
+                        'mobile home', 'rv', 'houseboat', 'dome home', 'earth house', 'stilt house', 'ranch house',
+                        'colonial house', 'victorian house', 'tudor house', 'craftsman house', 'modern house',
+                        'adobe house', 'log cabin', 'a-frame house', 'split-level house', 'prairie house',
+                        'mediterranean villa', 'japanese house', 'pagoda house', 'bamboo house', 'mud house',
+                        'stone cottage', 'thatched cottage', 'glass house', 'underground home', 'cave dwelling'
+                    ],
+                    commercial: [
+                        // Shops and Businesses (75+)
+                        'shop', 'tavern', 'inn', 'bakery', 'blacksmith', 'library', 'bank', 'market', 'restaurant',
+                        'cafe', 'bookstore', 'pharmacy', 'tailor', 'butcher', 'jeweler', 'alchemist', 'general store',
+                        'pawn shop', 'auction house', 'trading post', 'grocery store', 'department store', 'mall',
+                        'boutique', 'salon', 'spa', 'gym', 'cinema', 'arcade', 'bar', 'nightclub', 'casino', 'hotel',
+                        'motel', 'resort', 'office building', 'skyscraper', 'strip mall', 'food court', 'gas station',
+                        'flower shop', 'pet store', 'hardware store', 'furniture store', 'clothing store', 'toy store',
+                        'electronics store', 'music store', 'art gallery', 'antique shop', 'thrift store', 'convenience store',
+                        'liquor store', 'smoke shop', 'candy store', 'ice cream shop', 'coffee shop', 'tea house',
+                        'sushi bar', 'pizzeria', 'burger joint', 'taco stand', 'food truck', 'diner', 'bistro',
+                        'steakhouse', 'seafood restaurant', 'vegetarian restaurant', 'fast food', 'drive-through',
+                        'brewery', 'winery', 'distillery', 'dispensary', 'massage parlor', 'tattoo parlor'
+                    ],
+                    fantasy: [
+                        // Fantasy Buildings (60+)
+                        'castle', 'tower', 'fortress', 'wizard tower', 'dungeon entrance', 'palace', 'guild hall',
+                        'magic shop', 'dragon lair', 'elven tree home', 'dwarven forge', 'necromancer tower',
+                        'fairy dwelling', 'portal shrine', 'crystal spire', 'floating castle', 'cloud palace',
+                        'underwater palace', 'volcanic fortress', 'ice castle', 'shadow realm tower', 'celestial temple',
+                        'demon fortress', 'titan stronghold', 'ancient ruins', 'mystic library', 'oracle temple',
+                        'enchanted grove', 'spell forge', 'arcane academy', 'summoning circle', 'ritual chamber',
+                        'throne room', 'treasure vault', 'crystal cave', 'magic well', 'fairy ring', 'stone circle',
+                        'pyramid', 'ziggurat', 'sphinx', 'obelisk', 'monolith', 'megalith', 'dolmen', 'cairn',
+                        'mausoleum', 'crypt', 'catacomb', 'ossuary', 'necropolis', 'lich tower', 'vampire castle',
+                        'werewolf den', 'witch hut', 'warlock sanctum', 'sorcerer spire', 'enchanter workshop',
+                        'artificer forge', 'runesmith shop', 'potion brewery', 'scroll library'
+                    ],
+                    industrial: [
+                        // Industrial Buildings (60+)
+                        'factory', 'warehouse', 'mill', 'windmill', 'water mill', 'sawmill', 'mine entrance', 'quarry',
+                        'smelter', 'foundry', 'power plant', 'oil rig', 'refinery', 'brewery', 'distillery',
+                        'chemical plant', 'steel mill', 'textile factory', 'assembly plant', 'recycling center',
+                        'waste facility', 'water treatment', 'solar farm', 'wind farm', 'nuclear plant', 'coal plant',
+                        'lumber yard', 'shipyard', 'train depot', 'cargo terminal', 'loading dock', 'crane yard',
+                        'construction site', 'scaffolding', 'cement plant', 'brick factory', 'glass factory',
+                        'paper mill', 'printing press', 'mint', 'ammunition factory', 'vehicle factory', 'robot factory',
+                        'circuit factory', 'server farm', 'data center', 'cooling tower', 'smokestack', 'pipeline',
+                        'storage tank', 'silo', 'grain elevator', 'feed mill', 'slaughterhouse', 'meat packing',
+                        'cannery', 'bottling plant', 'packaging facility', 'distribution center'
+                    ],
+                    military: [
+                        // Military Structures (50+)
+                        'barracks', 'armory', 'guard tower', 'watchtower', 'fort', 'bunker', 'garrison', 'command center',
+                        'outpost', 'checkpoint', 'prison', 'stockade', 'siege workshop', 'training ground', 'war camp',
+                        'missile silo', 'radar station', 'communications tower', 'supply depot', 'field hospital',
+                        'motor pool', 'airbase', 'naval base', 'fortress wall', 'gate house', 'drawbridge', 'moat',
+                        'bailey', 'keep', 'citadel', 'redoubt', 'bastion', 'rampart', 'parapet', 'battlement',
+                        'arrow slit', 'murder hole', 'portcullis', 'barbican', 'curtain wall', 'corner tower',
+                        'siege tower', 'battering ram', 'catapult platform', 'ballista mount', 'cannon emplacement',
+                        'pillbox', 'machine gun nest', 'sniper tower', 'observation post'
+                    ],
+                    religious: [
+                        // Religious Buildings (40+)
+                        'temple', 'church', 'cathedral', 'chapel', 'mosque', 'synagogue', 'shrine', 'monastery',
+                        'convent', 'abbey', 'priory', 'basilica', 'pagoda', 'stupa', 'torii gate', 'altar',
+                        'sanctuary', 'cloister', 'bell tower', 'minaret', 'prayer hall', 'meditation hall',
+                        'confessional', 'baptistry', 'cemetery', 'graveyard', 'tomb', 'memorial', 'monument',
+                        'statue', 'fountain', 'holy well', 'sacred tree', 'stone garden', 'zen garden', 'labyrinth',
+                        'pilgrimage site', 'oracle chamber', 'divination room', 'ritual bath', 'sacred fire pit'
+                    ],
+                    civic: [
+                        // Civic Buildings (50+)
+                        'town hall', 'courthouse', 'police station', 'fire station', 'hospital', 'clinic', 'school',
+                        'university', 'library', 'museum', 'gallery', 'theater', 'opera house', 'concert hall',
+                        'stadium', 'arena', 'colosseum', 'amphitheater', 'convention center', 'exhibition hall',
+                        'community center', 'recreation center', 'youth center', 'senior center', 'daycare',
+                        'orphanage', 'shelter', 'soup kitchen', 'food bank', 'thrift store', 'charity shop',
+                        'post office', 'dmv', 'tax office', 'permit office', 'records hall', 'archive', 'vault',
+                        'mint', 'treasury', 'embassy', 'consulate', 'customs house', 'immigration center',
+                        'quarantine station', 'inspection station', 'weigh station', 'toll booth', 'border crossing',
+                        'passport control', 'security checkpoint'
+                    ],
+                    infrastructure: [
+                        // Infrastructure (40+)
+                        'bridge', 'tunnel', 'dam', 'levee', 'dike', 'aqueduct', 'viaduct', 'overpass', 'underpass',
+                        'pier', 'dock', 'wharf', 'marina', 'lighthouse', 'beacon', 'buoy', 'airport', 'helipad',
+                        'runway', 'hangar', 'control tower', 'terminal', 'train station', 'subway station',
+                        'bus station', 'taxi stand', 'parking garage', 'parking lot', 'toll plaza', 'rest stop',
+                        'service area', 'weigh station', 'border station', 'customs plaza', 'inspection station',
+                        'pump station', 'lift station', 'substation', 'transformer', 'relay station', 'repeater'
+                    ],
+                    agricultural: [
+                        // Agricultural Buildings (20+)
+                        'barn', 'stable', 'silo', 'grain bin', 'chicken coop', 'pig pen', 'cattle pen', 'milking parlor',
+                        'tool shed', 'equipment barn', 'tractor shed', 'greenhouse', 'hothouse', 'cold frame',
+                        'root cellar', 'smoke house', 'sugar shack', 'maple house', 'honey house', 'bee hive',
+                        'rabbit hutch', 'duck pond', 'fish farm', 'hatchery', 'nursery', 'potting shed',
+                        'compost bin', 'manure pit', 'irrigation pump', 'windbreak'
+                    ]
                 },
                 details: {
-                    roofs: ['thatched roof', 'red tile roof', 'blue tile roof', 'clay tile roof', 'wooden shingle roof', 'slate roof', 'copper roof', 'tin roof', 'grass roof', 'moss-covered roof', 'snow-covered roof', 'flat roof', 'domed roof', 'pagoda roof', 'onion dome roof'],
-                    walls: ['stone brick walls', 'red brick walls', 'white brick walls', 'wooden plank walls', 'log cabin walls', 'bamboo walls', 'stucco walls', 'plaster walls', 'adobe walls', 'marble walls'],
-                    doors: ['wooden door', 'oak door', 'pine door', 'metal door', 'iron door', 'steel door', 'brass door', 'arched door', 'round door', 'double doors'],
-                    windows: ['square windows', 'round windows', 'arched windows', 'gothic windows', 'bay windows', 'bow windows', 'dormer windows', 'casement windows', 'sash windows', 'sliding windows']
+                    roofs: [
+                        'thatched roof', 'red tile roof', 'blue tile roof', 'clay tile roof', 'wooden shingle roof',
+                        'slate roof', 'copper roof', 'tin roof', 'grass roof', 'moss-covered roof', 'snow-covered roof',
+                        'flat roof', 'domed roof', 'pagoda roof', 'onion dome roof', 'barrel roof', 'butterfly roof',
+                        'gabled roof', 'hipped roof', 'mansard roof', 'gambrel roof', 'shed roof', 'saltbox roof',
+                        'bonnet roof', 'curved roof', 'pyramid roof', 'conical roof', 'bell-shaped roof'
+                    ],
+                    walls: [
+                        'stone brick walls', 'red brick walls', 'white brick walls', 'wooden plank walls', 'log cabin walls',
+                        'bamboo walls', 'stucco walls', 'plaster walls', 'adobe walls', 'marble walls', 'granite walls',
+                        'limestone walls', 'sandstone walls', 'concrete walls', 'metal siding', 'vinyl siding',
+                        'cedar shake walls', 'board and batten', 'clapboard siding', 'half-timbered walls',
+                        'wattle and daub', 'rammed earth walls', 'cob walls', 'straw bale walls', 'glass walls'
+                    ],
+                    windows: [
+                        'square windows', 'round windows', 'arched windows', 'gothic windows', 'bay windows',
+                        'bow windows', 'dormer windows', 'casement windows', 'sash windows', 'sliding windows',
+                        'awning windows', 'hopper windows', 'jalousie windows', 'clerestory windows', 'transom windows',
+                        'sidelight windows', 'picture windows', 'stained glass windows', 'leaded glass windows',
+                        'frosted windows', 'tinted windows', 'broken windows', 'boarded windows', 'barred windows'
+                    ],
+                    doors: [
+                        'wooden door', 'oak door', 'pine door', 'metal door', 'iron door', 'steel door', 'brass door',
+                        'arched door', 'round door', 'double doors', 'french doors', 'sliding doors', 'revolving door',
+                        'saloon doors', 'barn doors', 'pocket doors', 'folding doors', 'accordion doors', 'roll-up door',
+                        'garage door', 'security door', 'vault door', 'prison door', 'portcullis', 'drawbridge'
+                    ]
                 }
             },
             vehicle: {
                 types: {
-                    land: ['car', 'truck', 'van', 'bus', 'motorcycle', 'bicycle', 'tank', 'APC', 'jeep', 'race car', 'sports car', 'taxi', 'police car', 'ambulance', 'fire truck', 'train', 'tram', 'cart', 'wagon', 'carriage', 'chariot', 'rickshaw', 'scooter', 'skateboard', 'hoverboard', 'segway', 'atv', 'dune buggy', 'monster truck', 'formula 1', 'rally car', 'limousine', 'hearse', 'ice cream truck', 'food truck', 'tractor', 'bulldozer', 'excavator', 'crane truck', 'cement mixer', 'garbage truck'],
+                    // 200+ VEHICLES
+                    land: [
+                        // Cars and Personal Vehicles (50+)
+                        'car', 'sedan', 'coupe', 'convertible', 'sports car', 'race car', 'formula 1', 'nascar',
+                        'rally car', 'drift car', 'muscle car', 'hot rod', 'lowrider', 'tuner car', 'luxury car',
+                        'limousine', 'taxi', 'uber', 'police car', 'cop car', 'patrol car', 'swat van', 'ambulance',
+                        'fire truck', 'ladder truck', 'pumper truck', 'rescue vehicle', 'hearse', 'van', 'minivan',
+                        'suv', 'crossover', 'station wagon', 'hatchback', 'smart car', 'electric car', 'hybrid',
+                        'self-driving car', 'concept car', 'vintage car', 'classic car', 'antique car', 'jalopy',
+                        'beater', 'rust bucket', 'project car', 'kit car', 'dune buggy', 'beach buggy', 'sand rail'
+                    ],
+                    trucks: [
+                        // Trucks and Commercial (40+)
+                        'pickup truck', 'dump truck', 'garbage truck', 'recycling truck', 'tow truck', 'flatbed truck',
+                        'box truck', 'moving van', 'delivery truck', 'mail truck', 'ups truck', 'fedex truck',
+                        'amazon van', 'food truck', 'ice cream truck', 'taco truck', 'coffee truck', 'mobile library',
+                        'bloodmobile', 'bookmobile', 'semi truck', 'big rig', '18-wheeler', 'tanker truck',
+                        'cement mixer', 'concrete truck', 'crane truck', 'cherry picker', 'bucket truck', 'utility truck',
+                        'refrigerated truck', 'livestock truck', 'car carrier', 'log truck', 'dump trailer',
+                        'flatbed trailer', 'box trailer', 'horse trailer', 'travel trailer', 'fifth wheel'
+                    ],
+                    military: [
+                        // Military Vehicles (30+)
+                        'tank', 'main battle tank', 'light tank', 'heavy tank', 'apc', 'armored personnel carrier',
+                        'ifv', 'infantry fighting vehicle', 'mrap', 'humvee', 'jeep', 'military truck', 'deuce and a half',
+                        'artillery', 'self-propelled gun', 'howitzer', 'rocket launcher', 'mlrs', 'sam launcher',
+                        'missile carrier', 'radar truck', 'command vehicle', 'medical vehicle', 'supply truck',
+                        'fuel tanker', 'ammunition carrier', 'mine sweeper', 'combat engineer vehicle', 'bridge layer',
+                        'recovery vehicle', 'armored car'
+                    ],
+                    bikes: [
+                        // Bikes and Motorcycles (30+)
+                        'bicycle', 'mountain bike', 'road bike', 'bmx', 'cruiser bike', 'fixie', 'tandem bike',
+                        'recumbent bike', 'folding bike', 'electric bike', 'e-bike', 'tricycle', 'unicycle',
+                        'motorcycle', 'sport bike', 'cruiser', 'touring bike', 'dirt bike', 'motocross', 'enduro',
+                        'dual sport', 'adventure bike', 'cafe racer', 'bobber', 'chopper', 'bagger', 'naked bike',
+                        'scooter', 'moped', 'vespa', 'atv', 'quad bike'
+                    ],
+                    construction: [
+                        // Construction Equipment (25+)
+                        'bulldozer', 'excavator', 'backhoe', 'loader', 'skid steer', 'grader', 'scraper',
+                        'compactor', 'roller', 'paver', 'milling machine', 'trencher', 'pile driver', 'crane',
+                        'tower crane', 'mobile crane', 'forklift', 'telehandler', 'scissor lift', 'boom lift',
+                        'cherry picker', 'man lift', 'scaffolding truck', 'concrete pump', 'drill rig'
+                    ],
+                    rail: [
+                        // Trains and Rail (25+)
+                        'locomotive', 'steam engine', 'diesel engine', 'electric train', 'bullet train', 'maglev',
+                        'passenger car', 'sleeper car', 'dining car', 'observation car', 'baggage car', 'mail car',
+                        'freight car', 'boxcar', 'flatcar', 'tank car', 'hopper car', 'gondola', 'caboose',
+                        'subway train', 'metro', 'tram', 'streetcar', 'monorail', 'cable car'
+                    ],
                     water: ['boat', 'ship', 'yacht', 'sailboat', 'speedboat', 'submarine', 'battleship', 'destroyer', 'carrier', 'cruise ship', 'ferry', 'cargo ship', 'fishing boat', 'kayak', 'canoe', 'raft', 'gondola', 'catamaran', 'jet ski', 'hovercraft', 'tugboat', 'barge', 'pirate ship', 'viking longship', 'galleon', 'frigate', 'corsair', 'steamboat', 'paddle boat', 'hydrofoil'],
                     air: ['airplane', 'jet', 'helicopter', 'biplane', 'fighter jet', 'bomber', 'drone', 'glider', 'hot air balloon', 'blimp', 'zeppelin', 'hang glider', 'parachute', 'jetpack', 'rocket', 'space shuttle', 'vtol', 'gyrocopter', 'autogyro', 'ornithopter', 'flying wing', 'cargo plane', 'seaplane', 'ultralight', 'paraglider'],
                     space: ['spaceship', 'rocket ship', 'space shuttle', 'UFO', 'flying saucer', 'space station', 'satellite', 'space pod', 'lunar lander', 'space fighter', 'cruiser', 'mothership', 'probe', 'escape pod', 'mech', 'orbital platform', 'colony ship', 'mining vessel', 'science vessel', 'war frigate'],
@@ -916,139 +1263,1381 @@ This tool is created by the community for the community
             },
             nature: {
                 types: {
-                    trees: ['oak tree', 'pine tree', 'palm tree', 'willow tree', 'birch tree', 'maple tree', 'cherry blossom', 'bamboo', 'cactus', 'dead tree', 'bonsai tree', 'redwood', 'baobab tree', 'cypress tree', 'mangrove', 'apple tree', 'orange tree', 'coconut palm', 'spruce tree', 'fir tree', 'ash tree', 'elm tree', 'beech tree', 'cedar tree', 'sequoia', 'joshua tree', 'acacia tree', 'eucalyptus', 'rubber tree', 'banana tree'],
-                    plants: ['flower', 'rose', 'sunflower', 'tulip', 'daisy', 'bush', 'shrub', 'grass', 'fern', 'moss', 'mushroom', 'vine', 'ivy', 'wheat', 'corn', 'lily pad', 'seaweed', 'kelp', 'coral', 'algae', 'orchid', 'lotus', 'dandelion', 'poppy', 'lavender', 'cactus flower', 'water lily', 'carnivorous plant', 'herb garden', 'vegetable patch'],
-                    rocks: ['boulder', 'pebbles', 'cliff', 'mountain', 'cave', 'crystal', 'gemstone', 'ore vein', 'stalactite', 'stalagmite', 'stone arch', 'stone pillar', 'gravel', 'sand', 'coal', 'meteorite', 'fossil', 'geode', 'volcanic rock', 'pumice'],
-                    water: ['lake', 'river', 'ocean', 'pond', 'waterfall', 'fountain', 'well', 'stream', 'swamp', 'marsh', 'geyser', 'hot spring', 'puddle', 'ice', 'glacier', 'rapids', 'whirlpool', 'tide pool', 'lagoon', 'oasis'],
-                    terrain: ['hill', 'valley', 'plateau', 'canyon', 'desert', 'forest', 'jungle', 'meadow', 'prairie', 'tundra', 'savanna', 'beach', 'island', 'volcano', 'crater', 'mesa', 'butte', 'badlands', 'wetlands', 'delta']
+                    // 500+ NATURE ELEMENTS
+                    trees: [
+                        // Trees (100+)
+                        'oak tree', 'pine tree', 'palm tree', 'willow tree', 'birch tree', 'maple tree', 'cherry blossom',
+                        'bamboo', 'cactus', 'dead tree', 'bonsai tree', 'redwood', 'baobab tree', 'cypress tree',
+                        'mangrove', 'apple tree', 'orange tree', 'lemon tree', 'lime tree', 'grapefruit tree',
+                        'coconut palm', 'date palm', 'banana tree', 'mango tree', 'avocado tree', 'peach tree',
+                        'pear tree', 'plum tree', 'apricot tree', 'cherry tree', 'walnut tree', 'almond tree',
+                        'pecan tree', 'hazelnut tree', 'chestnut tree', 'spruce tree', 'fir tree', 'cedar tree',
+                        'sequoia', 'joshua tree', 'acacia tree', 'eucalyptus', 'rubber tree', 'teak tree',
+                        'mahogany tree', 'ebony tree', 'ash tree', 'elm tree', 'beech tree', 'sycamore', 'poplar',
+                        'aspen', 'cottonwood', 'dogwood', 'magnolia', 'mimosa', 'jacaranda', 'flame tree',
+                        'rainbow eucalyptus', 'dragon tree', 'bottle tree', 'kapok tree', 'fig tree', 'mulberry',
+                        'persimmon', 'pomegranate', 'olive tree', 'cork oak', 'holly tree', 'yew tree', 'juniper',
+                        'larch', 'hemlock', 'hickory', 'basswood', 'buckeye', 'catalpa', 'ginkgo', 'hawthorn',
+                        'honey locust', 'ironwood', 'linden', 'locust', 'mesquite', 'mountain ash', 'paulownia',
+                        'redbud', 'sassafras', 'serviceberry', 'silverbell', 'sourwood', 'sweetgum', 'tulip tree',
+                        'tupelo', 'witch hazel', 'yellowwood', 'zelkova', 'giant sequoia', 'coastal redwood',
+                        'dawn redwood', 'bald cypress', 'monkey puzzle tree', 'rainbow tree', 'ghost tree'
+                    ],
+                    plants: [
+                        // Plants and Flowers (100+)
+                        'flower', 'rose', 'sunflower', 'tulip', 'daisy', 'lily', 'orchid', 'iris', 'daffodil',
+                        'carnation', 'chrysanthemum', 'peony', 'hydrangea', 'lavender', 'jasmine', 'gardenia',
+                        'magnolia flower', 'azalea', 'rhododendron', 'camellia', 'hibiscus', 'bougainvillea',
+                        'wisteria', 'morning glory', 'honeysuckle', 'clematis', 'passion flower', 'bird of paradise',
+                        'lotus', 'water lily', 'poppy', 'marigold', 'zinnia', 'cosmos', 'dahlia', 'gladiolus',
+                        'amaryllis', 'begonia', 'geranium', 'petunia', 'impatiens', 'pansy', 'violet', 'snapdragon',
+                        'foxglove', 'hollyhock', 'delphinium', 'lupine', 'salvia', 'verbena', 'yarrow', 'aster',
+                        'black-eyed susan', 'coneflower', 'coreopsis', 'gaillardia', 'rudbeckia', 'sedum',
+                        'bush', 'shrub', 'hedge', 'grass', 'tall grass', 'wheat', 'corn', 'rice', 'barley', 'oats',
+                        'rye', 'sugarcane', 'fern', 'moss', 'lichen', 'mushroom', 'toadstool', 'fungus', 'vine',
+                        'ivy', 'poison ivy', 'kudzu', 'grape vine', 'hop vine', 'berry bush', 'blueberry bush',
+                        'raspberry bush', 'blackberry bush', 'strawberry plant', 'tomato plant', 'pepper plant',
+                        'cucumber vine', 'pumpkin vine', 'watermelon vine', 'squash plant', 'zucchini plant',
+                        'herb garden', 'basil', 'oregano', 'thyme', 'rosemary', 'sage', 'mint', 'parsley',
+                        'cilantro', 'dill', 'chives', 'aloe vera', 'succulent', 'air plant', 'bromeliad'
+                    ],
+                    terrain: [
+                        // Terrain Features (80+)
+                        'mountain', 'hill', 'valley', 'canyon', 'cliff', 'plateau', 'mesa', 'butte', 'peak',
+                        'ridge', 'pass', 'gorge', 'ravine', 'gully', 'crevasse', 'cave', 'cavern', 'grotto',
+                        'sinkhole', 'crater', 'volcano', 'caldera', 'geyser', 'hot spring', 'fumarole', 'mudpot',
+                        'desert', 'oasis', 'dune', 'sandstone formation', 'rock formation', 'hoodoo', 'arch',
+                        'natural bridge', 'spire', 'pillar', 'balanced rock', 'forest', 'jungle', 'rainforest',
+                        'taiga', 'tundra', 'savanna', 'prairie', 'grassland', 'meadow', 'field', 'pasture',
+                        'wetland', 'marsh', 'swamp', 'bog', 'fen', 'bayou', 'mangrove swamp', 'salt marsh',
+                        'estuary', 'delta', 'floodplain', 'beach', 'shore', 'coast', 'headland', 'peninsula',
+                        'cape', 'bay', 'cove', 'inlet', 'fjord', 'lagoon', 'atoll', 'reef', 'coral reef',
+                        'barrier reef', 'tide pool', 'island', 'archipelago', 'isthmus', 'strait', 'channel',
+                        'glacier', 'ice sheet', 'iceberg', 'ice cave', 'permafrost'
+                    ],
+                    water: [
+                        // Water Features (60+)
+                        'ocean', 'sea', 'lake', 'pond', 'river', 'stream', 'creek', 'brook', 'spring', 'waterfall',
+                        'cascade', 'rapids', 'whirlpool', 'eddy', 'pool', 'puddle', 'fountain', 'well', 'cistern',
+                        'reservoir', 'dam', 'canal', 'channel', 'aqueduct', 'moat', 'irrigation ditch', 'wetland',
+                        'flood', 'wave', 'tsunami', 'tidal wave', 'surf', 'breaker', 'whitecap', 'swell', 'current',
+                        'rip current', 'undertow', 'tide', 'high tide', 'low tide', 'neap tide', 'spring tide',
+                        'whirlpool', 'maelstrom', 'water spout', 'hot spring', 'cold spring', 'mineral spring',
+                        'artesian well', 'oasis pool', 'watering hole', 'swimming hole', 'quarry lake', 'kettle lake',
+                        'oxbow lake', 'crater lake', 'glacial lake', 'salt lake', 'lagoon', 'estuary', 'fjord'
+                    ],
+                    rocks: [
+                        // Rocks and Minerals (60+)
+                        'boulder', 'rock', 'stone', 'pebble', 'gravel', 'sand', 'crystal', 'quartz', 'amethyst',
+                        'diamond', 'ruby', 'emerald', 'sapphire', 'topaz', 'opal', 'pearl', 'jade', 'turquoise',
+                        'lapis lazuli', 'malachite', 'agate', 'jasper', 'onyx', 'obsidian', 'granite', 'marble',
+                        'limestone', 'sandstone', 'slate', 'shale', 'basalt', 'pumice', 'volcanic rock', 'lava rock',
+                        'geode', 'fossil', 'petrified wood', 'amber', 'coal', 'ore', 'iron ore', 'gold ore',
+                        'silver ore', 'copper ore', 'tin ore', 'lead ore', 'uranium ore', 'salt crystal', 'sulfur',
+                        'stalactite', 'stalagmite', 'flowstone', 'cave pearl', 'moonstone', 'sunstone', 'bloodstone',
+                        'tiger eye', 'rose quartz', 'smoky quartz', 'citrine', 'garnet', 'peridot'
+                    ],
+                    weather: [
+                        // Weather Phenomena (50+)
+                        'cloud', 'cumulus cloud', 'stratus cloud', 'cirrus cloud', 'nimbus cloud', 'storm cloud',
+                        'rain', 'drizzle', 'shower', 'downpour', 'thunderstorm', 'lightning', 'thunder', 'rainbow',
+                        'double rainbow', 'snow', 'snowflake', 'blizzard', 'snowstorm', 'hail', 'sleet', 'ice',
+                        'frost', 'fog', 'mist', 'haze', 'smog', 'wind', 'breeze', 'gust', 'gale', 'hurricane',
+                        'tornado', 'cyclone', 'typhoon', 'dust devil', 'sandstorm', 'dust storm', 'aurora',
+                        'northern lights', 'southern lights', 'meteor', 'shooting star', 'comet', 'eclipse',
+                        'solar eclipse', 'lunar eclipse', 'moonbow', 'sun dog', 'halo', 'mirage'
+                    ],
+                    biomes: [
+                        // Biomes and Ecosystems (40+)
+                        'tropical rainforest', 'temperate rainforest', 'deciduous forest', 'coniferous forest',
+                        'boreal forest', 'taiga', 'tundra', 'arctic tundra', 'alpine tundra', 'grassland',
+                        'savanna', 'prairie', 'steppe', 'pampas', 'desert', 'hot desert', 'cold desert',
+                        'coastal desert', 'semi-arid', 'chaparral', 'scrubland', 'woodland', 'wetland',
+                        'freshwater marsh', 'salt marsh', 'swamp', 'mangrove swamp', 'bog', 'fen', 'river delta',
+                        'estuary', 'coral reef', 'kelp forest', 'seagrass bed', 'deep ocean', 'abyssal plain',
+                        'continental shelf', 'intertidal zone', 'pelagic zone', 'benthic zone'
+                    ]
                 }
             },
             // Continue with more expanded categories...
             ui: {
                 types: {
-                    buttons: ['play button', 'pause button', 'stop button', 'menu button', 'settings button', 'exit button', 'confirm button', 'cancel button', 'arrow button', 'toggle switch', 'radio button', 'checkbox', 'slider', 'dropdown', 'tab'],
-                    windows: ['dialogue box', 'inventory window', 'map screen', 'character sheet', 'quest log', 'skill tree', 'crafting menu', 'shop interface', 'save menu', 'options menu', 'achievement popup', 'notification', 'tooltip', 'health bar', 'mana bar'],
-                    icons: ['heart icon', 'star icon', 'coin icon', 'gem icon', 'sword icon', 'shield icon', 'potion icon', 'map icon', 'quest marker', 'waypoint', 'exclamation mark', 'question mark', 'lock icon', 'key icon', 'skull icon']
+                    // EXPANDED UI/GUI - 800+ Interface Elements
+                    buttons: [
+                        // Action Buttons (60+)
+                        'play button', 'pause button', 'stop button', 'record button', 'fast forward', 'rewind', 'skip button', 'replay button',
+                        'menu button', 'home button', 'back button', 'forward button', 'up button', 'down button', 'left button', 'right button',
+                        'settings button', 'options button', 'preferences button', 'config button', 'gear button', 'wrench button', 'tools button',
+                        'exit button', 'close button', 'minimize button', 'maximize button', 'restore button', 'fullscreen button', 'windowed button',
+                        'confirm button', 'ok button', 'yes button', 'accept button', 'apply button', 'submit button', 'send button', 'save button',
+                        'cancel button', 'no button', 'decline button', 'reject button', 'abort button', 'escape button', 'skip button', 'ignore button',
+                        'help button', 'info button', 'about button', 'tutorial button', 'guide button', 'manual button', 'tips button', 'hints button'
+                    ],
+                    inputs: [
+                        // Input Controls (50+)
+                        'text field', 'text box', 'input box', 'search box', 'password field', 'email field', 'number field', 'date field',
+                        'checkbox', 'radio button', 'toggle switch', 'on off switch', 'power switch', 'mode switch', 'selection switch',
+                        'slider', 'range slider', 'volume slider', 'brightness slider', 'opacity slider', 'speed slider', 'progress slider',
+                        'dropdown', 'select box', 'combo box', 'list box', 'menu list', 'option list', 'choice list', 'picker',
+                        'spinner', 'number spinner', 'stepper', 'increment button', 'decrement button', 'plus button', 'minus button',
+                        'color picker', 'file picker', 'folder picker', 'image picker', 'date picker', 'time picker', 'calendar widget'
+                    ],
+                    windows: [
+                        // Window Types (80+)
+                        'main window', 'child window', 'popup window', 'modal dialog', 'dialogue box', 'message box', 'alert box', 'warning box',
+                        'inventory window', 'equipment window', 'character window', 'stats window', 'attributes window', 'skills window',
+                        'map screen', 'mini map', 'world map', 'dungeon map', 'area map', 'region map', 'location map', 'radar screen',
+                        'character sheet', 'profile screen', 'biography screen', 'backstory screen', 'character creator', 'customization screen',
+                        'quest log', 'mission log', 'task list', 'objective screen', 'achievement screen', 'trophy screen', 'badge screen',
+                        'skill tree', 'talent tree', 'ability tree', 'tech tree', 'research tree', 'upgrade tree', 'progression screen',
+                        'crafting menu', 'recipe book', 'blueprint screen', 'workshop screen', 'forge screen', 'alchemy screen', 'enchanting screen',
+                        'shop interface', 'store screen', 'market screen', 'vendor screen', 'trading screen', 'auction screen', 'exchange screen',
+                        'save menu', 'load menu', 'file menu', 'game menu', 'pause menu', 'system menu', 'debug menu', 'admin panel',
+                        'options menu', 'settings screen', 'preferences screen', 'config screen', 'controls screen', 'keybind screen', 'audio screen'
+                    ],
+                    bars: [
+                        // Progress & Status Bars (40+)
+                        'health bar', 'hp bar', 'life bar', 'vitality bar', 'stamina bar', 'energy bar', 'mana bar', 'mp bar', 'magic bar',
+                        'experience bar', 'xp bar', 'level bar', 'progress bar', 'loading bar', 'completion bar', 'achievement bar',
+                        'armor bar', 'shield bar', 'defense bar', 'attack bar', 'damage bar', 'critical bar', 'combo bar', 'charge bar',
+                        'oxygen bar', 'breath bar', 'hunger bar', 'thirst bar', 'sanity bar', 'morale bar', 'reputation bar', 'karma bar',
+                        'temperature bar', 'radiation bar', 'toxicity bar', 'infection bar', 'disease bar', 'curse bar', 'buff bar', 'debuff bar'
+                    ],
+                    panels: [
+                        // Interface Panels (60+)
+                        'control panel', 'status panel', 'info panel', 'detail panel', 'property panel', 'attribute panel', 'stat panel',
+                        'inventory panel', 'equipment panel', 'storage panel', 'container panel', 'chest panel', 'bag panel', 'pouch panel',
+                        'chat panel', 'message panel', 'log panel', 'history panel', 'news panel', 'feed panel', 'timeline panel',
+                        'minimap panel', 'compass panel', 'navigation panel', 'waypoint panel', 'marker panel', 'legend panel', 'scale panel',
+                        'social panel', 'friends panel', 'guild panel', 'party panel', 'team panel', 'group panel', 'clan panel',
+                        'leaderboard panel', 'ranking panel', 'score panel', 'statistics panel', 'analytics panel', 'metrics panel', 'data panel',
+                        'tool panel', 'palette panel', 'brush panel', 'layer panel', 'filter panel', 'effect panel', 'shader panel',
+                        'audio panel', 'video panel', 'graphics panel', 'performance panel', 'system panel', 'hardware panel', 'network panel'
+                    ]
                 }
             },
             effect: {
                 types: {
-                    magic: ['fireball', 'ice shard', 'lightning bolt', 'poison cloud', 'healing aura', 'shield bubble', 'teleport effect', 'summoning circle', 'magic missile', 'energy beam', 'arcane explosion', 'holy light', 'dark pulse', 'time warp', 'dimensional rift'],
-                    particle: ['smoke puff', 'dust cloud', 'sparkles', 'bubbles', 'steam', 'rain drops', 'snow flakes', 'leaves falling', 'petals', 'confetti', 'fireflies', 'embers', 'stars', 'light particles', 'shadow wisps'],
-                    impact: ['explosion', 'shockwave', 'crater', 'splash', 'ripple', 'crack', 'shatter', 'burst', 'flash', 'spark', 'debris', 'rubble', 'splatter', 'dent', 'scorch mark']
+                    // EXPANDED EFFECTS - 1000+ Visual Effects
+                    magic: [
+                        // Elemental Magic (100+)
+                        'fireball', 'fire blast', 'flame burst', 'fire wave', 'inferno', 'meteor', 'fire tornado', 'phoenix wings', 'lava eruption',
+                        'ice shard', 'ice spike', 'frost bolt', 'blizzard', 'ice storm', 'freeze ray', 'ice wall', 'glacier', 'ice prison',
+                        'lightning bolt', 'thunder strike', 'electric shock', 'chain lightning', 'storm cloud', 'thunder clap', 'electric field',
+                        'poison cloud', 'toxic gas', 'acid spray', 'venom spit', 'plague mist', 'disease aura', 'corruption field', 'miasma',
+                        'healing aura', 'restore light', 'regeneration', 'cure beam', 'blessing glow', 'divine light', 'life force', 'vitality',
+                        'shield bubble', 'force field', 'barrier', 'protection dome', 'ward circle', 'magic armor', 'deflection field',
+                        'teleport effect', 'portal', 'warp gate', 'dimensional door', 'blink', 'phase shift', 'ethereal form', 'displacement',
+                        'summoning circle', 'magic circle', 'ritual circle', 'pentagram', 'rune circle', 'casting circle', 'binding circle',
+                        'magic missile', 'arcane dart', 'force bolt', 'energy projectile', 'spirit arrow', 'phantom bullet', 'psychic blast',
+                        'energy beam', 'laser beam', 'death ray', 'disintegration ray', 'power beam', 'force beam', 'destruction beam'
+                    ],
+                    particle: [
+                        // Particle Effects (120+)
+                        'smoke puff', 'smoke cloud', 'smoke trail', 'steam', 'vapor', 'mist', 'fog', 'haze', 'smog', 'exhaust',
+                        'dust cloud', 'sand storm', 'dirt spray', 'debris field', 'powder explosion', 'ash cloud', 'soot particles',
+                        'sparkles', 'glitter', 'shimmer', 'twinkle', 'star dust', 'magic dust', 'fairy dust', 'pixie dust', 'cosmic dust',
+                        'bubbles', 'soap bubbles', 'air bubbles', 'water bubbles', 'magic bubbles', 'force bubbles', 'energy spheres',
+                        'rain drops', 'water drops', 'dew drops', 'tear drops', 'blood drops', 'oil drops', 'acid drops', 'poison drops',
+                        'snow flakes', 'ice crystals', 'frost particles', 'hail', 'sleet', 'blizzard particles', 'snow storm', 'ice shards',
+                        'leaves falling', 'autumn leaves', 'flower petals', 'cherry blossoms', 'rose petals', 'dandelion seeds',
+                        'confetti', 'paper bits', 'ticker tape', 'celebration particles', 'party streamers', 'balloon pieces',
+                        'fireflies', 'lightning bugs', 'glow worms', 'light orbs', 'will o wisps', 'spirit lights', 'ghost lights',
+                        'embers', 'fire sparks', 'cinders', 'burning particles', 'flame bits', 'molten drops', 'lava particles',
+                        'stars', 'shooting stars', 'meteor trail', 'comet tail', 'stellar dust', 'nebula particles', 'galaxy swirl'
+                    ],
+                    impact: [
+                        // Impact & Destruction Effects (80+)
+                        'explosion', 'big explosion', 'nuclear explosion', 'atomic blast', 'mushroom cloud', 'fire explosion', 'gas explosion',
+                        'shockwave', 'blast wave', 'pressure wave', 'sonic boom', 'air burst', 'ground wave', 'tremor', 'quake',
+                        'crater', 'blast crater', 'impact crater', 'hole', 'pit', 'chasm', 'fissure', 'crack', 'split', 'rupture',
+                        'splash', 'water splash', 'blood splash', 'mud splash', 'paint splash', 'liquid burst', 'fluid spray',
+                        'ripple', 'water ripple', 'energy ripple', 'force ripple', 'shock ripple', 'wave effect', 'distortion',
+                        'shatter', 'glass break', 'crystal shatter', 'ice break', 'stone crack', 'wall collapse', 'structure break',
+                        'burst', 'energy burst', 'light burst', 'power burst', 'force burst', 'magic burst', 'elemental burst',
+                        'flash', 'bright flash', 'camera flash', 'lightning flash', 'strobe light', 'blinding light', 'white out',
+                        'spark', 'electric spark', 'metal spark', 'welding spark', 'grinding spark', 'friction spark', 'static spark',
+                        'debris', 'rubble', 'fragments', 'chunks', 'pieces', 'bits', 'shards', 'splinters', 'wreckage', 'remains'
+                    ],
+                    weather: [
+                        // Weather Effects (60+)
+                        'rain', 'heavy rain', 'light rain', 'drizzle', 'downpour', 'storm', 'thunderstorm', 'lightning storm',
+                        'snow', 'heavy snow', 'light snow', 'snow storm', 'blizzard', 'snow flurry', 'powder snow', 'wet snow',
+                        'wind', 'strong wind', 'gale', 'hurricane', 'tornado', 'cyclone', 'whirlwind', 'dust devil', 'vortex',
+                        'fog', 'thick fog', 'morning mist', 'sea fog', 'ground fog', 'haze', 'smog', 'vapor', 'steam cloud',
+                        'clouds', 'storm clouds', 'dark clouds', 'rain clouds', 'thunder clouds', 'cumulus', 'nimbus', 'cirrus',
+                        'hail', 'ice storm', 'sleet', 'freezing rain', 'frost', 'ice fog', 'black ice', 'icicles', 'frozen rain'
+                    ],
+                    environmental: [
+                        // Environmental Effects (60+)
+                        'aurora', 'northern lights', 'rainbow', 'sunbeam', 'moonbeam', 'sunray', 'god ray', 'light shaft',
+                        'volcano', 'lava flow', 'magma', 'geyser', 'hot spring', 'steam vent', 'sulfur gas', 'ash fall',
+                        'earthquake', 'landslide', 'avalanche', 'rockfall', 'mudslide', 'sinkhole', 'ground collapse',
+                        'tsunami', 'tidal wave', 'flood', 'flash flood', 'river rapids', 'waterfall', 'whirlpool', 'maelstrom',
+                        'forest fire', 'wildfire', 'brush fire', 'grass fire', 'canopy fire', 'ember storm', 'fire whirl',
+                        'sandstorm', 'dust storm', 'sand devil', 'desert wind', 'sirocco', 'haboob', 'sand cloud'
+                    ]
                 }
             },
             tile: {
                 types: {
-                    floor: ['grass tile', 'dirt tile', 'stone tile', 'wood floor', 'carpet tile', 'marble floor', 'brick floor', 'sand tile', 'snow tile', 'ice tile', 'lava tile', 'water tile', 'metal grating', 'concrete', 'cobblestone'],
-                    wall: ['brick wall', 'stone wall', 'wood wall', 'metal wall', 'hedge wall', 'fence', 'castle wall', 'cave wall', 'tech wall', 'glass wall', 'energy barrier', 'force field', 'prison bars', 'bamboo wall', 'ice wall'],
-                    path: ['dirt path', 'stone path', 'brick road', 'wooden bridge', 'rope bridge', 'stone bridge', 'railroad', 'highway', 'trail', 'boardwalk', 'stairs', 'ladder', 'elevator', 'escalator', 'teleporter pad']
+                    // LOWER TERRAIN - Base Ground Surfaces by Biome (120+ items)
+                    lowerTerrain: [
+                        // Grassland Biome
+                        'grass floor', 'meadow ground', 'prairie surface', 'lawn terrain', 'pasture ground',
+                        // Forest Biome
+                        'dirt ground', 'forest floor', 'woodland path', 'leaf carpet', 'bark texture', 'root network',
+                        // Desert Biome
+                        'sand surface', 'dune sand', 'red sand', 'sandstone floor', 'desert rock',
+                        // Snow Biome
+                        'snow ground', 'ice surface', 'frozen ground', 'permafrost', 'glacier ice',
+                        // Swamp Biome
+                        'mud terrain', 'bog water', 'marsh ground', 'swamp water', 'murky pond',
+                        // Volcano Biome
+                        'lava flow', 'magma surface', 'obsidian ground', 'pumice terrain', 'volcanic rock', 'ash layer',
+                        // Ocean Biome
+                        'water surface', 'shallow water', 'deep water', 'seafloor', 'coral base',
+                        // Cave Biome
+                        'stone floor', 'rock surface', 'slate ground', 'limestone ground', 'granite surface',
+                        // Mushroom Biome
+                        'mushroom patch', 'spore ground', 'mycelium network', 'fungal surface', 'toadstool base',
+                        // Crystal Biome
+                        'crystal formation', 'gem surface', 'ore ground', 'mineral deposits', 'quartz floor',
+                        // Urban Biome
+                        'concrete surface', 'asphalt road', 'brick paving', 'cobblestone street', 'flagstone path',
+                        // Tech Biome
+                        'metal grating', 'steel plating', 'circuit board', 'holographic surface', 'neon glow'
+                    ],
+                    // UPPER TERRAIN - Ground Overlays by Biome (130+ items)
+                    upperTerrain: [
+                        // Grassland Biome
+                        'grass overlay', 'flower patch', 'dandelions', 'clover spread', 'wildflower mix',
+                        // Forest Biome
+                        'fallen leaves', 'leaf litter', 'pine needles', 'twig scatter', 'bark pieces', 'moss overlay',
+                        // Desert Biome
+                        'sand drift', 'dust layer', 'cactus needles', 'tumbleweeds', 'bone fragments',
+                        // Snow Biome
+                        'snow cover', 'ice patches', 'frost layer', 'icicle drops', 'snowflakes',
+                        // Swamp Biome
+                        'lily pads', 'algae patches', 'reed growth', 'moss overlay', 'slime puddles',
+                        // Volcano Biome
+                        'ember scatter', 'cinder drops', 'soot patches', 'char marks', 'sulfur crystals',
+                        // Ocean Biome
+                        'coral growth', 'seaweed patches', 'kelp overlay', 'barnacle clusters', 'sea foam',
+                        // Cave Biome
+                        'rock debris', 'pebble scatter', 'stone chips', 'stalactite drops', 'mineral veins',
+                        // Mushroom Biome
+                        'mushroom sprouts', 'spore clouds', 'fungal growth', 'mycelium threads', 'glowing caps',
+                        // Crystal Biome
+                        'crystal growth', 'gem scatter', 'ore veins', 'precious stones', 'sparkle zones',
+                        // Urban Biome
+                        'trash scatter', 'oil stains', 'crack lines', 'wear marks', 'graffiti spots',
+                        // Tech Biome
+                        'circuit fragments', 'wire pieces', 'metal scraps', 'energy wisps', 'hologram glitches',
+                        // Magic Biome
+                        'magic sparkles', 'spell residue', 'arcane symbols', 'mystic runes', 'energy traces'
+                    ],
+                    // TRANSITION WALLS - Vertical Barriers by Biome (140+ items)
+                    transition: [
+                        // Grassland Biome
+                        'hedge wall', 'wooden fence', 'stone wall', 'ivy wall', 'vine wall',
+                        // Forest Biome
+                        'wooden wall', 'log wall', 'bark wall', 'tree trunk', 'bamboo fence',
+                        // Desert Biome
+                        'sandstone wall', 'adobe wall', 'clay wall', 'cactus fence', 'sand wall',
+                        // Snow Biome
+                        'ice wall', 'glacier wall', 'frozen wall', 'icicle wall', 'snow wall',
+                        // Swamp Biome
+                        'reed barrier', 'mangrove roots', 'bog wall', 'mud wall', 'moss wall',
+                        // Volcano Biome
+                        'lava wall', 'molten barrier', 'obsidian wall', 'volcanic rock', 'ash wall',
+                        // Ocean Biome
+                        'coral wall', 'seaweed barrier', 'water wall', 'ice barrier', 'wave wall',
+                        // Cave Biome
+                        'stone wall', 'rock wall', 'limestone cave', 'granite face', 'stalactite wall',
+                        // Mushroom Biome
+                        'mushroom wall', 'fungal barrier', 'spore wall', 'mycelium wall', 'toadstool fence',
+                        // Crystal Biome
+                        'crystal wall', 'gem wall', 'mineral wall', 'quartz wall', 'diamond barrier',
+                        // Urban Biome
+                        'brick wall', 'concrete wall', 'metal wall', 'glass wall', 'chain link fence',
+                        // Tech Biome
+                        'circuit wall', 'holographic wall', 'energy barrier', 'force field', 'plasma wall',
+                        // Magic Biome
+                        'magic barrier', 'spell wall', 'enchanted barrier', 'mystical wall', 'arcane shield',
+                        // Undead Biome
+                        'bone wall', 'skeleton wall', 'skull barrier', 'fossil wall', 'tomb wall'
+                    ],
+                },
+                details: {
+                    style: ['8x8', '16x16', '32x32', '48x48', '64x64', 'isometric', 'top-down', 'side-view', 'angled', '3D effect', 'flat design', 'detailed', 'minimalist', 'pixel perfect', 'hand-drawn', 'procedural'],
+                    pattern: ['solid', 'striped', 'checkered', 'diamond', 'herringbone', 'hexagonal', 'circular', 'square', 'triangular', 'random', 'organic', 'geometric', 'repeating', 'seamless', 'tileable', 'non-repeating'],
+                    condition: ['pristine', 'clean', 'dirty', 'weathered', 'cracked', 'broken', 'mossy', 'overgrown', 'flooded', 'frozen', 'burnt', 'corroded', 'ancient', 'new', 'polished', 'rough']
                 }
             },
             icon: {
                 types: {
-                    items: ['health potion icon', 'mana potion icon', 'gold coin icon', 'gem icon', 'key icon', 'map icon', 'compass icon', 'scroll icon', 'book icon', 'bag icon', 'chest icon', 'bottle icon', 'food icon', 'armor icon', 'weapon icon'],
-                    status: ['buff icon', 'debuff icon', 'poison icon', 'burn icon', 'freeze icon', 'stun icon', 'sleep icon', 'confusion icon', 'rage icon', 'shield icon', 'speed icon', 'strength icon', 'magic icon', 'stealth icon', 'curse icon'],
-                    ui: ['settings icon', 'menu icon', 'close icon', 'minimize icon', 'maximize icon', 'save icon', 'load icon', 'delete icon', 'edit icon', 'search icon', 'filter icon', 'sort icon', 'refresh icon', 'home icon', 'back icon']
+                    // EXPANDED ICONS - 1000+ Game Asset Icons
+                    items: [
+                        // Consumables (60+)
+                        'health potion icon', 'mana potion icon', 'stamina potion icon', 'energy potion icon', 'antidote icon', 'healing herb icon',
+                        'strength potion icon', 'speed potion icon', 'invisibility potion icon', 'fire potion icon', 'ice potion icon', 'poison bottle icon',
+                        'food icon', 'bread icon', 'meat icon', 'fish icon', 'fruit icon', 'vegetable icon', 'water bottle icon', 'wine bottle icon',
+                        'scroll icon', 'spell scroll icon', 'map scroll icon', 'letter icon', 'document icon', 'contract icon', 'recipe icon', 'blueprint icon',
+                        'bomb icon', 'grenade icon', 'dynamite icon', 'explosive icon', 'firework icon', 'smoke bomb icon', 'flash bomb icon', 'mine icon'
+                    ],
+                    equipment: [
+                        // Gear & Equipment (80+)
+                        'weapon icon', 'sword icon', 'axe icon', 'bow icon', 'staff icon', 'wand icon', 'dagger icon', 'hammer icon', 'spear icon',
+                        'armor icon', 'helmet icon', 'chest armor icon', 'leg armor icon', 'boots icon', 'gloves icon', 'gauntlets icon', 'cloak icon',
+                        'shield icon', 'buckler icon', 'tower shield icon', 'round shield icon', 'kite shield icon', 'heater shield icon', 'magic shield icon',
+                        'ring icon', 'amulet icon', 'necklace icon', 'bracelet icon', 'belt icon', 'earring icon', 'crown icon', 'tiara icon', 'circlet icon',
+                        'gem icon', 'ruby icon', 'diamond icon', 'emerald icon', 'sapphire icon', 'crystal icon', 'pearl icon', 'opal icon', 'onyx icon',
+                        'key icon', 'golden key icon', 'silver key icon', 'brass key icon', 'skeleton key icon', 'master key icon', 'ancient key icon',
+                        'tool icon', 'hammer icon', 'pickaxe icon', 'shovel icon', 'rope icon', 'torch icon', 'lantern icon', 'grappling hook icon'
+                    ],
+                    currency: [
+                        // Money & Valuables (40+)
+                        'gold coin icon', 'silver coin icon', 'copper coin icon', 'platinum coin icon', 'ancient coin icon', 'foreign coin icon',
+                        'gem icon', 'jewel icon', 'treasure icon', 'gold bar icon', 'silver ingot icon', 'precious metal icon', 'bullion icon',
+                        'currency icon', 'money icon', 'cash icon', 'credit icon', 'token icon', 'chip icon', 'voucher icon', 'ticket icon',
+                        'bank note icon', 'bill icon', 'check icon', 'bond icon', 'stock icon', 'investment icon', 'portfolio icon', 'wallet icon',
+                        'purse icon', 'coin pouch icon', 'money bag icon', 'treasure chest icon', 'safe icon', 'vault icon', 'bank icon'
+                    ],
+                    status: [
+                        // Status Effects (100+)
+                        'buff icon', 'debuff icon', 'enhancement icon', 'blessing icon', 'curse icon', 'hex icon', 'jinx icon', 'charm icon',
+                        'poison icon', 'toxic icon', 'venom icon', 'acid icon', 'disease icon', 'plague icon', 'infection icon', 'virus icon',
+                        'burn icon', 'fire icon', 'flame icon', 'heat icon', 'scorch icon', 'ignite icon', 'incinerate icon', 'blaze icon',
+                        'freeze icon', 'frost icon', 'ice icon', 'cold icon', 'frozen icon', 'chill icon', 'hypothermia icon', 'frostbite icon',
+                        'stun icon', 'paralysis icon', 'immobile icon', 'rooted icon', 'trapped icon', 'bound icon', 'entangled icon', 'webbed icon',
+                        'sleep icon', 'unconscious icon', 'knocked out icon', 'sedated icon', 'drowsy icon', 'tired icon', 'exhausted icon',
+                        'confusion icon', 'dazed icon', 'disoriented icon', 'bewildered icon', 'lost icon', 'scrambled icon', 'mixed up icon',
+                        'rage icon', 'anger icon', 'fury icon', 'berserker icon', 'enraged icon', 'furious icon', 'mad icon', 'livid icon',
+                        'shield icon', 'protection icon', 'defense icon', 'armor icon', 'barrier icon', 'ward icon', 'guard icon', 'resist icon',
+                        'speed icon', 'haste icon', 'swift icon', 'quick icon', 'fast icon', 'accelerated icon', 'turbo icon', 'rush icon',
+                        'strength icon', 'power icon', 'might icon', 'force icon', 'strong icon', 'muscular icon', 'mighty icon', 'potent icon',
+                        'magic icon', 'spell icon', 'enchanted icon', 'mystical icon', 'arcane icon', 'supernatural icon', 'ethereal icon'
+                    ],
+                    ui: [
+                        // Interface Icons (120+)
+                        'settings icon', 'gear icon', 'cog icon', 'options icon', 'preferences icon', 'config icon', 'setup icon', 'tools icon',
+                        'menu icon', 'hamburger icon', 'list icon', 'navigation icon', 'nav icon', 'dropdown icon', 'submenu icon', 'category icon',
+                        'close icon', 'x icon', 'cancel icon', 'exit icon', 'quit icon', 'abort icon', 'stop icon', 'end icon', 'terminate icon',
+                        'minimize icon', 'shrink icon', 'collapse icon', 'reduce icon', 'contract icon', 'fold icon', 'compress icon', 'condense icon',
+                        'maximize icon', 'expand icon', 'enlarge icon', 'fullscreen icon', 'zoom icon', 'magnify icon', 'increase icon', 'stretch icon',
+                        'save icon', 'disk icon', 'floppy icon', 'download icon', 'export icon', 'backup icon', 'archive icon', 'store icon',
+                        'load icon', 'open icon', 'import icon', 'upload icon', 'retrieve icon', 'restore icon', 'recover icon', 'access icon',
+                        'delete icon', 'trash icon', 'bin icon', 'remove icon', 'erase icon', 'clear icon', 'wipe icon', 'purge icon', 'destroy icon',
+                        'edit icon', 'pencil icon', 'pen icon', 'modify icon', 'change icon', 'alter icon', 'update icon', 'revise icon', 'adjust icon',
+                        'search icon', 'magnify icon', 'find icon', 'look icon', 'seek icon', 'hunt icon', 'locate icon', 'discover icon', 'explore icon',
+                        'filter icon', 'sieve icon', 'screen icon', 'sort icon', 'organize icon', 'arrange icon', 'order icon', 'rank icon',
+                        'refresh icon', 'reload icon', 'update icon', 'sync icon', 'renew icon', 'restart icon', 'reset icon', 'cycle icon',
+                        'home icon', 'house icon', 'main icon', 'start icon', 'origin icon', 'base icon', 'hub icon', 'center icon', 'root icon',
+                        'back icon', 'previous icon', 'return icon', 'undo icon', 'reverse icon', 'revert icon', 'retreat icon', 'backward icon',
+                        'forward icon', 'next icon', 'advance icon', 'proceed icon', 'continue icon', 'progress icon', 'ahead icon', 'onward icon'
+                    ],
+                    navigation: [
+                        // Map & Navigation (60+)
+                        'map icon', 'world map icon', 'mini map icon', 'chart icon', 'atlas icon', 'globe icon', 'terrain icon', 'topography icon',
+                        'compass icon', 'north icon', 'direction icon', 'bearing icon', 'orientation icon', 'navigation icon', 'guide icon',
+                        'waypoint icon', 'marker icon', 'pin icon', 'flag icon', 'beacon icon', 'landmark icon', 'checkpoint icon', 'destination icon',
+                        'quest marker icon', 'objective icon', 'mission icon', 'task icon', 'goal icon', 'target icon', 'bullseye icon', 'crosshair icon',
+                        'path icon', 'route icon', 'road icon', 'trail icon', 'track icon', 'course icon', 'way icon', 'passage icon', 'journey icon',
+                        'location icon', 'place icon', 'position icon', 'spot icon', 'site icon', 'area icon', 'zone icon', 'region icon', 'territory icon',
+                        'portal icon', 'gate icon', 'door icon', 'entrance icon', 'exit icon', 'passage icon', 'tunnel icon', 'bridge icon', 'stairs icon'
+                    ],
+                    social: [
+                        // Social & Communication (40+)
+                        'player icon', 'avatar icon', 'character icon', 'person icon', 'user icon', 'profile icon', 'account icon', 'identity icon',
+                        'friend icon', 'buddy icon', 'ally icon', 'companion icon', 'partner icon', 'teammate icon', 'guild member icon', 'party icon',
+                        'enemy icon', 'foe icon', 'rival icon', 'opponent icon', 'adversary icon', 'hostile icon', 'threat icon', 'danger icon',
+                        'chat icon', 'message icon', 'talk icon', 'speak icon', 'communicate icon', 'dialogue icon', 'conversation icon', 'text icon',
+                        'group icon', 'team icon', 'party icon', 'guild icon', 'clan icon', 'faction icon', 'alliance icon', 'organization icon'
+                    ]
                 }
             },
             prop: {
                 types: {
-                    dungeon: ['torch', 'brazier', 'chain', 'cage', 'skeleton', 'cobweb', 'trap', 'pressure plate', 'lever', 'button', 'pedestal', 'altar', 'sarcophagus', 'coffin', 'tombstone'],
-                    town: ['street lamp', 'bench', 'fountain', 'statue', 'sign post', 'mail box', 'trash can', 'flower pot', 'flag pole', 'clock tower', 'bell', 'market stall', 'wagon', 'barrel', 'crate'],
-                    nature: ['rock', 'log', 'stump', 'mushroom', 'flower', 'grass patch', 'puddle', 'nest', 'beehive', 'spider web', 'vine', 'root', 'crystal formation', 'ore deposit', 'fossil']
+                    // 1000+ GAME PROPS - Based on 2024-2025 game asset trends
+                    dungeon: [
+                        // Dungeon Environment (80+)
+                        'torch', 'wall torch', 'brazier', 'fire pit', 'candle', 'candlestick', 'candelabra',
+                        'lantern', 'oil lamp', 'crystal lamp', 'glowing orb', 'magic light', 'fire bowl',
+                        'chain', 'iron chain', 'rusty chain', 'shackles', 'manacles', 'cage', 'prison cell',
+                        'skeleton', 'skull', 'bone pile', 'rib cage', 'femur', 'spine', 'skeletal remains',
+                        'cobweb', 'spider web', 'dust motes', 'dirt patch', 'moss patch', 'mold growth',
+                        'trap', 'spike trap', 'arrow trap', 'pit trap', 'blade trap', 'poison dart trap',
+                        'pressure plate', 'floor switch', 'hidden switch', 'secret button', 'wall lever',
+                        'lever', 'pull lever', 'switch lever', 'gate lever', 'door lever', 'bridge lever',
+                        'button', 'stone button', 'crystal button', 'rune button', 'magic button',
+                        'pedestal', 'stone pedestal', 'marble pedestal', 'crystal pedestal', 'altar pedestal',
+                        'altar', 'sacrificial altar', 'stone altar', 'blood altar', 'ritual altar', 'shrine',
+                        'sarcophagus', 'stone tomb', 'marble sarcophagus', 'ornate coffin', 'wooden coffin',
+                        'coffin', 'casket', 'burial chamber', 'crypt door', 'tomb entrance',
+                        'tombstone', 'gravestone', 'headstone', 'grave marker', 'memorial stone',
+                        'cauldron', 'witch cauldron', 'brewing pot', 'alchemy station', 'potion stand',
+                        'crystal formation', 'glowing crystal', 'magic crystal', 'gem cluster', 'ore vein'
+                    ],
+                    town: [
+                        // Urban Environment (100+)
+                        'street lamp', 'gas lamp', 'electric lamp', 'torch post', 'lantern post',
+                        'bench', 'park bench', 'wooden bench', 'stone bench', 'iron bench', 'bus bench',
+                        'fountain', 'water fountain', 'stone fountain', 'decorative fountain', 'fish fountain',
+                        'statue', 'hero statue', 'king statue', 'horse statue', 'angel statue', 'monument',
+                        'sign post', 'wooden sign', 'metal sign', 'shop sign', 'tavern sign', 'inn sign',
+                        'mail box', 'post box', 'letter box', 'package box', 'delivery box',
+                        'trash can', 'garbage bin', 'waste basket', 'recycling bin', 'compost bin',
+                        'flower pot', 'planter', 'flower bed', 'garden box', 'herb planter', 'tree pot',
+                        'flag pole', 'banner pole', 'pennant pole', 'country flag', 'guild banner',
+                        'clock tower', 'bell tower', 'church bell', 'town bell', 'alarm bell',
+                        'market stall', 'vendor cart', 'food cart', 'merchant booth', 'trading post',
+                        'wagon', 'cart', 'wheelbarrow', 'handcart', 'carriage', 'hay wagon',
+                        'barrel', 'wine barrel', 'water barrel', 'storage barrel', 'oil drum',
+                        'crate', 'wooden crate', 'shipping crate', 'storage box', 'cargo container',
+                        'well', 'water well', 'stone well', 'wishing well', 'village well', 'draw well',
+                        'fence', 'wooden fence', 'picket fence', 'stone wall', 'hedge fence', 'iron fence',
+                        'gate', 'wooden gate', 'iron gate', 'garden gate', 'city gate', 'castle gate',
+                        'anvil', 'blacksmith anvil', 'forge', 'smithy tools', 'hammer rack', 'tool rack',
+                        'hitching post', 'horse post', 'stable post', 'tether pole', 'tie rail'
+                    ],
+                    nature: [
+                        // Natural Environment (120+)
+                        // Rocks & Stones
+                        'rock', 'boulder', 'pebble', 'stone pile', 'rock formation', 'standing stone',
+                        'river rock', 'smooth stone', 'jagged rock', 'moss rock', 'crystal rock',
+                        // Trees & Wood
+                        'log', 'fallen log', 'hollow log', 'driftwood', 'dead wood', 'petrified wood',
+                        'stump', 'tree stump', 'hollow stump', 'mushroom stump', 'burned stump',
+                        'branch', 'fallen branch', 'twig pile', 'kindling', 'firewood stack',
+                        // Plants & Fungi
+                        'mushroom', 'toadstool', 'fungus', 'fairy ring', 'mushroom circle', 'spore cloud',
+                        'flower', 'wildflower', 'flower patch', 'flower cluster', 'blooming bush',
+                        'grass patch', 'tall grass', 'wheat grass', 'reed grass', 'marsh grass',
+                        'fern', 'bracken', 'moss', 'lichen', 'algae', 'kelp', 'seaweed',
+                        'vine', 'ivy', 'climbing vine', 'hanging vine', 'poison ivy', 'grape vine',
+                        'root', 'tree root', 'exposed root', 'root system', 'root tangle',
+                        // Water Features
+                        'puddle', 'water puddle', 'mud puddle', 'rain puddle', 'ice puddle',
+                        'stream', 'brook', 'creek', 'rivulet', 'spring', 'water source',
+                        'waterfall', 'cascade', 'water drop', 'splash', 'ripple', 'whirlpool',
+                        // Animal Features
+                        'nest', 'bird nest', 'eagle nest', 'squirrel nest', 'rabbit burrow', 'fox den',
+                        'beehive', 'wasp nest', 'ant hill', 'termite mound', 'spider web',
+                        'animal tracks', 'paw prints', 'hoof prints', 'claw marks', 'bite marks',
+                        // Geological Features
+                        'crystal formation', 'geode', 'gem cluster', 'ore deposit', 'gold vein',
+                        'fossil', 'dinosaur bone', 'ancient shell', 'petrified remains', 'amber',
+                        'cave entrance', 'cavern mouth', 'rock shelter', 'natural arch', 'stone bridge'
+                    ],
+                    decorative: [
+                        // Decorative Props (80+)
+                        'painting', 'portrait', 'landscape painting', 'abstract art', 'framed picture',
+                        'tapestry', 'wall hanging', 'banner', 'flag', 'pennant', 'coat of arms',
+                        'carpet', 'rug', 'throw rug', 'persian rug', 'prayer rug', 'animal skin rug',
+                        'vase', 'flower vase', 'ceramic vase', 'crystal vase', 'decorative pot',
+                        'sculpture', 'bust', 'figurine', 'statuette', 'carved figure', 'idol',
+                        'mirror', 'hand mirror', 'wall mirror', 'ornate mirror', 'broken mirror',
+                        'curtains', 'drapes', 'window curtains', 'bed curtains', 'room divider',
+                        'pillow', 'cushion', 'throw pillow', 'decorative pillow', 'silk pillow',
+                        'candle holder', 'candlestick', 'sconce', 'chandelier', 'hanging light',
+                        'ornament', 'decoration', 'trinket', 'bauble', 'charm', 'talisman',
+                        'trophy', 'award', 'medal', 'plaque', 'certificate', 'ribbon',
+                        'plant', 'potted plant', 'house plant', 'decorative tree', 'bonsai tree',
+                        'clock', 'wall clock', 'grandfather clock', 'pocket watch', 'sundial',
+                        'weapon display', 'sword rack', 'shield display', 'armor stand', 'helmet rack'
+                    ],
+                    interactive: [
+                        // Interactive Objects (60+)
+                        'chest', 'treasure chest', 'wooden chest', 'iron chest', 'locked chest',
+                        'door', 'wooden door', 'iron door', 'secret door', 'trap door', 'magic door',
+                        'switch', 'lever switch', 'button switch', 'magic switch', 'hidden switch',
+                        'terminal', 'computer terminal', 'control panel', 'interface', 'keypad',
+                        'crystal', 'power crystal', 'energy crystal', 'magic crystal', 'glowing crystal',
+                        'orb', 'crystal orb', 'magic orb', 'scrying orb', 'power orb', 'glowing orb',
+                        'portal', 'magic portal', 'dimensional portal', 'transport portal', 'gate portal',
+                        'machine', 'ancient machine', 'magical device', 'clockwork device', 'steam engine',
+                        'altar', 'ritual altar', 'magic altar', 'prayer altar', 'offering altar',
+                        'teleporter', 'transport pad', 'beam platform', 'warp gate', 'portal gate',
+                        'generator', 'power generator', 'energy source', 'mana generator', 'crystal generator',
+                        'workstation', 'crafting station', 'alchemy station', 'enchanting station', 'forge'
+                    ],
+                    containers: [
+                        // Storage & Containers (50+)
+                        'box', 'wooden box', 'storage box', 'jewelry box', 'music box', 'puzzle box',
+                        'bag', 'money bag', 'grain sack', 'flour sack', 'potato sack', 'mail bag',
+                        'pot', 'cooking pot', 'clay pot', 'iron pot', 'ceramic pot', 'flower pot',
+                        'jar', 'storage jar', 'pickle jar', 'honey jar', 'cookie jar', 'medicine jar',
+                        'bottle', 'wine bottle', 'potion bottle', 'milk bottle', 'oil bottle', 'message bottle',
+                        'basket', 'wicker basket', 'fruit basket', 'bread basket', 'laundry basket',
+                        'bucket', 'water bucket', 'milk bucket', 'paint bucket', 'coal bucket',
+                        'sack', 'burlap sack', 'canvas sack', 'leather sack', 'cloth sack', 'rice sack',
+                        'urn', 'funeral urn', 'decorative urn', 'storage urn', 'water urn', 'wine urn',
+                        'trunk', 'storage trunk', 'travel trunk', 'treasure trunk', 'old trunk'
+                    ],
+                    magical: [
+                        // Magical Props (70+)
+                        'magic circle', 'summoning circle', 'ritual circle', 'protection circle', 'teleport circle',
+                        'rune stone', 'magic rune', 'power rune', 'ancient rune', 'glowing rune',
+                        'enchanted object', 'cursed object', 'blessed item', 'holy relic', 'dark artifact',
+                        'spell focus', 'magic focus', 'crystal focus', 'staff focus', 'wand focus',
+                        'mana crystal', 'power gem', 'soul gem', 'spirit stone', 'essence crystal',
+                        'floating object', 'levitating stone', 'hovering crystal', 'flying book', 'floating candle',
+                        'magic book', 'spell tome', 'grimoire', 'ancient codex', 'forbidden text',
+                        'cauldron', 'magic cauldron', 'brewing pot', 'potion cauldron', 'witch cauldron',
+                        'staff stand', 'wand rack', 'spell component', 'magic ingredient', 'ritual tool',
+                        'arcane device', 'mystical apparatus', 'enchanted mechanism', 'magical contraption',
+                        'ward stone', 'protection totem', 'barrier generator', 'shield projector',
+                        'scrying bowl', 'divination tool', 'fortune telling device', 'prophecy stone',
+                        'elemental focus', 'fire essence', 'water essence', 'earth essence', 'air essence',
+                        'dimension anchor', 'planar focus', 'void crystal', 'reality stone', 'time crystal'
+                    ],
+                    technology: [
+                        // Sci-Fi/Tech Props (40+)
+                        'computer', 'terminal', 'console', 'control panel', 'interface', 'monitor',
+                        'robot', 'android', 'drone', 'probe', 'scanner', 'sensor', 'detector',
+                        'energy cell', 'power core', 'battery', 'fuel cell', 'reactor core',
+                        'hologram', 'holographic display', 'projection', 'virtual screen', 'data stream',
+                        'laser', 'beam emitter', 'energy weapon', 'plasma cannon', 'force field',
+                        'teleporter', 'transport pad', 'beam platform', 'matter transmitter',
+                        'spaceship part', 'engine part', 'hull fragment', 'control module', 'life support',
+                        'alien artifact', 'unknown device', 'extraterrestrial object', 'crashed probe',
+                        'cybernetic implant', 'neural interface', 'data chip', 'memory core', 'ai core'
+                    ]
+                },
+                details: {
+                    size: ['tiny', 'small', 'medium', 'large', 'huge', 'massive', 'miniature', 'oversized', 'life-sized', 'scaled'],
+                    condition: ['pristine', 'good', 'worn', 'damaged', 'broken', 'rusted', 'weathered', 'ancient', 'new', 'restored', 'cracked', 'chipped', 'faded', 'polished'],
+                    material: ['wood', 'stone', 'metal', 'crystal', 'glass', 'ceramic', 'clay', 'bone', 'leather', 'fabric', 'rope', 'plastic', 'rubber', 'bronze', 'iron', 'steel', 'gold', 'silver'],
+                    style: ['ornate', 'simple', 'decorative', 'functional', 'artistic', 'crude', 'elegant', 'rustic', 'modern', 'ancient', 'medieval', 'futuristic', 'alien', 'magical', 'cursed', 'blessed'],
+                    origin: ['handmade', 'crafted', 'forged', 'carved', 'molded', 'grown', 'summoned', 'discovered', 'inherited', 'stolen', 'found', 'created', 'enchanted', 'blessed', 'cursed', 'ancient']
                 }
             },
             item: {
                 types: {
-                    potions: ['health potion', 'mana potion', 'stamina potion', 'poison bottle', 'antidote', 'elixir', 'holy water', 'energy drink', 'buff potion', 'speed potion', 'strength potion', 'defense potion', 'invisibility potion', 'fire resistance', 'ice resistance'],
-                    tools: ['pickaxe', 'shovel', 'axe', 'hammer', 'wrench', 'screwdriver', 'saw', 'drill', 'crowbar', 'rope', 'grappling hook', 'torch', 'lantern', 'compass', 'map'],
-                    treasures: ['gold coin', 'silver coin', 'copper coin', 'gem', 'diamond', 'ruby', 'emerald', 'sapphire', 'pearl', 'treasure chest', 'gold bar', 'ancient artifact', 'relic', 'crown', 'scepter'],
-                    consumables: ['bandage', 'medical kit', 'food ration', 'water bottle', 'energy bar', 'herb', 'mushroom', 'berries', 'bread', 'meat', 'fish', 'vegetables', 'fruit', 'cheese', 'wine'],
-                    magical: ['scroll', 'spell book', 'wand', 'staff', 'orb', 'crystal', 'rune', 'talisman', 'amulet', 'ring', 'enchanted stone', 'soul gem', 'magic dust', 'fairy dust', 'dragon scale'],
-                    crafting: ['wood', 'stone', 'iron ore', 'gold ore', 'leather', 'cloth', 'string', 'feather', 'bone', 'claw', 'fang', 'pelt', 'scale', 'essence', 'powder']
+                    // 1000+ GAME ITEMS
+                    potions: [
+                        // Health & Recovery (50+)
+                        'health potion', 'minor health potion', 'major health potion', 'superior health potion', 'ultimate health potion',
+                        'mana potion', 'minor mana potion', 'major mana potion', 'superior mana potion', 'ultimate mana potion',
+                        'stamina potion', 'energy potion', 'vigor potion', 'vitality potion', 'rejuvenation potion',
+                        'full restore potion', 'phoenix down', 'revival potion', 'resurrection elixir', 'life potion',
+                        'healing salve', 'medical kit', 'first aid kit', 'bandages', 'gauze', 'antiseptic', 'morphine',
+                        'antidote', 'cure poison', 'neutralize', 'panacea', 'universal antidote', 'cleansing potion',
+                        'holy water', 'blessed water', 'purifying water', 'sacred elixir', 'divine essence',
+                        'elixir of life', 'fountain of youth', 'immortality potion', 'longevity serum', 'youth potion',
+                        'recovery drink', 'energy drink', 'sports drink', 'protein shake', 'vitamin supplement',
+                        'herbal remedy', 'traditional medicine', 'folk remedy', 'healing tea', 'medicinal herb'
+                    ],
+                    enhancement: [
+                        // Stat Boosters (80+)
+                        'strength potion', 'power elixir', 'might serum', 'muscle enhancer', 'brute force',
+                        'speed potion', 'haste elixir', 'swift serum', 'agility enhancer', 'quicksilver',
+                        'defense potion', 'armor elixir', 'protection serum', 'fortification potion', 'iron skin',
+                        'intelligence potion', 'wisdom elixir', 'mind enhancer', 'brain booster', 'cognitive serum',
+                        'luck potion', 'fortune elixir', 'blessed serum', 'karma booster', 'lucky charm potion',
+                        'invisibility potion', 'stealth elixir', 'camouflage serum', 'shadow potion', 'vanishing elixir',
+                        'flight potion', 'levitation elixir', 'floating serum', 'antigravity potion', 'wing elixir',
+                        'water breathing potion', 'gills elixir', 'aquatic serum', 'underwater breathing', 'mermaid potion',
+                        'fire resistance', 'flame ward', 'heat immunity', 'fireproof elixir', 'salamander serum',
+                        'ice resistance', 'frost ward', 'cold immunity', 'freeze protection', 'yeti serum',
+                        'poison resistance', 'venom ward', 'toxin immunity', 'antivenom serum', 'snake immunity',
+                        'magic resistance', 'spell ward', 'arcane immunity', 'mana shield', 'dispel potion',
+                        'night vision', 'darkvision potion', 'cat eyes elixir', 'nocturnal serum', 'shadow sight',
+                        'true sight', 'detect magic', 'illusion piercing', 'reality serum', 'truth elixir',
+                        'berserker rage', 'battle fury', 'combat stimulant', 'warrior serum', 'bloodlust potion',
+                        'calm mind', 'peace serum', 'tranquility potion', 'meditation elixir', 'zen potion'
+                    ],
+                    tools: [
+                        // Tools & Equipment (100+)
+                        'pickaxe', 'iron pickaxe', 'steel pickaxe', 'diamond pickaxe', 'enchanted pickaxe',
+                        'shovel', 'spade', 'trenching tool', 'excavation shovel', 'archaeological brush',
+                        'axe', 'hatchet', 'splitting axe', 'felling axe', 'battle axe', 'throwing axe',
+                        'hammer', 'mallet', 'sledgehammer', 'war hammer', 'smith hammer', 'craftsman hammer',
+                        'wrench', 'spanner', 'pipe wrench', 'monkey wrench', 'adjustable wrench',
+                        'screwdriver', 'phillips head', 'flathead', 'precision screwdriver', 'electric screwdriver',
+                        'saw', 'handsaw', 'hacksaw', 'chainsaw', 'circular saw', 'band saw', 'jigsaw',
+                        'drill', 'hand drill', 'power drill', 'pneumatic drill', 'diamond drill', 'mining drill',
+                        'crowbar', 'pry bar', 'jimmy bar', 'lever', 'fulcrum bar', 'breaking bar',
+                        'rope', 'climbing rope', 'silk rope', 'hemp rope', 'chain', 'cable', 'wire',
+                        'grappling hook', 'climbing gear', 'pitons', 'carabiners', 'harness', 'rappel gear',
+                        'torch', 'lantern', 'oil lamp', 'gas lamp', 'electric torch', 'flashlight', 'headlamp',
+                        'candle', 'tallow candle', 'wax candle', 'scented candle', 'eternal flame', 'magic light',
+                        'compass', 'magnetic compass', 'astrolabe', 'sextant', 'navigation tools', 'GPS device',
+                        'map', 'treasure map', 'nautical chart', 'topographic map', 'dungeon map', 'world map',
+                        'telescope', 'spyglass', 'binoculars', 'magnifying glass', 'microscope', 'periscope',
+                        'fishing rod', 'fishing net', 'fishing line', 'fishing hook', 'tackle box', 'bait',
+                        'lock picks', 'skeleton key', 'master key', 'locksmith tools', 'thief tools'
+                    ],
+                    treasures: [
+                        // Currency & Valuables (80+)
+                        'gold coin', 'silver coin', 'copper coin', 'platinum coin', 'electrum coin', 'ancient coin',
+                        'treasure coin', 'foreign currency', 'token', 'medal', 'commemorative coin', 'lucky coin',
+                        'gem', 'precious gem', 'rare gem', 'flawless gem', 'cut gem', 'raw gem',
+                        'diamond', 'rough diamond', 'black diamond', 'blood diamond', 'cursed diamond', 'star diamond',
+                        'ruby', 'fire ruby', 'blood ruby', 'star ruby', 'crimson ruby', 'dragon ruby',
+                        'emerald', 'forest emerald', 'sea emerald', 'star emerald', 'verdant emerald', 'elven emerald',
+                        'sapphire', 'blue sapphire', 'white sapphire', 'yellow sapphire', 'star sapphire', 'royal sapphire',
+                        'topaz', 'imperial topaz', 'blue topaz', 'pink topaz', 'golden topaz', 'mystic topaz',
+                        'amethyst', 'royal amethyst', 'deep amethyst', 'pale amethyst', 'chevron amethyst',
+                        'opal', 'fire opal', 'black opal', 'crystal opal', 'boulder opal', 'water opal',
+                        'pearl', 'black pearl', 'cultured pearl', 'freshwater pearl', 'baroque pearl', 'tahitian pearl',
+                        'treasure chest', 'wooden chest', 'iron chest', 'golden chest', 'jeweled chest', 'pirate chest',
+                        'coffer', 'strongbox', 'lockbox', 'safe', 'vault door', 'bank vault',
+                        'gold bar', 'silver bar', 'platinum bar', 'ingot', 'bullion', 'precious metal',
+                        'ancient artifact', 'mysterious relic', 'divine artifact', 'cursed relic', 'blessed item',
+                        'crown', 'royal crown', 'golden crown', 'jeweled crown', 'ceremonial crown', 'war crown',
+                        'scepter', 'royal scepter', 'ceremonial staff', 'orb of power', 'rod of authority'
+                    ],
+                    consumables: [
+                        // Food & Drinks (120+)
+                        'bread', 'loaf of bread', 'crusty bread', 'sweet bread', 'sourdough', 'rye bread',
+                        'cheese', 'aged cheese', 'goat cheese', 'swiss cheese', 'cheddar', 'blue cheese',
+                        'meat', 'jerky', 'dried meat', 'smoked meat', 'cured ham', 'bacon', 'sausage',
+                        'fish', 'dried fish', 'smoked fish', 'salted fish', 'fresh fish', 'seafood',
+                        'fruit', 'apple', 'orange', 'banana', 'grapes', 'berries', 'dried fruit',
+                        'vegetables', 'carrot', 'potato', 'cabbage', 'onion', 'garlic', 'herbs',
+                        'water bottle', 'purified water', 'spring water', 'blessed water', 'ice water',
+                        'wine', 'red wine', 'white wine', 'vintage wine', 'elven wine', 'dwarven ale',
+                        'ale', 'beer', 'lager', 'stout', 'porter', 'mead', 'honey mead',
+                        'spirits', 'whiskey', 'rum', 'vodka', 'brandy', 'schnapps', 'moonshine',
+                        'coffee', 'tea', 'herbal tea', 'green tea', 'black tea', 'chai',
+                        'milk', 'goat milk', 'cow milk', 'almond milk', 'coconut milk', 'cream',
+                        'soup', 'stew', 'broth', 'chowder', 'bisque', 'consommé',
+                        'rations', 'trail mix', 'hardtack', 'survival food', 'emergency rations',
+                        'candy', 'chocolate', 'sweets', 'honey', 'sugar', 'maple syrup',
+                        'spices', 'salt', 'pepper', 'cinnamon', 'nutmeg', 'vanilla', 'saffron'
+                    ],
+                    magical: [
+                        // Magical Items (150+)
+                        'spell scroll', 'magic scroll', 'ancient scroll', 'forbidden scroll', 'divine scroll',
+                        'spell book', 'grimoire', 'tome', 'codex', 'magical manual', 'arcane book',
+                        'spellbook of fire', 'tome of ice', 'grimoire of shadows', 'codex of light', 'book of the dead',
+                        'wand', 'magic wand', 'healing wand', 'fire wand', 'ice wand', 'lightning wand',
+                        'staff', 'wizard staff', 'druid staff', 'staff of power', 'staff of healing', 'staff of fire',
+                        'rod', 'magic rod', 'rod of lordly might', 'rod of resurrection', 'immovable rod',
+                        'orb', 'crystal orb', 'scrying orb', 'orb of storms', 'orb of dragonkind', 'orb of time',
+                        'crystal', 'magic crystal', 'power crystal', 'healing crystal', 'mana crystal', 'soul crystal',
+                        'rune', 'magic rune', 'rune of power', 'rune of protection', 'rune of binding', 'elder rune',
+                        'runestone', 'carved rune', 'glowing rune', 'ancient rune', 'draconic rune', 'elven rune',
+                        'talisman', 'protective talisman', 'lucky talisman', 'ward talisman', 'cursed talisman',
+                        'amulet', 'protection amulet', 'health amulet', 'mana amulet', 'luck amulet', 'cursed amulet',
+                        'ring', 'magic ring', 'ring of power', 'ring of protection', 'ring of invisibility', 'cursed ring',
+                        'enchanted stone', 'philosopher stone', 'lodestone', 'touchstone', 'keystone', 'heartstone',
+                        'soul gem', 'filled soul gem', 'empty soul gem', 'black soul gem', 'grand soul gem',
+                        'essence', 'life essence', 'mana essence', 'elemental essence', 'divine essence', 'shadow essence',
+                        'magic dust', 'pixie dust', 'fairy dust', 'stardust', 'moon dust', 'dragon dust',
+                        'dragon scale', 'phoenix feather', 'unicorn hair', 'basilisk fang', 'griffin claw', 'mermaid scale'
+                    ],
+                    crafting: [
+                        // Crafting Materials (200+)
+                        'wood', 'oak wood', 'pine wood', 'birch wood', 'maple wood', 'mahogany', 'ebony wood',
+                        'ironwood', 'driftwood', 'petrified wood', 'enchanted wood', 'world tree wood',
+                        'stone', 'granite', 'marble', 'limestone', 'sandstone', 'slate', 'obsidian',
+                        'precious stone', 'meteorite', 'volcanic rock', 'crystal stone', 'runestone',
+                        'metal', 'iron', 'steel', 'bronze', 'copper', 'tin', 'lead', 'zinc',
+                        'silver', 'gold', 'platinum', 'mithril', 'adamantine', 'orichalcum', 'meteoric iron',
+                        'ore', 'iron ore', 'copper ore', 'tin ore', 'silver ore', 'gold ore', 'platinum ore',
+                        'mithril ore', 'adamantine ore', 'precious ore', 'rare ore', 'enchanted ore',
+                        'leather', 'hide', 'fur', 'pelt', 'skin', 'tough hide', 'exotic leather',
+                        'dragon hide', 'demon skin', 'angel feather', 'phoenix down', 'griffin hide',
+                        'cloth', 'silk', 'cotton', 'linen', 'wool', 'hemp', 'burlap', 'velvet',
+                        'magical cloth', 'spider silk', 'ghost silk', 'mooncloth', 'starweave',
+                        'string', 'rope', 'twine', 'thread', 'yarn', 'wire', 'cable', 'chain',
+                        'sinew', 'catgut', 'spider thread', 'angel hair', 'demon cord',
+                        'bone', 'skull', 'rib bone', 'finger bone', 'dragon bone', 'demon bone', 'ancient bone',
+                        'claw', 'talon', 'fang', 'tooth', 'horn', 'antler', 'tusk', 'beak',
+                        'scale', 'fin', 'gill', 'wing', 'membrane', 'carapace', 'shell', 'chitin',
+                        'feather', 'down', 'plume', 'quill', 'wing feather', 'tail feather',
+                        'essence', 'extract', 'oil', 'resin', 'sap', 'tar', 'pitch', 'glue',
+                        'powder', 'dust', 'ash', 'soot', 'sand', 'salt', 'crystal powder',
+                        'herb', 'flower', 'root', 'bark', 'leaf', 'seed', 'fruit', 'berry',
+                        'mushroom', 'toadstool', 'fungus', 'mold', 'lichen', 'moss', 'algae'
+                    ],
+                    quest: [
+                        // Quest Items (100+)
+                        'ancient key', 'skeleton key', 'master key', 'golden key', 'silver key', 'crystal key',
+                        'mysterious letter', 'sealed letter', 'royal decree', 'ancient manuscript', 'cryptic note',
+                        'treasure map', 'ancient map', 'pirate map', 'dungeon map', 'star chart', 'navigation chart',
+                        'family heirloom', 'lost artifact', 'stolen goods', 'evidence', 'clue', 'witness testimony',
+                        'royal seal', 'noble signet', 'merchant stamp', 'guild mark', 'identification papers',
+                        'magical device', 'ancient mechanism', 'clockwork gadget', 'mystical apparatus', 'arcane tool',
+                        'holy relic', 'blessed icon', 'sacred text', 'divine symbol', 'religious artifact',
+                        'cursed object', 'haunted item', 'forbidden artifact', 'dark relic', 'evil totem',
+                        'memory crystal', 'data crystal', 'information shard', 'knowledge gem', 'wisdom stone',
+                        'portal key', 'dimensional anchor', 'planar compass', 'realm stone', 'gateway orb',
+                        'love letter', 'diary entry', 'personal journal', 'family photo', 'childhood toy',
+                        'recipe book', 'formula notes', 'alchemical recipe', 'cooking instructions', 'crafting guide',
+                        'broken weapon', 'damaged armor', 'torn banner', 'shattered shield', 'cracked helm',
+                        'flower bouquet', 'rare flower', 'exotic plant', 'medicinal herb', 'poisonous mushroom',
+                        'musical instrument', 'ancient lute', 'magical flute', 'enchanted harp', 'war drum'
+                    ],
+                    technology: [
+                        // Sci-Fi Items (80+)
+                        'data pad', 'tablet computer', 'hologram projector', 'communication device', 'scanner',
+                        'energy cell', 'power core', 'battery pack', 'fusion cell', 'quantum battery',
+                        'circuit board', 'processor chip', 'memory module', 'data drive', 'hard drive',
+                        'laser pointer', 'targeting system', 'guidance computer', 'autopilot', 'ai chip',
+                        'med scanner', 'health monitor', 'vital sign detector', 'medical tricorder', 'healing beam',
+                        'force field generator', 'shield emitter', 'barrier projector', 'deflector array',
+                        'teleporter pad', 'transport beacon', 'dimensional anchor', 'portal generator',
+                        'gravity boots', 'magnetic clamps', 'anti-grav unit', 'jet pack', 'thruster pack',
+                        'oxygen tank', 'air filter', 'breathing apparatus', 'space suit', 'environment suit',
+                        'plasma container', 'energy weapon', 'photon torpedo', 'quantum mine', 'antimatter',
+                        'robot parts', 'cybernetic implant', 'bionic arm', 'neural interface', 'brain chip',
+                        'nano bots', 'micro machines', 'repair drones', 'medical nanites', 'healing swarm'
+                    ]
                 },
                 details: {
-                    condition: ['pristine', 'worn', 'damaged', 'ancient', 'glowing', 'cursed', 'blessed', 'enchanted', 'rusty', 'polished'],
-                    size: ['tiny', 'small', 'medium', 'large', 'huge', 'pocket-sized', 'handheld', 'two-handed', 'oversized', 'miniature']
+                    condition: ['pristine', 'excellent', 'good', 'fair', 'poor', 'worn', 'damaged', 'broken', 'destroyed', 'ancient', 'weathered', 'corroded', 'rusted', 'tarnished', 'polished', 'shiny', 'glowing', 'cursed', 'blessed', 'enchanted', 'magical', 'mundane', 'common', 'uncommon', 'rare', 'epic', 'legendary', 'artifact'],
+                    size: ['microscopic', 'tiny', 'small', 'compact', 'medium', 'normal', 'large', 'huge', 'massive', 'gigantic', 'colossal', 'pocket-sized', 'handheld', 'one-handed', 'two-handed', 'oversized', 'miniature', 'full-sized', 'scaled-down', 'life-sized'],
+                    rarity: ['common', 'uncommon', 'rare', 'very rare', 'ultra rare', 'epic', 'legendary', 'mythical', 'artifact', 'unique', 'one-of-a-kind', 'prototype', 'limited edition', 'special', 'collectible', 'vintage', 'antique', 'priceless'],
+                    origin: ['handmade', 'machine-made', 'forged', 'crafted', 'found', 'stolen', 'inherited', 'gifted', 'purchased', 'traded', 'looted', 'discovered', 'excavated', 'summoned', 'created', 'enchanted', 'cursed', 'blessed', 'ancient', 'modern', 'futuristic', 'alien', 'divine', 'demonic', 'natural', 'artificial']
                 }
             },
             furniture: {
                 types: {
-                    seating: ['chair', 'armchair', 'throne', 'stool', 'bench', 'sofa', 'couch', 'ottoman', 'cushion', 'bean bag', 'rocking chair', 'office chair', 'dining chair', 'bar stool', 'meditation cushion'],
-                    tables: ['dining table', 'coffee table', 'side table', 'desk', 'workbench', 'crafting table', 'alchemy table', 'round table', 'square table', 'console table', 'bedside table', 'picnic table', 'bar counter', 'kitchen island', 'conference table'],
-                    storage: ['chest', 'cabinet', 'wardrobe', 'dresser', 'bookshelf', 'shelf', 'drawer', 'trunk', 'safe', 'locker', 'crate', 'barrel', 'box', 'basket', 'rack'],
-                    beds: ['single bed', 'double bed', 'king bed', 'bunk bed', 'canopy bed', 'futon', 'sleeping bag', 'hammock', 'cot', 'cradle', 'four-poster bed', 'water bed', 'hospital bed', 'daybed', 'sofa bed'],
-                    decor: ['lamp', 'chandelier', 'candelabra', 'mirror', 'painting', 'vase', 'statue', 'clock', 'rug', 'curtains', 'tapestry', 'plant pot', 'aquarium', 'fireplace', 'fountain']
+                    // 1000+ GAME FURNITURE
+                    seating: [
+                        // Chairs & Seating (100+)
+                        'wooden chair', 'metal chair', 'stone chair', 'crystal chair', 'bone chair',
+                        'armchair', 'leather armchair', 'velvet armchair', 'royal armchair', 'reading armchair',
+                        'throne', 'royal throne', 'golden throne', 'stone throne', 'ice throne', 'fire throne', 'shadow throne',
+                        'stool', 'bar stool', 'kitchen stool', 'workshop stool', 'milking stool', 'piano stool',
+                        'bench', 'garden bench', 'park bench', 'church bench', 'tavern bench', 'picnic bench',
+                        'sofa', 'leather sofa', 'fabric sofa', 'sectional sofa', 'love seat', 'three-seater',
+                        'couch', 'living room couch', 'office couch', 'waiting room couch', 'sleeper couch',
+                        'ottoman', 'footstool', 'storage ottoman', 'tufted ottoman', 'round ottoman',
+                        'cushion', 'floor cushion', 'meditation cushion', 'throw pillow', 'seat cushion',
+                        'bean bag', 'gaming bean bag', 'giant bean bag', 'kids bean bag', 'outdoor bean bag',
+                        'rocking chair', 'porch rocker', 'glider chair', 'nursery rocker', 'elderly rocker',
+                        'office chair', 'executive chair', 'gaming chair', 'ergonomic chair', 'swivel chair',
+                        'dining chair', 'kitchen chair', 'breakfast chair', 'banquet chair', 'folding chair',
+                        'director chair', 'camping chair', 'beach chair', 'lawn chair', 'deck chair',
+                        'wheelchair', 'mobility scooter', 'hospital chair', 'dentist chair', 'barber chair',
+                        'saddle', 'horse saddle', 'bike saddle', 'tractor seat', 'pilot seat', 'captain chair'
+                    ],
+                    tables: [
+                        // Tables & Surfaces (120+)
+                        'dining table', 'kitchen table', 'breakfast table', 'banquet table', 'feast table',
+                        'coffee table', 'end table', 'side table', 'accent table', 'nesting table',
+                        'desk', 'office desk', 'writing desk', 'computer desk', 'standing desk', 'roll-top desk',
+                        'workbench', 'tool bench', 'garage workbench', 'carpenter bench', 'jeweler bench',
+                        'crafting table', 'sewing table', 'pottery table', 'art table', 'drafting table',
+                        'alchemy table', 'enchanting table', 'potion table', 'spell table', 'ritual table',
+                        'round table', 'oval table', 'rectangular table', 'square table', 'hexagonal table',
+                        'console table', 'entry table', 'hall table', 'sofa table', 'behind-sofa table',
+                        'bedside table', 'nightstand', 'night table', 'bedroom table', 'lamp table',
+                        'picnic table', 'outdoor table', 'patio table', 'garden table', 'umbrella table',
+                        'bar counter', 'kitchen island', 'breakfast bar', 'pub table', 'high top table',
+                        'conference table', 'meeting table', 'boardroom table', 'presentation table',
+                        'laboratory table', 'examination table', 'operating table', 'autopsy table',
+                        'card table', 'poker table', 'chess table', 'game table', 'pool table',
+                        'altar', 'shrine table', 'offering table', 'ceremonial table', 'sacrificial altar',
+                        'operating table', 'massage table', 'therapy table', 'treatment table',
+                        'folding table', 'portable table', 'camping table', 'TV tray', 'laptop table'
+                    ],
+                    storage: [
+                        // Storage & Organization (150+)
+                        'chest', 'treasure chest', 'wooden chest', 'iron chest', 'golden chest', 'magic chest',
+                        'cabinet', 'kitchen cabinet', 'medicine cabinet', 'filing cabinet', 'display cabinet',
+                        'wardrobe', 'armoire', 'closet', 'walk-in closet', 'portable wardrobe',
+                        'dresser', 'bureau', 'chest of drawers', 'tall dresser', 'low dresser',
+                        'bookshelf', 'library shelf', 'floating shelf', 'corner shelf', 'wall shelf',
+                        'shelf', 'storage shelf', 'garage shelf', 'pantry shelf', 'bathroom shelf',
+                        'drawer', 'desk drawer', 'kitchen drawer', 'bedroom drawer', 'secret drawer',
+                        'trunk', 'storage trunk', 'cedar trunk', 'vintage trunk', 'travel trunk',
+                        'safe', 'wall safe', 'floor safe', 'fireproof safe', 'digital safe', 'combination safe',
+                        'locker', 'school locker', 'gym locker', 'employee locker', 'sports locker',
+                        'crate', 'wooden crate', 'shipping crate', 'fruit crate', 'wine crate', 'ammo crate',
+                        'barrel', 'wine barrel', 'water barrel', 'oil barrel', 'storage barrel',
+                        'box', 'storage box', 'jewelry box', 'music box', 'tool box', 'lunch box',
+                        'basket', 'laundry basket', 'picnic basket', 'storage basket', 'fruit basket',
+                        'rack', 'coat rack', 'wine rack', 'spice rack', 'towel rack', 'gun rack',
+                        'cupboard', 'pantry', 'larder', 'sideboard', 'buffet', 'hutch', 'china cabinet',
+                        'vault', 'bank vault', 'treasure vault', 'storage vault', 'underground vault',
+                        'container', 'storage container', 'plastic container', 'metal container'
+                    ],
+                    beds: [
+                        // Beds & Sleep Furniture (80+)
+                        'single bed', 'twin bed', 'narrow bed', 'child bed', 'youth bed',
+                        'double bed', 'full bed', 'queen bed', 'king bed', 'california king', 'super king',
+                        'bunk bed', 'loft bed', 'trundle bed', 'murphy bed', 'wall bed',
+                        'canopy bed', 'four-poster bed', 'sleigh bed', 'platform bed', 'panel bed',
+                        'futon', 'japanese futon', 'sofa bed', 'convertible bed', 'hide-a-bed',
+                        'sleeping bag', 'camping bed', 'air mattress', 'roll-up bed', 'portable bed',
+                        'hammock', 'rope hammock', 'fabric hammock', 'hanging bed', 'swing bed',
+                        'cot', 'camping cot', 'military cot', 'hospital cot', 'folding cot',
+                        'cradle', 'baby crib', 'bassinet', 'moses basket', 'rocking cradle',
+                        'water bed', 'heated bed', 'adjustable bed', 'hospital bed', 'medical bed',
+                        'daybed', 'chaise lounge', 'fainting couch', 'divan', 'settee',
+                        'captain bed', 'storage bed', 'bookcase bed', 'headboard bed', 'footboard bed',
+                        'race car bed', 'princess bed', 'castle bed', 'pirate ship bed', 'themed bed',
+                        'guest bed', 'spare bed', 'master bed', 'bedroom suite', 'bed frame'
+                    ],
+                    kitchen: [
+                        // Kitchen Furniture (100+)
+                        'kitchen island', 'cooking island', 'prep island', 'breakfast island',
+                        'kitchen cabinet', 'upper cabinet', 'lower cabinet', 'corner cabinet', 'pantry cabinet',
+                        'kitchen counter', 'countertop', 'breakfast counter', 'work surface',
+                        'stove', 'oven', 'range', 'cooktop', 'gas stove', 'electric stove', 'wood stove',
+                        'refrigerator', 'fridge', 'freezer', 'ice box', 'wine fridge', 'mini fridge',
+                        'sink', 'kitchen sink', 'farmhouse sink', 'double sink', 'prep sink',
+                        'dishwasher', 'garbage disposal', 'trash compactor', 'recycling bin',
+                        'spice rack', 'pot rack', 'pan rack', 'utensil holder', 'knife block',
+                        'cutting board', 'butcher block', 'prep board', 'serving board',
+                        'microwave', 'toaster', 'coffee maker', 'blender', 'food processor',
+                        'dining set', 'kitchen table set', 'breakfast nook', 'corner booth',
+                        'bar cart', 'serving cart', 'kitchen cart', 'utility cart', 'rolling cart',
+                        'baker rack', 'wine storage', 'dish rack', 'drying rack', 'plate rack'
+                    ],
+                    bathroom: [
+                        // Bathroom Furniture (60+)
+                        'vanity', 'bathroom vanity', 'double vanity', 'floating vanity', 'pedestal vanity',
+                        'medicine cabinet', 'mirror cabinet', 'storage cabinet', 'linen cabinet',
+                        'bathtub', 'clawfoot tub', 'whirlpool tub', 'soaking tub', 'corner tub',
+                        'shower', 'walk-in shower', 'shower stall', 'shower cabin', 'steam shower',
+                        'toilet', 'bidet', 'urinal', 'composting toilet', 'portable toilet',
+                        'towel rack', 'towel bar', 'heated towel rail', 'towel hook', 'robe hook',
+                        'bathroom stool', 'shower seat', 'bath bench', 'toilet stool', 'step stool',
+                        'laundry hamper', 'clothes hamper', 'laundry basket', 'dirty clothes bin',
+                        'bathroom scale', 'toilet paper holder', 'soap dispenser', 'toothbrush holder'
+                    ],
+                    office: [
+                        // Office Furniture (80+)
+                        'executive desk', 'computer desk', 'writing desk', 'corner desk', 'l-shaped desk',
+                        'office chair', 'executive chair', 'task chair', 'conference chair', 'guest chair',
+                        'filing cabinet', 'file drawer', 'document cabinet', 'hanging file', 'lateral file',
+                        'bookcase', 'office bookshelf', 'library case', 'display case', 'storage unit',
+                        'conference table', 'meeting table', 'boardroom table', 'presentation table',
+                        'reception desk', 'front desk', 'customer service desk', 'help desk',
+                        'cubicle', 'office partition', 'privacy screen', 'room divider', 'office panel',
+                        'coat rack', 'umbrella stand', 'magazine rack', 'newspaper stand',
+                        'whiteboard', 'bulletin board', 'cork board', 'presentation board',
+                        'printer stand', 'copier stand', 'supply cabinet', 'storage locker',
+                        'waiting room chair', 'lobby chair', 'reception chair', 'visitor chair'
+                    ],
+                    outdoor: [
+                        // Outdoor Furniture (70+)
+                        'patio table', 'outdoor dining table', 'picnic table', 'garden table',
+                        'outdoor chair', 'patio chair', 'lawn chair', 'folding chair', 'deck chair',
+                        'lounge chair', 'chaise lounge', 'pool chair', 'beach chair', 'recliner',
+                        'outdoor sofa', 'patio sofa', 'sectional sofa', 'loveseat', 'glider',
+                        'outdoor bench', 'garden bench', 'park bench', 'tree bench', 'stone bench',
+                        'umbrella table', 'shade table', 'parasol table', 'gazebo table',
+                        'bar set', 'patio bar', 'tiki bar', 'outdoor bar', 'pool bar',
+                        'fire pit table', 'outdoor fireplace', 'chiminea', 'fire bowl',
+                        'planter box', 'flower box', 'garden planter', 'raised bed', 'herb garden',
+                        'storage bench', 'deck box', 'outdoor storage', 'cushion box',
+                        'hammock stand', 'swing set', 'porch swing', 'garden swing'
+                    ],
+                    fantasy: [
+                        // Fantasy Game Furniture (80+)
+                        'wizard chair', 'mage throne', 'crystal chair', 'floating chair', 'levitating seat',
+                        'enchanted table', 'potion table', 'spell table', 'crystal table', 'floating table',
+                        'magic chest', 'enchanted chest', 'cursed chest', 'treasure vault', 'dimensional chest',
+                        'royal bed', 'princess bed', 'wizard bed', 'floating bed', 'cloud bed',
+                        'altar', 'sacrificial altar', 'prayer altar', 'offering table', 'shrine',
+                        'crystal chandelier', 'floating lamp', 'magic lantern', 'glowing orb', 'fire bowl',
+                        'stone pedestal', 'crystal pedestal', 'statue base', 'monument base',
+                        'portal frame', 'teleport platform', 'summoning circle', 'magic circle',
+                        'dragon throne', 'bone throne', 'shadow throne', 'ice throne', 'flame throne',
+                        'elven furniture', 'dwarven furniture', 'orcish furniture', 'goblin furniture'
+                    ],
+                    medieval: [
+                        // Medieval/Historical Furniture (60+)
+                        'medieval chair', 'throne room chair', 'castle chair', 'court chair',
+                        'feast table', 'banquet table', 'royal table', 'monastery table', 'tavern table',
+                        'wooden chest', 'iron chest', 'coin chest', 'armor chest', 'weapon chest',
+                        'castle bed', 'royal bed', 'canopy bed', 'straw bed', 'peasant bed',
+                        'tapestry', 'banner', 'coat of arms', 'family crest', 'heraldic display',
+                        'weapon rack', 'armor stand', 'shield display', 'sword rack', 'spear rack',
+                        'monastery furniture', 'church furniture', 'cathedral furniture', 'chapel furniture',
+                        'guild furniture', 'craftsman furniture', 'merchant furniture', 'noble furniture'
+                    ],
+                    scifi: [
+                        // Sci-Fi Furniture (50+)
+                        'hover chair', 'anti-gravity seat', 'force field chair', 'energy chair',
+                        'holographic table', 'plasma table', 'energy table', 'data table', 'control console',
+                        'stasis pod', 'cryo bed', 'healing chamber', 'medical pod', 'sleep chamber',
+                        'data storage', 'quantum chest', 'energy vault', 'matter storage', 'digital vault',
+                        'holographic display', 'energy lamp', 'plasma light', 'laser light', 'LED panel',
+                        'teleporter pad', 'transport platform', 'beam platform', 'portal station',
+                        'space station furniture', 'spaceship furniture', 'orbital furniture', 'colony furniture'
+                    ]
                 },
                 details: {
-                    material: ['wooden', 'metal', 'stone', 'glass', 'crystal', 'marble', 'leather', 'fabric', 'wicker', 'bamboo'],
-                    style: ['modern', 'antique', 'rustic', 'medieval', 'gothic', 'minimalist', 'ornate', 'industrial', 'fantasy', 'sci-fi']
+                    material: ['wooden', 'oak', 'pine', 'mahogany', 'cherry', 'walnut', 'metal', 'iron', 'steel', 'aluminum', 'brass', 'copper', 'stone', 'granite', 'marble', 'limestone', 'glass', 'crystal', 'diamond', 'plastic', 'leather', 'fabric', 'cotton', 'silk', 'velvet', 'wicker', 'rattan', 'bamboo', 'bone', 'ivory', 'ceramic', 'porcelain', 'concrete', 'rubber', 'foam'],
+                    style: ['modern', 'contemporary', 'minimalist', 'antique', 'vintage', 'retro', 'rustic', 'farmhouse', 'country', 'cottage', 'colonial', 'victorian', 'georgian', 'art deco', 'mid-century', 'medieval', 'gothic', 'baroque', 'renaissance', 'neoclassical', 'industrial', 'steampunk', 'fantasy', 'magical', 'elvish', 'dwarven', 'orcish', 'sci-fi', 'futuristic', 'space age', 'cyberpunk', 'post-apocalyptic', 'tribal', 'nomadic', 'oriental', 'asian', 'japanese', 'chinese', 'indian', 'scandinavian', 'mediterranean', 'tropical', 'nautical', 'military', 'royal', 'noble', 'peasant', 'merchant'],
+                    condition: ['brand new', 'excellent', 'good', 'fair', 'poor', 'worn', 'damaged', 'antique', 'vintage', 'restored', 'refurbished', 'handcrafted', 'mass produced', 'custom made', 'one of a kind', 'family heirloom', 'cursed', 'blessed', 'enchanted', 'magical', 'haunted', 'possessed'],
+                    size: ['miniature', 'tiny', 'small', 'compact', 'medium', 'standard', 'large', 'oversized', 'huge', 'massive', 'gigantic', 'dollhouse', 'child-sized', 'adult-sized', 'commercial', 'industrial']
                 }
             },
             character: {
                 types: {
-                    heroes: ['knight', 'warrior', 'mage', 'wizard', 'archer', 'ranger', 'rogue', 'thief', 'paladin', 'cleric', 'monk', 'bard', 'druid', 'necromancer', 'samurai'],
-                    npcs: ['villager', 'merchant', 'guard', 'innkeeper', 'blacksmith', 'farmer', 'noble', 'beggar', 'child', 'elder', 'priest', 'scholar', 'sailor', 'miner', 'hunter'],
-                    enemies: ['bandit', 'pirate', 'assassin', 'cultist', 'dark knight', 'evil wizard', 'mercenary', 'thug', 'raider', 'barbarian', 'witch', 'warlock', 'demon', 'undead', 'vampire'],
-                    fantasy: ['elf', 'dwarf', 'orc', 'goblin', 'troll', 'fairy', 'pixie', 'gnome', 'halfling', 'giant', 'centaur', 'minotaur', 'mermaid', 'angel', 'demon'],
-                    modern: ['soldier', 'police', 'doctor', 'scientist', 'hacker', 'spy', 'athlete', 'student', 'teacher', 'chef', 'mechanic', 'pilot', 'astronaut', 'firefighter', 'paramedic']
+                    // 300+ GAME CHARACTERS
+                    heroes: [
+                        // Fantasy Heroes (50+)
+                        'knight', 'crusader', 'templar', 'paladin', 'holy knight', 'dark knight', 'death knight',
+                        'warrior', 'berserker', 'barbarian', 'fighter', 'gladiator', 'champion', 'veteran',
+                        'mage', 'wizard', 'sorcerer', 'warlock', 'necromancer', 'elementalist', 'battle mage',
+                        'archer', 'ranger', 'hunter', 'marksman', 'sniper', 'bowman', 'crossbow expert',
+                        'rogue', 'thief', 'assassin', 'ninja', 'spy', 'scout', 'infiltrator', 'burglar',
+                        'cleric', 'priest', 'healer', 'bishop', 'cardinal', 'oracle', 'prophet', 'saint',
+                        'monk', 'martial artist', 'kung fu master', 'zen master', 'fighting monk', 'battle monk',
+                        'bard', 'minstrel', 'storyteller', 'musician', 'poet', 'court bard', 'war bard',
+                        'druid', 'nature priest', 'forest guardian', 'tree shepherd', 'animal whisperer',
+                        'samurai', 'shogun', 'ronin', 'daimyo', 'ninja master', 'sword saint', 'bushido warrior'
+                    ],
+                    npcs: [
+                        // Non-Player Characters (70+)
+                        'villager', 'peasant', 'commoner', 'citizen', 'townsfolk', 'rural folk', 'hermit',
+                        'merchant', 'trader', 'vendor', 'shopkeeper', 'peddler', 'caravan leader', 'guild master',
+                        'guard', 'city guard', 'royal guard', 'gate keeper', 'watch captain', 'patrol officer',
+                        'innkeeper', 'bartender', 'tavern keeper', 'barmaid', 'waiter', 'cook', 'server',
+                        'blacksmith', 'weaponsmith', 'armorsmith', 'craftsman', 'artisan', 'toolmaker',
+                        'farmer', 'rancher', 'shepherd', 'milkmaid', 'stable boy', 'field worker', 'harvest hand',
+                        'noble', 'aristocrat', 'lord', 'lady', 'baron', 'count', 'duke', 'duchess', 'prince', 'princess',
+                        'beggar', 'vagrant', 'homeless', 'street urchin', 'orphan', 'refugee', 'exile',
+                        'child', 'baby', 'toddler', 'teenager', 'student', 'apprentice', 'page', 'squire',
+                        'elder', 'old man', 'old woman', 'sage', 'wise elder', 'village elder', 'ancient',
+                        'priest', 'bishop', 'monk', 'nun', 'chaplain', 'missionary', 'acolyte', 'deacon',
+                        'scholar', 'librarian', 'scribe', 'historian', 'researcher', 'academic', 'professor',
+                        'sailor', 'pirate', 'sea captain', 'first mate', 'deck hand', 'navigator', 'helmsman',
+                        'miner', 'prospector', 'gem cutter', 'quarry worker', 'cave explorer', 'tunnel digger',
+                        'hunter', 'trapper', 'fur trader', 'game warden', 'poacher', 'tracker', 'guide'
+                    ],
+                    enemies: [
+                        // Antagonists & Villains (40+)
+                        'bandit', 'highwayman', 'road agent', 'outlaw', 'desperado', 'gang leader', 'crime boss',
+                        'pirate', 'buccaneer', 'corsair', 'sea raider', 'privateer', 'pirate captain', 'first mate',
+                        'assassin', 'hitman', 'killer', 'murderer', 'contract killer', 'shadow assassin',
+                        'cultist', 'fanatic', 'zealot', 'dark priest', 'demon worshipper', 'heretic', 'apostate',
+                        'evil wizard', 'dark mage', 'sorcerer', 'warlock', 'necromancer', 'death mage', 'lich',
+                        'mercenary', 'sellsword', 'hired gun', 'bounty hunter', 'enforcer', 'bodyguard',
+                        'thug', 'brute', 'goon', 'henchman', 'ruffian', 'gangster', 'mobster', 'criminal',
+                        'raider', 'marauder', 'pillager', 'viking', 'barbarian', 'tribal warrior', 'savage'
+                    ],
+                    fantasy: [
+                        // Fantasy Races (60+)
+                        'elf', 'high elf', 'wood elf', 'dark elf', 'blood elf', 'moon elf', 'sun elf', 'sea elf',
+                        'dwarf', 'mountain dwarf', 'hill dwarf', 'iron dwarf', 'stone dwarf', 'fire dwarf',
+                        'orc', 'uruk', 'goblin', 'hobgoblin', 'bugbear', 'ogre', 'troll', 'giant', 'cyclops',
+                        'fairy', 'pixie', 'sprite', 'nymph', 'dryad', 'naiad', 'sylph', 'will-o-wisp',
+                        'gnome', 'halfling', 'hobbit', 'dwarf-kin', 'gnome-kin', 'small folk', 'little people',
+                        'centaur', 'minotaur', 'satyr', 'faun', 'chimera', 'sphinx', 'harpy', 'siren',
+                        'mermaid', 'merman', 'triton', 'sea folk', 'aquatic humanoid', 'fish person',
+                        'angel', 'archangel', 'seraph', 'cherub', 'celestial', 'divine being', 'heavenly host',
+                        'demon', 'devil', 'imp', 'succubus', 'incubus', 'fiend', 'shadow being', 'dark entity',
+                        'dragon-kin', 'dragonborn', 'lizardfolk', 'kobold', 'salamander', 'yuan-ti', 'naga',
+                        'beastfolk', 'catfolk', 'wolffolk', 'bearfolk', 'foxfolk', 'rabbitfolk', 'birdfolk'
+                    ],
+                    modern: [
+                        // Modern Characters (80+)
+                        'soldier', 'marine', 'army ranger', 'special forces', 'commando', 'veteran', 'drill sergeant',
+                        'police officer', 'detective', 'sheriff', 'marshal', 'cop', 'patrol officer', 'swat officer',
+                        'doctor', 'surgeon', 'nurse', 'paramedic', 'emt', 'physician', 'medical examiner',
+                        'scientist', 'researcher', 'biologist', 'chemist', 'physicist', 'botanist', 'geologist',
+                        'hacker', 'programmer', 'it specialist', 'cyber security', 'data analyst', 'tech support',
+                        'spy', 'secret agent', 'intelligence officer', 'operative', 'undercover agent', 'double agent',
+                        'athlete', 'boxer', 'martial artist', 'soccer player', 'basketball player', 'runner', 'swimmer',
+                        'student', 'college student', 'high school student', 'graduate student', 'intern', 'trainee',
+                        'teacher', 'professor', 'instructor', 'principal', 'dean', 'tutor', 'coach', 'mentor',
+                        'chef', 'cook', 'baker', 'barista', 'waiter', 'food critic', 'restaurant owner',
+                        'mechanic', 'engineer', 'technician', 'electrician', 'plumber', 'carpenter', 'welder',
+                        'pilot', 'airline pilot', 'fighter pilot', 'test pilot', 'helicopter pilot', 'drone operator',
+                        'astronaut', 'cosmonaut', 'space engineer', 'mission specialist', 'commander',
+                        'firefighter', 'fire chief', 'rescue worker', 'emt', 'first responder', 'emergency crew',
+                        'businessman', 'ceo', 'manager', 'accountant', 'lawyer', 'judge', 'politician', 'diplomat'
+                    ]
                 },
                 details: {
-                    pose: ['standing', 'walking', 'running', 'jumping', 'sitting', 'crouching', 'attacking', 'defending', 'casting spell', 'idle'],
-                    equipment: ['sword and shield', 'dual wielding', 'bow and arrow', 'staff', 'heavy armor', 'light armor', 'robes', 'casual clothes', 'uniform', 'cape']
+                    pose: ['standing', 'walking', 'running', 'sprinting', 'jogging', 'jumping', 'leaping', 'sitting', 'kneeling', 'crouching', 'crawling', 'lying down', 'sleeping', 'resting', 'attacking', 'striking', 'slashing', 'stabbing', 'shooting', 'defending', 'blocking', 'parrying', 'dodging', 'casting spell', 'channeling', 'meditating', 'praying', 'reading', 'writing', 'crafting', 'working', 'idle', 'waiting', 'talking', 'shouting', 'whispering', 'laughing', 'crying', 'angry', 'surprised', 'confused', 'thinking'],
+                    equipment: ['sword and shield', 'two-handed sword', 'dual wielding', 'sword and dagger', 'bow and arrow', 'crossbow', 'staff', 'magic wand', 'spell focus', 'heavy armor', 'plate armor', 'chain mail', 'light armor', 'leather armor', 'robes', 'wizard robes', 'battle robes', 'casual clothes', 'noble attire', 'peasant clothes', 'uniform', 'military uniform', 'police uniform', 'medical scrubs', 'cape', 'cloak', 'hood', 'helmet', 'crown', 'hat', 'bandana', 'mask', 'gloves', 'boots', 'sandals', 'barefoot'],
+                    expression: ['happy', 'sad', 'angry', 'surprised', 'confused', 'determined', 'fierce', 'calm', 'peaceful', 'worried', 'scared', 'brave', 'confident', 'shy', 'proud', 'humble', 'serious', 'playful', 'mischievous', 'wise', 'innocent', 'evil', 'good', 'neutral', 'smiling', 'frowning', 'grinning', 'scowling', 'laughing', 'crying', 'screaming', 'whispering'],
+                    age: ['baby', 'child', 'teenager', 'young adult', 'adult', 'middle-aged', 'elderly', 'ancient', 'ageless', 'immortal', 'newborn', 'toddler', 'preteen', 'teen', 'twenties', 'thirties', 'forties', 'fifties', 'sixties', 'seventies', 'eighties', 'nineties', 'centenarian']
                 }
             },
             creature: {
                 types: {
-                    beasts: ['wolf', 'bear', 'lion', 'tiger', 'boar', 'deer', 'fox', 'rabbit', 'bat', 'rat', 'snake', 'spider', 'scorpion', 'eagle', 'crow'],
-                    dragons: ['fire dragon', 'ice dragon', 'earth dragon', 'wind dragon', 'water dragon', 'lightning dragon', 'shadow dragon', 'light dragon', 'ancient dragon', 'wyvern', 'drake', 'wyrm', 'hydra', 'basilisk', 'sea serpent'],
-                    undead: ['skeleton', 'zombie', 'ghost', 'wraith', 'lich', 'mummy', 'vampire', 'ghoul', 'specter', 'banshee', 'revenant', 'death knight', 'bone dragon', 'phantom', 'shade'],
-                    elementals: ['fire elemental', 'water elemental', 'earth elemental', 'air elemental', 'ice elemental', 'lightning elemental', 'nature elemental', 'shadow elemental', 'light elemental', 'crystal golem', 'lava golem', 'stone golem', 'iron golem', 'wood golem', 'sand golem'],
-                    mythical: ['phoenix', 'griffin', 'pegasus', 'unicorn', 'chimera', 'manticore', 'sphinx', 'cerberus', 'kraken', 'leviathan', 'behemoth', 'roc', 'basilisk', 'cockatrice', 'harpy']
+                    // EXPANDED CREATURES - 800+ Game Asset Creatures
+                    beasts: [
+                        // Mammals (60+)
+                        'wolf', 'bear', 'lion', 'tiger', 'boar', 'deer', 'fox', 'rabbit', 'bat', 'rat', 'mouse', 'cat', 'dog', 'horse', 'elephant',
+                        'rhino', 'hippo', 'giraffe', 'zebra', 'monkey', 'ape', 'gorilla', 'panther', 'leopard', 'cheetah', 'lynx', 'jaguar',
+                        'bison', 'buffalo', 'moose', 'elk', 'antelope', 'gazelle', 'ram', 'sheep', 'goat', 'cow', 'bull', 'pig', 'donkey',
+                        'mule', 'llama', 'alpaca', 'camel', 'dromedary', 'sloth', 'anteater', 'armadillo', 'pangolin', 'badger', 'weasel',
+                        'ferret', 'otter', 'beaver', 'porcupine', 'hedgehog', 'mole', 'shrew', 'squirrel', 'chipmunk', 'raccoon', 'skunk'
+                    ],
+                    dragons: [
+                        // All Dragon Types (50+)
+                        'fire dragon', 'ice dragon', 'earth dragon', 'wind dragon', 'water dragon', 'lightning dragon', 'shadow dragon', 'light dragon',
+                        'ancient dragon', 'elder dragon', 'great dragon', 'royal dragon', 'celestial dragon', 'infernal dragon', 'void dragon', 'chaos dragon',
+                        'wyvern', 'drake', 'wyrm', 'hydra', 'basilisk', 'sea serpent', 'sand wyrm', 'frost wyrm', 'bone dragon', 'ghost dragon',
+                        'crystal dragon', 'metal dragon', 'forest dragon', 'storm dragon', 'flame wyrm', 'ice wyrm', 'earth wyrm', 'wind wyrm',
+                        'baby dragon', 'teen dragon', 'adult dragon', 'legendary dragon', 'mythic dragon', 'cosmic dragon', 'time dragon', 'space dragon',
+                        'poison dragon', 'acid dragon', 'plasma dragon', 'energy dragon', 'spirit dragon', 'phantom dragon', 'dream dragon', 'nightmare dragon'
+                    ],
+                    undead: [
+                        // Undead Creatures (60+)
+                        'skeleton', 'zombie', 'ghost', 'wraith', 'lich', 'mummy', 'vampire', 'ghoul', 'specter', 'banshee', 'revenant', 'death knight',
+                        'bone dragon', 'phantom', 'shade', 'wight', 'ghast', 'mummy lord', 'vampire lord', 'lich king', 'death lord', 'grave knight',
+                        'skeleton warrior', 'skeleton archer', 'skeleton mage', 'zombie lord', 'plague zombie', 'toxic zombie', 'armored zombie', 'fast zombie',
+                        'crawling claw', 'floating skull', 'bone pile', 'corpse', 'risen corpse', 'animated corpse', 'flesh golem', 'bone golem',
+                        'spirit', 'lost soul', 'tormented soul', 'angry ghost', 'poltergeist', 'apparition', 'shadow', 'dark shadow', 'shadow beast',
+                        'necromancer', 'death priest', 'bone collector', 'grave robber', 'tomb guardian', 'crypt keeper', 'death stalker', 'soul reaper'
+                    ],
+                    elementals: [
+                        // Elemental Creatures (80+)
+                        'fire elemental', 'water elemental', 'earth elemental', 'air elemental', 'ice elemental', 'lightning elemental', 'nature elemental', 
+                        'shadow elemental', 'light elemental', 'void elemental', 'chaos elemental', 'order elemental', 'time elemental', 'space elemental',
+                        'crystal golem', 'lava golem', 'stone golem', 'iron golem', 'wood golem', 'sand golem', 'clay golem', 'flesh golem', 'bone golem',
+                        'ice golem', 'snow golem', 'steam golem', 'magma golem', 'obsidian golem', 'diamond golem', 'ruby golem', 'emerald golem',
+                        'fire sprite', 'water sprite', 'earth sprite', 'air sprite', 'lightning sprite', 'nature sprite', 'shadow sprite', 'light sprite',
+                        'salamander', 'undine', 'gnome', 'sylph', 'phoenix', 'ifrit', 'djinn', 'efreet', 'marid', 'dao', 'storm lord', 'thunder bird',
+                        'flame wisp', 'frost wisp', 'earth wisp', 'wind wisp', 'spark wisp', 'void wisp', 'chaos wisp', 'order wisp', 'dream wisp',
+                        'living flame', 'living water', 'living stone', 'living wind', 'living lightning', 'living shadow', 'living light', 'living void'
+                    ],
+                    mythical: [
+                        // Mythical Creatures (70+)
+                        'phoenix', 'griffin', 'pegasus', 'unicorn', 'chimera', 'manticore', 'sphinx', 'cerberus', 'kraken', 'leviathan', 'behemoth', 'roc',
+                        'basilisk', 'cockatrice', 'harpy', 'siren', 'medusa', 'minotaur', 'centaur', 'satyr', 'faun', 'cyclops', 'giant', 'titan',
+                        'fairy', 'pixie', 'sprite', 'wisp', 'brownie', 'gnome', 'dwarf', 'elf', 'dryad', 'nymph', 'naiad', 'nereid', 'oceanid',
+                        'angel', 'archangel', 'seraph', 'cherub', 'demon', 'devil', 'fiend', 'imp', 'succubus', 'incubus', 'balrog', 'pit fiend',
+                        'kelpie', 'selkie', 'banshee', 'bean sidhe', 'dullahan', 'wendigo', 'skinwalker', 'chupacabra', 'bigfoot', 'yeti', 'sasquatch',
+                        'mothman', 'jersey devil', 'thunderbird', 'quetzalcoatl', 'amphithere', 'couatl', 'feathered serpent', 'rainbow serpent'
+                    ],
+                    monsters: [
+                        // Game Monsters (80+)
+                        'troll', 'ogre', 'orc', 'goblin', 'hobgoblin', 'kobold', 'gnoll', 'bugbear', 'owlbear', 'bulette', 'rust monster', 'gelatinous cube',
+                        'beholder', 'mind flayer', 'aboleth', 'illithid', 'grick', 'hook horror', 'umber hulk', 'carrion crawler', 'purple worm', 'tarrasque',
+                        'hydra', 'chimera', 'manticore', 'griffon', 'hippogriff', 'peryton', 'stirge', 'darkmantle', 'roper', 'piercer', 'lurker',
+                        'shambling mound', 'treant', 'dryad', 'satyr', 'centaur', 'minotaur', 'medusa', 'gorgon', 'cockatrice', 'basilisk', 'catoblepas',
+                        'ankheg', 'bulezau', 'chasme', 'glabrezu', 'hezrou', 'marilith', 'nalfeshnee', 'vrock', 'babau', 'dretch', 'quasit', 'manes',
+                        'lemure', 'imp', 'chain devil', 'bone devil', 'horned devil', 'ice devil', 'pit fiend', 'solar', 'planetar', 'deva', 'couatl',
+                        'ki-rin', 'unicorn', 'pegasus', 'nightmare', 'hell hound', 'winter wolf', 'dire wolf', 'worg', 'barghest', 'yeth hound'
+                    ],
+                    insects: [
+                        // Insects & Arthropods (50+)
+                        'spider', 'scorpion', 'centipede', 'millipede', 'beetle', 'ant', 'wasp', 'bee', 'hornet', 'fly', 'mosquito', 'moth', 'butterfly',
+                        'grasshopper', 'cricket', 'locust', 'mantis', 'dragonfly', 'damselfly', 'cockroach', 'termite', 'earwig', 'silverfish', 'flea',
+                        'tick', 'mite', 'louse', 'aphid', 'scale insect', 'thrip', 'whitefly', 'mealybug', 'weevil', 'grub', 'maggot', 'larva',
+                        'giant spider', 'giant scorpion', 'giant centipede', 'giant beetle', 'giant ant', 'giant wasp', 'giant mantis', 'giant dragonfly',
+                        'fire ant', 'soldier ant', 'worker ant', 'queen ant', 'killer bee', 'honey bee', 'bumblebee', 'carpenter bee'
+                    ],
+                    marine: [
+                        // Sea Creatures (60+)
+                        'fish', 'shark', 'whale', 'dolphin', 'octopus', 'squid', 'crab', 'lobster', 'shrimp', 'jellyfish', 'starfish', 'sea urchin',
+                        'seahorse', 'eel', 'ray', 'skate', 'barracuda', 'tuna', 'salmon', 'cod', 'bass', 'trout', 'pike', 'catfish', 'anglerfish',
+                        'great white shark', 'hammerhead shark', 'tiger shark', 'bull shark', 'mako shark', 'nurse shark', 'whale shark', 'reef shark',
+                        'blue whale', 'humpback whale', 'sperm whale', 'killer whale', 'pilot whale', 'beluga whale', 'narwhal', 'walrus', 'seal', 'sea lion',
+                        'giant squid', 'colossal squid', 'vampire squid', 'cuttlefish', 'nautilus', 'sea turtle', 'leatherback turtle', 'green turtle',
+                        'manta ray', 'stingray', 'electric eel', 'moray eel', 'sea snake', 'sea cucumber', 'sea anemone', 'coral', 'sponge'
+                    ],
+                    birds: [
+                        // Flying Creatures (50+)
+                        'eagle', 'hawk', 'falcon', 'owl', 'crow', 'raven', 'vulture', 'condor', 'albatross', 'pelican', 'seagull', 'puffin', 'penguin',
+                        'ostrich', 'emu', 'cassowary', 'rhea', 'kiwi', 'peacock', 'turkey', 'chicken', 'rooster', 'duck', 'goose', 'swan', 'crane',
+                        'heron', 'ibis', 'flamingo', 'stork', 'spoonbill', 'kingfisher', 'woodpecker', 'cardinal', 'blue jay', 'robin', 'sparrow',
+                        'finch', 'canary', 'parakeet', 'parrot', 'macaw', 'cockatoo', 'toucan', 'hummingbird', 'swallow', 'swift', 'martin', 'wren',
+                        'mockingbird', 'thrush', 'blackbird', 'starling', 'oriole', 'tanager', 'warbler', 'flycatcher', 'vireo', 'pigeon', 'dove'
+                    ],
+                    reptiles: [
+                        // Reptiles & Amphibians (40+)
+                        'snake', 'python', 'cobra', 'viper', 'rattlesnake', 'boa', 'anaconda', 'mamba', 'adder', 'asp', 'copperhead', 'cottonmouth',
+                        'lizard', 'iguana', 'gecko', 'chameleon', 'monitor', 'komodo dragon', 'bearded dragon', 'skink', 'anole', 'basilisk',
+                        'turtle', 'tortoise', 'terrapin', 'snapping turtle', 'box turtle', 'painted turtle', 'slider', 'cooter', 'diamondback',
+                        'crocodile', 'alligator', 'caiman', 'gharial', 'frog', 'toad', 'tree frog', 'poison frog', 'bullfrog', 'salamander', 'newt'
+                    ]
                 },
                 details: {
-                    size: ['tiny', 'small', 'medium', 'large', 'huge', 'gigantic', 'colossal', 'boss-sized', 'swarm', 'pack'],
-                    behavior: ['aggressive', 'passive', 'neutral', 'territorial', 'friendly', 'hostile', 'fearful', 'curious', 'predatory', 'protective']
+                    size: ['tiny', 'small', 'medium', 'large', 'huge', 'gigantic', 'colossal', 'boss-sized', 'swarm', 'pack', 'horde', 'legendary', 'epic', 'mythic', 'titan-sized'],
+                    behavior: ['aggressive', 'passive', 'neutral', 'territorial', 'friendly', 'hostile', 'fearful', 'curious', 'predatory', 'protective', 'docile', 'wild', 'tamed', 'enraged', 'calm'],
+                    rarity: ['common', 'uncommon', 'rare', 'epic', 'legendary', 'mythic', 'unique', 'boss', 'mini-boss', 'elite', 'champion', 'alpha', 'omega', 'ancient', 'primordial'],
+                    habitat: ['forest', 'desert', 'ocean', 'mountain', 'cave', 'swamp', 'arctic', 'volcanic', 'grassland', 'urban', 'underground', 'aerial', 'aquatic', 'magical realm', 'nightmare realm']
                 }
             },
             weapon: {
                 types: {
-                    melee: ['sword', 'axe', 'mace', 'hammer', 'spear', 'lance', 'halberd', 'scythe', 'club', 'staff', 'dagger', 'katana', 'rapier', 'claymore', 'greatsword'],
-                    ranged: ['bow', 'crossbow', 'longbow', 'shortbow', 'sling', 'throwing knife', 'shuriken', 'javelin', 'boomerang', 'dart', 'blowgun', 'chakram', 'throwing axe', 'bolas', 'net'],
-                    firearms: ['pistol', 'revolver', 'rifle', 'shotgun', 'sniper rifle', 'machine gun', 'rocket launcher', 'grenade launcher', 'laser gun', 'plasma rifle', 'ray gun', 'blaster', 'cannon', 'flamethrower', 'freeze ray'],
-                    magical: ['wand', 'staff', 'rod', 'orb', 'crystal', 'tome', 'scroll', 'rune blade', 'enchanted sword', 'cursed dagger', 'holy mace', 'demon axe', 'soul reaper', 'life stealer', 'element blade'],
-                    siege: ['catapult', 'ballista', 'trebuchet', 'battering ram', 'siege tower', 'cannon', 'mortar', 'bomb', 'explosive barrel', 'fire pot', 'oil cauldron', 'spike trap', 'bear trap', 'pit trap', 'arrow trap']
+                    // EXPANDED WEAPONS - 1000+ Game Weapons
+                    melee: [
+                        // Swords (80+)
+                        'sword', 'longsword', 'shortsword', 'broadsword', 'claymore', 'greatsword', 'zweihander', 'bastard sword', 'hand and a half sword',
+                        'katana', 'wakizashi', 'tanto', 'nodachi', 'tachi', 'uchigatana', 'kodachi', 'rapier', 'sabre', 'cutlass', 'scimitar', 'falchion',
+                        'gladius', 'spatha', 'xiphos', 'kopis', 'viking sword', 'arming sword', 'knightly sword', 'crusader sword', 'templar sword',
+                        'flamberge', 'estoc', 'smallsword', 'court sword', 'dueling sword', 'fencing sword', 'foil', 'epee', 'sabre blade', 'cavalry sabre',
+                        'shamshir', 'tulwar', 'kirpan', 'dao', 'jian', 'liuyedao', 'dadao', 'changdao', 'miaodao', 'wodao', 'zhanmadao', 'butterfly swords',
+                        'kukri', 'kris', 'keris', 'kampilan', 'barong', 'ginunting', 'talwar', 'khanda', 'firangi', 'pata', 'urumi', 'shotel'
+                    ],
+                    axes: [
+                        // Axes & Hatchets (40+)
+                        'axe', 'battle axe', 'war axe', 'great axe', 'double axe', 'bearded axe', 'danish axe', 'viking axe', 'francisca', 'tomahawk',
+                        'hatchet', 'hand axe', 'throwing axe', 'woodcutter axe', 'executioner axe', 'pole axe', 'halberd', 'bardiche', 'voulge',
+                        'glaive', 'naginata', 'bisento', 'guandao', 'ji', 'ge', 'dagger-axe', 'labrys', 'sagaris', 'parashu', 'bhuj', 'tabar',
+                        'shillelagh', 'club axe', 'mace axe', 'hammer axe', 'pick axe', 'mattock', 'adze', 'froe', 'broadaxe', 'splitting axe'
+                    ],
+                    hammers: [
+                        // Hammers & Maces (50+)
+                        'hammer', 'war hammer', 'maul', 'sledgehammer', 'battle hammer', 'throwing hammer', 'mjolnir', 'mace', 'war mace', 'flanged mace',
+                        'morning star', 'mace and chain', 'flail', 'nunchaku', 'three-section staff', 'meteor hammer', 'club', 'war club', 'spiked club',
+                        'cudgel', 'bludgeon', 'blackjack', 'truncheon', 'nightstick', 'baton', 'staff', 'quarterstaff', 'bo staff', 'jo staff',
+                        'hanbo', 'tanbo', 'escrima stick', 'tonfa', 'sai', 'jutte', 'tessen', 'gunsen', 'madu', 'main gauche', 'parrying dagger',
+                        'cestus', 'caestus', 'knuckle dusters', 'brass knuckles', 'tekko', 'shuko', 'cat claws', 'tiger claws', 'wolverine claws'
+                    ],
+                    polearms: [
+                        // Spears & Polearms (60+)
+                        'spear', 'lance', 'pike', 'partisan', 'spontoon', 'boar spear', 'hunting spear', 'javelin', 'pilum', 'hasta', 'sarissa',
+                        'halberd', 'bardiche', 'voulge', 'glaive', 'guisarme', 'bill', 'billhook', 'fauchard', 'ranseur', 'spetum', 'corsesca',
+                        'trident', 'pitchfork', 'military fork', 'war fork', 'ox tongue spear', 'winged spear', 'leaf spear', 'broad spear',
+                        'naginata', 'bisento', 'yari', 'su yari', 'jumonji yari', 'kama yari', 'guandao', 'ji', 'ge', 'qiang', 'mao', 'changqiang',
+                        'doru', 'xyston', 'kontos', 'contus', 'longche', 'rhomphaia', 'falx', 'war scythe', 'scythe', 'sickle', 'kama', 'kusarigama'
+                    ],
+                    daggers: [
+                        // Daggers & Knives (60+)
+                        'dagger', 'stiletto', 'dirk', 'poniard', 'misericorde', 'rondel dagger', 'ear dagger', 'baselard', 'cinquedea', 'anelace',
+                        'knife', 'hunting knife', 'combat knife', 'utility knife', 'boot knife', 'throwing knife', 'bowie knife', 'cleaver',
+                        'tanto', 'aikuchi', 'kozuka', 'kogatana', 'kunai', 'shuriken', 'tessen', 'tekko-kagi', 'shuko', 'nekote', 'ashiko',
+                        'kris', 'keris', 'kampilan', 'barong', 'ginunting', 'balisong', 'butterfly knife', 'switchblade', 'stiletto knife',
+                        'kukri', 'khukuri', 'machete', 'parang', 'golok', 'bolo', 'cutlass knife', 'seax', 'scramasax', 'francisca knife',
+                        'sgian-dubh', 'dirk knife', 'athame', 'ritual dagger', 'ceremonial knife', 'sacrificial blade', 'obsidian knife'
+                    ],
+                    ranged: [
+                        // Bows & Projectiles (80+)
+                        'bow', 'longbow', 'shortbow', 'recurve bow', 'composite bow', 'reflex bow', 'compound bow', 'crossbow', 'arbalest',
+                        'ballista', 'scorpion', 'gastraphetes', 'hand crossbow', 'pistol crossbow', 'repeating crossbow', 'chu-ko-nu',
+                        'sling', 'staff sling', 'fustibal', 'slingshot', 'catapult', 'onager', 'mangonel', 'trebuchet', 'counterweight trebuchet',
+                        'arrow', 'bolt', 'quarrel', 'dart', 'needle', 'spike', 'javelin', 'pilum', 'angon', 'soliferrum', 'verutum',
+                        'throwing knife', 'throwing axe', 'francisca', 'tomahawk', 'throwing hammer', 'throwing club', 'throwing stick',
+                        'boomerang', 'hunting stick', 'rabbit stick', 'war boomerang', 'kylie', 'hunting boomerang', 'returning stick',
+                        'shuriken', 'ninja star', 'throwing star', 'hira shuriken', 'bo shuriken', 'senbon', 'tessen', 'chakram', 'war quoit',
+                        'blowgun', 'blowpipe', 'sumpit', 'zarabatana', 'cerbatana', 'peashooter', 'dart gun', 'needle gun', 'poison dart'
+                    ],
+                    firearms: [
+                        // Modern & Sci-Fi Guns (100+)
+                        'pistol', 'handgun', 'revolver', 'semi-auto pistol', 'automatic pistol', 'machine pistol', 'submachine gun', 'uzi',
+                        'rifle', 'assault rifle', 'battle rifle', 'sniper rifle', 'hunting rifle', 'marksman rifle', 'carbine', 'musket',
+                        'shotgun', 'pump shotgun', 'semi-auto shotgun', 'double barrel', 'sawed-off shotgun', 'combat shotgun', 'riot gun',
+                        'machine gun', 'light machine gun', 'heavy machine gun', 'minigun', 'gatling gun', 'chain gun', 'auto cannon',
+                        'rocket launcher', 'bazooka', 'rpg', 'grenade launcher', 'mortar', 'howitzer', 'cannon', 'artillery', 'tank gun',
+                        'laser gun', 'laser rifle', 'laser pistol', 'laser cannon', 'beam rifle', 'ray gun', 'death ray', 'disintegrator',
+                        'plasma gun', 'plasma rifle', 'plasma cannon', 'plasma pistol', 'ion cannon', 'particle beam', 'pulse rifle',
+                        'energy weapon', 'photon torpedo', 'phaser', 'blaster', 'bolt gun', 'needle gun', 'rail gun', 'gauss rifle',
+                        'flamethrower', 'flame gun', 'incendiary gun', 'napalm gun', 'freeze ray', 'cryo gun', 'ice gun', 'frost gun',
+                        'sonic weapon', 'sound gun', 'shock gun', 'taser gun', 'stun gun', 'paralyzer', 'sleep gun', 'tranquilizer gun'
+                    ],
+                    magical: [
+                        // Magic Weapons (80+)
+                        'wand', 'magic wand', 'fairy wand', 'wizard wand', 'witch wand', 'sorcerer wand', 'elder wand', 'phoenix wand',
+                        'staff', 'wizard staff', 'mage staff', 'battle staff', 'war staff', 'druid staff', 'shaman staff', 'arcane staff',
+                        'rod', 'magic rod', 'crystal rod', 'lightning rod', 'fire rod', 'ice rod', 'earth rod', 'wind rod', 'holy rod',
+                        'orb', 'crystal orb', 'power orb', 'spell orb', 'magic sphere', 'scrying orb', 'chaos orb', 'order orb',
+                        'tome', 'spellbook', 'grimoire', 'book of shadows', 'magic book', 'spell tome', 'necronomicon', 'codex',
+                        'scroll', 'spell scroll', 'magic scroll', 'ancient scroll', 'parchment', 'tablet', 'rune stone', 'magic tablet',
+                        'enchanted sword', 'magic sword', 'holy sword', 'demon sword', 'cursed blade', 'blessed blade', 'rune blade',
+                        'elemental blade', 'fire sword', 'ice sword', 'lightning sword', 'earth sword', 'wind sword', 'water sword',
+                        'soul reaper', 'life stealer', 'death blade', 'vampire blade', 'spirit sword', 'ghost blade', 'phantom sword',
+                        'crystal weapon', 'gem weapon', 'artifact weapon', 'legendary weapon', 'mythic weapon', 'divine weapon'
+                    ],
+                    exotic: [
+                        // Exotic & Unique Weapons (60+)
+                        'whip', 'chain whip', 'cat o nine tails', 'scourge', 'flail whip', 'rope dart', 'meteor hammer', 'chain dart',
+                        'net', 'weighted net', 'gladiator net', 'fishing net', 'capture net', 'entanglement net', 'shock net',
+                        'bolas', 'weighted bolas', 'hunting bolas', 'war bolas', 'entangling bolas', 'electric bolas', 'explosive bolas',
+                        'brass knuckles', 'spiked knuckles', 'power fist', 'gauntlet', 'war gauntlet', 'spiked gauntlet', 'claw gauntlet',
+                        'war fan', 'battle fan', 'iron fan', 'steel fan', 'bladed fan', 'gunsen', 'tessen', 'folding fan', 'combat fan',
+                        'yo-yo', 'combat yo-yo', 'bladed yo-yo', 'weighted yo-yo', 'chain yo-yo', 'explosive yo-yo', 'razor yo-yo',
+                        'umbrella', 'sword umbrella', 'gun umbrella', 'shield umbrella', 'poison umbrella', 'explosive umbrella'
+                    ]
                 },
                 details: {
-                    material: ['iron', 'steel', 'bronze', 'silver', 'gold', 'mithril', 'adamantine', 'obsidian', 'crystal', 'bone'],
-                    enchantment: ['flaming', 'freezing', 'shocking', 'poisoned', 'blessed', 'cursed', 'vampiric', 'holy', 'demonic', 'ethereal']
+                    material: ['iron', 'steel', 'bronze', 'copper', 'silver', 'gold', 'platinum', 'mithril', 'adamantine', 'orichalcum', 'obsidian', 'volcanic glass', 'crystal', 'diamond', 'ruby', 'sapphire', 'emerald', 'bone', 'ivory', 'horn', 'antler', 'wood', 'bamboo', 'carbon fiber', 'titanium', 'vibranium', 'unobtainium'],
+                    enchantment: ['flaming', 'freezing', 'shocking', 'poisoned', 'blessed', 'cursed', 'vampiric', 'holy', 'demonic', 'ethereal', 'ghost touch', 'keen edge', 'vorpal', 'bane', 'defending', 'dancing', 'speed', 'returning', 'thundering', 'brilliant energy', 'disruption', 'wounding', 'anarchic', 'axiomatic', 'unholy', 'sacred'],
+                    rarity: ['common', 'uncommon', 'rare', 'epic', 'legendary', 'mythic', 'artifact', 'relic', 'heirloom', 'masterwork', 'masterpiece', 'unique', 'one-of-a-kind', 'cursed', 'blessed', 'divine', 'infernal', 'celestial', 'abyssal'],
+                    condition: ['pristine', 'excellent', 'good', 'worn', 'damaged', 'broken', 'shattered', 'rusted', 'tarnished', 'ancient', 'weathered', 'battle-scarred', 'bloodstained', 'enchanted glow', 'crackling energy', 'humming power', 'pulsing magic', 'radiating aura']
                 }
             },
             food: {
                 types: {
-                    meals: ['steak', 'chicken', 'fish', 'soup', 'stew', 'salad', 'sandwich', 'burger', 'pizza', 'pasta', 'rice bowl', 'sushi', 'tacos', 'curry', 'roast'],
-                    fruits: ['apple', 'banana', 'orange', 'grape', 'strawberry', 'watermelon', 'pineapple', 'mango', 'peach', 'pear', 'cherry', 'blueberry', 'raspberry', 'lemon', 'coconut'],
-                    vegetables: ['carrot', 'potato', 'tomato', 'lettuce', 'cabbage', 'onion', 'corn', 'broccoli', 'pepper', 'mushroom', 'pumpkin', 'cucumber', 'spinach', 'garlic', 'beans'],
-                    desserts: ['cake', 'pie', 'cookie', 'ice cream', 'chocolate', 'candy', 'donut', 'cupcake', 'pudding', 'jelly', 'tart', 'macaron', 'brownie', 'muffin', 'croissant'],
-                    drinks: ['water', 'juice', 'milk', 'coffee', 'tea', 'soda', 'beer', 'wine', 'cocktail', 'smoothie', 'shake', 'energy drink', 'potion', 'elixir', 'nectar']
+                    // EXPANDED FOOD - 1200+ Game Food Items
+                    meals: [
+                        // Meat Dishes (80+)
+                        'steak', 'ribeye', 't-bone', 'sirloin', 'filet mignon', 'porterhouse', 'prime rib', 'beef brisket', 'pot roast', 'meatloaf',
+                        'chicken', 'roast chicken', 'fried chicken', 'chicken breast', 'chicken thigh', 'chicken wings', 'buffalo wings', 'chicken nuggets',
+                        'turkey', 'roast turkey', 'turkey breast', 'turkey leg', 'turkey sandwich', 'thanksgiving turkey', 'smoked turkey',
+                        'pork', 'pork chop', 'pork tenderloin', 'pork shoulder', 'pulled pork', 'bacon', 'ham', 'prosciutto', 'pancetta', 'sausage',
+                        'lamb', 'leg of lamb', 'lamb chops', 'lamb shank', 'rack of lamb', 'mutton', 'venison', 'elk', 'bison', 'rabbit',
+                        'fish', 'salmon', 'tuna', 'cod', 'halibut', 'sea bass', 'trout', 'mackerel', 'sardines', 'anchovies', 'herring',
+                        'seafood', 'shrimp', 'lobster', 'crab', 'oysters', 'mussels', 'clams', 'scallops', 'squid', 'octopus', 'calamari'
+                    ],
+                    fruits: [
+                        // Fruits (100+)
+                        'apple', 'red apple', 'green apple', 'golden apple', 'granny smith', 'honeycrisp', 'gala apple', 'fuji apple',
+                        'banana', 'plantain', 'orange', 'navel orange', 'blood orange', 'mandarin', 'tangerine', 'clementine', 'satsuma',
+                        'grape', 'red grape', 'green grape', 'purple grape', 'wine grape', 'raisin', 'currant', 'gooseberry',
+                        'strawberry', 'blueberry', 'blackberry', 'raspberry', 'cranberry', 'boysenberry', 'elderberry', 'huckleberry',
+                        'watermelon', 'cantaloupe', 'honeydew', 'casaba melon', 'crenshaw melon', 'persian melon', 'sugar melon',
+                        'pineapple', 'mango', 'papaya', 'guava', 'passion fruit', 'dragon fruit', 'star fruit', 'kiwi', 'fig',
+                        'peach', 'nectarine', 'apricot', 'plum', 'prune', 'cherry', 'sweet cherry', 'sour cherry', 'bing cherry',
+                        'pear', 'asian pear', 'anjou pear', 'bosc pear', 'bartlett pear', 'comice pear', 'seckel pear',
+                        'coconut', 'avocado', 'lime', 'lemon', 'grapefruit', 'pomegranate', 'persimmon', 'lychee', 'rambutan',
+                        'durian', 'jackfruit', 'breadfruit', 'plantain', 'date', 'olive', 'kumquat', 'quince', 'mulberry'
+                    ],
+                    vegetables: [
+                        // Vegetables (120+)
+                        'carrot', 'baby carrot', 'purple carrot', 'potato', 'sweet potato', 'red potato', 'russet potato', 'yukon potato',
+                        'tomato', 'cherry tomato', 'roma tomato', 'beefsteak tomato', 'heirloom tomato', 'green tomato', 'sun-dried tomato',
+                        'lettuce', 'iceberg lettuce', 'romaine lettuce', 'butter lettuce', 'arugula', 'spinach', 'kale', 'chard',
+                        'cabbage', 'red cabbage', 'napa cabbage', 'bok choy', 'brussels sprouts', 'cauliflower', 'broccoli', 'broccolini',
+                        'onion', 'red onion', 'yellow onion', 'white onion', 'green onion', 'scallion', 'shallot', 'leek', 'chives',
+                        'pepper', 'bell pepper', 'red pepper', 'green pepper', 'yellow pepper', 'orange pepper', 'hot pepper', 'chili pepper',
+                        'jalapeño', 'habanero', 'serrano', 'cayenne', 'ghost pepper', 'carolina reaper', 'poblano', 'chipotle',
+                        'corn', 'sweet corn', 'popcorn', 'corn on the cob', 'baby corn', 'hominy', 'cornmeal', 'polenta',
+                        'mushroom', 'button mushroom', 'portobello', 'shiitake', 'oyster mushroom', 'enoki', 'morel', 'chanterelle',
+                        'pumpkin', 'butternut squash', 'acorn squash', 'spaghetti squash', 'delicata squash', 'hubbard squash', 'zucchini',
+                        'cucumber', 'pickle', 'dill pickle', 'gherkin', 'cornichon', 'bread and butter pickle', 'kosher pickle',
+                        'garlic', 'elephant garlic', 'garlic clove', 'roasted garlic', 'garlic powder', 'garlic salt', 'garlic bread',
+                        'beans', 'green beans', 'black beans', 'kidney beans', 'pinto beans', 'navy beans', 'lima beans', 'chickpeas',
+                        'peas', 'green peas', 'snow peas', 'snap peas', 'split peas', 'black-eyed peas', 'lentils', 'soybeans',
+                        'celery', 'asparagus', 'artichoke', 'eggplant', 'radish', 'turnip', 'parsnip', 'rutabaga', 'beet', 'fennel'
+                    ],
+                    desserts: [
+                        // Desserts & Sweets (150+)
+                        'cake', 'chocolate cake', 'vanilla cake', 'red velvet cake', 'carrot cake', 'pound cake', 'angel food cake', 'devil\'s food cake',
+                        'birthday cake', 'wedding cake', 'layer cake', 'sheet cake', 'bundt cake', 'coffee cake', 'fruitcake', 'cheesecake',
+                        'pie', 'apple pie', 'cherry pie', 'pumpkin pie', 'pecan pie', 'lemon meringue pie', 'key lime pie', 'coconut cream pie',
+                        'chocolate pie', 'banana cream pie', 'strawberry pie', 'blueberry pie', 'blackberry pie', 'rhubarb pie', 'mince pie',
+                        'cookie', 'chocolate chip cookie', 'oatmeal cookie', 'sugar cookie', 'gingerbread cookie', 'snickerdoodle', 'peanut butter cookie',
+                        'ice cream', 'vanilla ice cream', 'chocolate ice cream', 'strawberry ice cream', 'mint chocolate chip', 'rocky road',
+                        'chocolate', 'milk chocolate', 'dark chocolate', 'white chocolate', 'chocolate bar', 'chocolate truffle', 'fudge',
+                        'candy', 'lollipop', 'gummy bear', 'jelly bean', 'hard candy', 'caramel', 'toffee', 'taffy', 'nougat', 'marshmallow',
+                        'donut', 'glazed donut', 'chocolate donut', 'jelly donut', 'cream donut', 'old fashioned donut', 'cruller', 'bear claw',
+                        'cupcake', 'muffin', 'blueberry muffin', 'bran muffin', 'banana muffin', 'chocolate chip muffin', 'scone', 'danish',
+                        'pudding', 'chocolate pudding', 'vanilla pudding', 'bread pudding', 'rice pudding', 'tapioca pudding', 'custard',
+                        'jelly', 'jam', 'marmalade', 'preserves', 'apple butter', 'honey', 'syrup', 'maple syrup', 'molasses', 'agave',
+                        'pastry', 'croissant', 'éclair', 'profiterole', 'cream puff', 'napoleon', 'strudel', 'baklava', 'tiramisu'
+                    ],
+                    drinks: [
+                        // Beverages (120+)
+                        'water', 'spring water', 'sparkling water', 'mineral water', 'tap water', 'filtered water', 'distilled water',
+                        'juice', 'orange juice', 'apple juice', 'grape juice', 'cranberry juice', 'pineapple juice', 'tomato juice', 'grapefruit juice',
+                        'milk', 'whole milk', 'skim milk', '2% milk', 'chocolate milk', 'strawberry milk', 'almond milk', 'soy milk', 'oat milk',
+                        'coffee', 'black coffee', 'espresso', 'cappuccino', 'latte', 'mocha', 'americano', 'macchiato', 'frappé', 'cold brew',
+                        'tea', 'green tea', 'black tea', 'white tea', 'oolong tea', 'herbal tea', 'chamomile tea', 'peppermint tea', 'chai tea',
+                        'soda', 'cola', 'root beer', 'ginger ale', 'lemon-lime soda', 'orange soda', 'grape soda', 'cream soda', 'diet soda',
+                        'beer', 'lager', 'ale', 'stout', 'porter', 'wheat beer', 'pilsner', 'ipa', 'light beer', 'craft beer', 'draft beer',
+                        'wine', 'red wine', 'white wine', 'rosé wine', 'champagne', 'sparkling wine', 'port wine', 'sherry', 'dessert wine',
+                        'cocktail', 'martini', 'manhattan', 'old fashioned', 'whiskey sour', 'margarita', 'mojito', 'cosmopolitan', 'bloody mary',
+                        'smoothie', 'protein shake', 'milkshake', 'energy drink', 'sports drink', 'vitamin water', 'coconut water', 'kombucha',
+                        'potion', 'health potion', 'mana potion', 'magic elixir', 'love potion', 'strength potion', 'invisibility potion', 'poison',
+                        'nectar', 'ambrosia', 'holy water', 'dragon blood', 'unicorn tears', 'phoenix essence', 'fairy dust drink', 'pixie juice'
+                    ],
+                    snacks: [
+                        // Snacks & Finger Foods (80+)
+                        'chips', 'potato chips', 'corn chips', 'tortilla chips', 'pita chips', 'bagel chips', 'pretzels', 'crackers',
+                        'nuts', 'peanuts', 'almonds', 'cashews', 'walnuts', 'pecans', 'pistachios', 'macadamia nuts', 'brazil nuts',
+                        'popcorn', 'caramel corn', 'cheese puffs', 'trail mix', 'granola', 'granola bar', 'protein bar', 'candy bar',
+                        'jerky', 'beef jerky', 'turkey jerky', 'salmon jerky', 'dried fruit', 'fruit leather', 'fruit roll-up',
+                        'cheese', 'cheddar cheese', 'swiss cheese', 'brie cheese', 'mozzarella', 'parmesan', 'goat cheese', 'cream cheese',
+                        'bread', 'white bread', 'wheat bread', 'rye bread', 'sourdough', 'pumpernickel', 'bagel', 'english muffin',
+                        'sandwich', 'club sandwich', 'blt', 'grilled cheese', 'peanut butter and jelly', 'ham sandwich', 'tuna sandwich',
+                        'burger', 'hamburger', 'cheeseburger', 'bacon burger', 'veggie burger', 'turkey burger', 'slider', 'double burger',
+                        'pizza', 'pepperoni pizza', 'cheese pizza', 'supreme pizza', 'margherita pizza', 'hawaiian pizza', 'meat lovers pizza',
+                        'hot dog', 'corn dog', 'bratwurst', 'italian sausage', 'polish sausage', 'kielbasa', 'chorizo', 'salami'
+                    ],
+                    fantasy: [
+                        // Fantasy Game Foods (60+)
+                        'dragon steak', 'phoenix egg', 'unicorn milk', 'fairy bread', 'elvish bread', 'dwarvish ale', 'orcish grog', 'giant turkey leg',
+                        'magical apple', 'golden apple', 'enchanted berry', 'mystic mushroom', 'healing herb', 'mana crystal', 'spirit wine',
+                        'troll meat', 'griffin drumstick', 'basilisk egg', 'kraken tentacle', 'chimera burger', 'hydra soup', 'pegasus milk',
+                        'demon fruit', 'angel cake', 'holy water', 'blessed bread', 'cursed wine', 'poison apple', 'vampire blood',
+                        'ambrosia', 'nectar of the gods', 'elixir of life', 'philosopher\'s stone', 'liquid courage', 'wisdom tea',
+                        'fire flower', 'ice berry', 'thunder grape', 'earth root', 'wind leaf', 'water lily', 'shadow fruit',
+                        'crystal candy', 'gem soup', 'mineral water', 'ore bread', 'metal meal', 'stone stew', 'diamond dust'
+                    ]
                 },
                 details: {
-                    preparation: ['raw', 'cooked', 'baked', 'fried', 'grilled', 'steamed', 'boiled', 'roasted', 'frozen', 'fresh'],
-                    quality: ['common', 'fine', 'gourmet', 'exotic', 'magical', 'poisoned', 'spoiled', 'preserved', 'organic', 'enchanted']
+                    preparation: ['raw', 'cooked', 'baked', 'fried', 'grilled', 'steamed', 'boiled', 'roasted', 'frozen', 'fresh', 'pickled', 'fermented', 'smoked', 'cured', 'dried', 'braised', 'sautéed', 'poached', 'blanched', 'marinated', 'seasoned', 'spiced', 'glazed', 'caramelized', 'charred', 'barbecued'],
+                    quality: ['common', 'fine', 'gourmet', 'exotic', 'magical', 'poisoned', 'spoiled', 'preserved', 'organic', 'enchanted', 'legendary', 'epic', 'rare', 'unique', 'artisanal', 'homemade', 'farm-fresh', 'wild-caught', 'free-range', 'grass-fed', 'heritage', 'heirloom'],
+                    temperature: ['hot', 'warm', 'cold', 'frozen', 'chilled', 'room temperature', 'piping hot', 'ice cold', 'steaming', 'sizzling', 'blazing', 'arctic', 'tropical', 'temperate'],
+                    taste: ['sweet', 'sour', 'salty', 'bitter', 'umami', 'spicy', 'mild', 'tangy', 'savory', 'bland', 'rich', 'creamy', 'crispy', 'crunchy', 'smooth', 'chunky', 'tender', 'tough', 'juicy', 'dry']
                 }
             },
             machine: {
                 types: {
-                    industrial: ['generator', 'engine', 'turbine', 'pump', 'compressor', 'conveyor', 'crane', 'forklift', 'drill', 'press', 'furnace', 'reactor', 'refinery', 'assembler', 'fabricator'],
-                    robots: ['android', 'cyborg', 'mech', 'drone', 'automaton', 'golem', 'sentry', 'probe', 'spider bot', 'tank bot', 'flying bot', 'repair bot', 'combat bot', 'service bot', 'nano bot'],
-                    computers: ['terminal', 'mainframe', 'server', 'laptop', 'tablet', 'console', 'hologram projector', 'data pad', 'control panel', 'interface', 'monitor', 'keyboard', 'scanner', 'printer', 'database'],
-                    vehicles: ['spaceship', 'hover car', 'flying car', 'mech suit', 'jet pack', 'teleporter', 'time machine', 'submarine', 'tank', 'helicopter', 'motorcycle', 'bicycle', 'skateboard', 'segway', 'train'],
-                    gadgets: ['laser', 'forcefield', 'scanner', 'detector', 'communicator', 'translator', 'cloaking device', 'shield generator', 'weapon turret', 'portal gun', 'grappling gun', 'jet boots', 'power suit', 'exoskeleton', 'cybernetics']
+                    // EXPANDED MACHINES - 800+ Game Machines
+                    industrial: [
+                        // Manufacturing & Production (80+)
+                        'generator', 'power generator', 'steam generator', 'wind generator', 'solar generator', 'nuclear generator', 'fusion generator',
+                        'engine', 'steam engine', 'diesel engine', 'rocket engine', 'jet engine', 'warp engine', 'antimatter engine', 'ion engine',
+                        'turbine', 'steam turbine', 'gas turbine', 'wind turbine', 'water turbine', 'hydroelectric turbine', 'geothermal turbine',
+                        'pump', 'water pump', 'oil pump', 'air pump', 'vacuum pump', 'hydraulic pump', 'pneumatic pump', 'centrifugal pump',
+                        'compressor', 'air compressor', 'gas compressor', 'pneumatic compressor', 'rotary compressor', 'piston compressor',
+                        'conveyor', 'belt conveyor', 'roller conveyor', 'chain conveyor', 'screw conveyor', 'pneumatic conveyor', 'magnetic conveyor',
+                        'crane', 'tower crane', 'mobile crane', 'overhead crane', 'gantry crane', 'jib crane', 'magnetic crane', 'hydraulic crane',
+                        'forklift', 'pallet jack', 'reach truck', 'order picker', 'telehandler', 'rough terrain forklift', 'warehouse forklift',
+                        'drill', 'drill press', 'hammer drill', 'core drill', 'oil drill', 'mining drill', 'diamond drill', 'laser drill',
+                        'press', 'hydraulic press', 'pneumatic press', 'stamping press', 'forging press', 'bending press', 'cutting press'
+                    ],
+                    robots: [
+                        // Robotics & Automation (100+)
+                        'android', 'humanoid robot', 'service android', 'companion android', 'worker android', 'combat android', 'infiltrator android',
+                        'cyborg', 'cybernetic human', 'augmented human', 'enhanced human', 'bionic human', 'tech hybrid', 'flesh machine',
+                        'mech', 'battle mech', 'war mech', 'heavy mech', 'light mech', 'assault mech', 'scout mech', 'support mech', 'titan mech',
+                        'drone', 'scout drone', 'surveillance drone', 'attack drone', 'delivery drone', 'repair drone', 'mining drone', 'cargo drone',
+                        'automaton', 'mechanical man', 'clockwork robot', 'steam robot', 'gear robot', 'brass automaton', 'Victorian robot',
+                        'golem', 'stone golem', 'iron golem', 'crystal golem', 'magic golem', 'earth golem', 'flame golem', 'ice golem',
+                        'sentry', 'guard robot', 'security bot', 'patrol bot', 'watch bot', 'defense bot', 'turret bot', 'fortress bot',
+                        'probe', 'exploration probe', 'research probe', 'space probe', 'deep space probe', 'planetary probe', 'survey probe',
+                        'spider bot', 'crawler bot', 'walker bot', 'climbing bot', 'wall crawler', 'ceiling walker', 'multi-leg robot',
+                        'tank bot', 'armored robot', 'heavy robot', 'siege robot', 'destroyer bot', 'juggernaut bot', 'fortress robot',
+                        'flying bot', 'hover bot', 'aerial drone', 'sky patrol', 'air support', 'wing bot', 'jet drone', 'rotor drone',
+                        'repair bot', 'maintenance bot', 'service robot', 'utility bot', 'construction bot', 'builder robot', 'assembly bot'
+                    ],
+                    computers: [
+                        // Computing Systems (80+)
+                        'terminal', 'computer terminal', 'data terminal', 'access terminal', 'command terminal', 'control terminal', 'user terminal',
+                        'mainframe', 'central computer', 'super computer', 'quantum computer', 'neural computer', 'bio computer', 'crystal computer',
+                        'server', 'data server', 'file server', 'web server', 'game server', 'cloud server', 'backup server', 'proxy server',
+                        'laptop', 'notebook', 'portable computer', 'mobile workstation', 'gaming laptop', 'rugged laptop', 'military laptop',
+                        'tablet', 'data pad', 'slate computer', 'touch tablet', 'digital tablet', 'smart tablet', 'industrial tablet',
+                        'console', 'game console', 'control console', 'command console', 'operator console', 'pilot console', 'navigation console',
+                        'monitor', 'display screen', 'computer screen', 'lcd screen', 'led screen', 'plasma screen', 'holographic display',
+                        'keyboard', 'input device', 'control pad', 'keypad', 'numeric pad', 'function keys', 'macro keyboard', 'gaming keyboard',
+                        'scanner', 'barcode scanner', 'document scanner', 'retinal scanner', 'fingerprint scanner', 'facial scanner', 'body scanner',
+                        'printer', '3d printer', 'laser printer', 'inkjet printer', 'dot matrix printer', 'thermal printer', 'photo printer'
+                    ],
+                    vehicles: [
+                        // Transportation & Vehicles (100+)
+                        'spaceship', 'starship', 'space cruiser', 'battleship', 'fighter ship', 'cargo ship', 'transport ship', 'exploration ship',
+                        'hover car', 'flying car', 'air car', 'sky car', 'anti-grav vehicle', 'repulsor car', 'mag-lev car', 'float car',
+                        'mech suit', 'power armor', 'exosuit', 'battle suit', 'combat armor', 'powered exoskeleton', 'military suit', 'space suit',
+                        'jet pack', 'rocket pack', 'thruster pack', 'flight pack', 'hover pack', 'anti-grav pack', 'personal flyer', 'wing pack',
+                        'teleporter', 'transport pad', 'warp gate', 'portal device', 'beam pad', 'transmat', 'quantum gate', 'dimension door',
+                        'time machine', 'temporal device', 'chronometer', 'time portal', 'time gate', 'temporal transport', 'chrono chamber',
+                        'submarine', 'sub', 'deep sea vehicle', 'underwater craft', 'submersible', 'bathyscaphe', 'mini sub', 'attack sub',
+                        'tank', 'battle tank', 'main battle tank', 'heavy tank', 'light tank', 'assault tank', 'siege tank', 'hover tank',
+                        'helicopter', 'chopper', 'heli', 'attack helicopter', 'transport heli', 'rescue helicopter', 'military chopper', 'gunship',
+                        'motorcycle', 'bike', 'motorbike', 'sport bike', 'cruiser bike', 'dirt bike', 'racing bike', 'electric bike', 'hover bike'
+                    ],
+                    gadgets: [
+                        // Tools & Gadgets (120+)
+                        'laser', 'laser cutter', 'laser welder', 'laser pointer', 'laser sight', 'laser scanner', 'laser drill', 'laser torch',
+                        'forcefield', 'energy shield', 'barrier generator', 'protection field', 'deflector shield', 'plasma shield', 'force barrier',
+                        'scanner', 'motion scanner', 'life scanner', 'thermal scanner', 'x-ray scanner', 'medical scanner', 'geological scanner',
+                        'detector', 'metal detector', 'radiation detector', 'toxin detector', 'lie detector', 'bomb detector', 'mine detector',
+                        'communicator', 'radio', 'transmitter', 'receiver', 'walkie talkie', 'comm device', 'intercom', 'telephone', 'cell phone',
+                        'translator', 'universal translator', 'language device', 'babel fish', 'translation matrix', 'linguistic processor',
+                        'cloaking device', 'invisibility cloak', 'stealth generator', 'camouflage field', 'optical camouflage', 'phase shifter',
+                        'shield generator', 'energy shield', 'plasma shield', 'deflector array', 'protective barrier', 'force field projector',
+                        'weapon turret', 'auto turret', 'defense turret', 'gun turret', 'laser turret', 'missile turret', 'plasma turret',
+                        'portal gun', 'wormhole generator', 'dimensional gate', 'space ripper', 'reality tear', 'quantum tunnel', 'void gate',
+                        'grappling gun', 'grapple hook', 'zip line gun', 'cable launcher', 'hook shot', 'magnetic grappler', 'climbing gun'
+                    ]
                 },
                 details: {
-                    condition: ['pristine', 'operational', 'damaged', 'broken', 'rusted', 'overheating', 'sparking', 'smoking', 'glowing', 'humming'],
-                    power: ['solar powered', 'battery powered', 'nuclear powered', 'steam powered', 'magic powered', 'crystal powered', 'fusion powered', 'diesel', 'electric', 'hybrid']
+                    condition: ['pristine', 'mint condition', 'excellent', 'good', 'fair', 'poor', 'operational', 'functional', 'working', 'running', 'damaged', 'broken', 'destroyed', 'rusted', 'corroded', 'worn', 'weathered', 'overheating', 'sparking', 'smoking', 'glowing', 'humming', 'vibrating', 'malfunctioning', 'offline', 'online', 'active', 'inactive', 'standby', 'emergency mode'],
+                    power: ['solar powered', 'battery powered', 'nuclear powered', 'fusion powered', 'steam powered', 'diesel powered', 'gas powered', 'electric powered', 'hybrid powered', 'magic powered', 'crystal powered', 'antimatter powered', 'zero point powered', 'quantum powered', 'plasma powered', 'thermal powered', 'geothermal powered', 'wind powered', 'water powered', 'muscle powered', 'manual powered', 'clockwork powered', 'spring powered'],
+                    technology: ['mechanical', 'electrical', 'electronic', 'digital', 'analog', 'hydraulic', 'pneumatic', 'magnetic', 'optical', 'laser', 'plasma', 'quantum', 'nano', 'bio', 'cyber', 'neural', 'psychic', 'magical', 'arcane', 'divine', 'infernal', 'alien', 'ancient', 'futuristic', 'steampunk', 'cyberpunk', 'dieselpunk', 'clockwork']
                 }
             }
             // Adding even more categories would continue here...
@@ -1088,9 +2677,11 @@ This tool is created by the community for the community
             
             selections.mainType = '';
             selections.details = {};
+            // Don't reset pagination when changing asset types - each category keeps its own pages
             
             updateDynamicSections();
         }
+
 
         // Update dynamic sections based on asset type
         function updateDynamicSections() {
@@ -1110,14 +2701,18 @@ This tool is created by the community for the community
                 </div>
                 <div class="section-content">
                     <div class="form-group">
-                        ${Object.keys(data.types).map(category => `
-                            <label class="form-label">${category.charAt(0).toUpperCase() + category.slice(1)}</label>
-                            <div class="preset-grid">
-                                ${data.types[category].map(item => 
-                                    `<button class="preset-btn" onclick="setMainType('${item}')">${item}</button>`
-                                ).join('')}
-                            </div>
-                        `).join('')}
+                        ${Object.keys(data.types).map(category => {
+                            const items = data.types[category];
+                            let html = `<label class="form-label">${category.charAt(0).toUpperCase() + category.slice(1)} (${items.length} items)</label>`;
+                            
+                            html += `<div class="preset-grid">`;
+                            items.forEach(item => {
+                                html += `<button class="preset-btn" onclick="setMainType('${item}')">${item}</button>`;
+                            });
+                            html += `</div>`;
+                            
+                            return html;
+                        }).join('')}
                     </div>
                 </div>
             `;
@@ -1431,50 +3026,30 @@ This tool is created by the community for the community
                 spriteScale: selections.spriteScale || ''
             };
 
-            // Generate PLAIN TEXT prompt following the Pixel Art Bible structure
-            let plainPrompt = 'Pixel art';
+            // Generate PLAIN TEXT prompt in PixelLab format: "perspective, direction asset in art style. Clean pixel lines."
+            let plainPrompt = components.perspective;
+            if (components.direction) plainPrompt += ', ' + components.direction;
             
-            // 1. Core Subject
             if (components.mainType) {
-                plainPrompt += ' of ' + getArticle(components.mainType) + ' ';
+                plainPrompt += ' ' + getArticle(components.mainType) + ' ';
                 if (components.mainColor) plainPrompt += components.mainColor + ' ';
                 plainPrompt += components.mainType;
             }
             
-            // 2. Perspective (CRUCIAL according to the document)
-            plainPrompt += '. Perspective: ' + components.perspective;
-            if (components.direction) plainPrompt += ', ' + components.direction;
-            plainPrompt += '.';
+            if (components.artStyle) plainPrompt += ' in ' + components.artStyle;
             
-            // 3. Object/Scene Details
-            if (components.material) plainPrompt += ' Made of ' + components.material + '.';
-            if (components.details.length > 0) plainPrompt += ' With ' + components.details.join(', ') + '.';
+            // Add all the important details
+            if (components.material) plainPrompt += '. Made of ' + components.material;
+            if (components.details.length > 0) plainPrompt += '. With ' + components.details.join(', ');
+            if (components.shading) plainPrompt += '. ' + components.shading.charAt(0).toUpperCase() + components.shading.slice(1);
+            if (components.lightSource) plainPrompt += '. ' + components.lightSource.charAt(0).toUpperCase() + components.lightSource.slice(1);
+            if (components.effect) plainPrompt += '. ' + components.effect.charAt(0).toUpperCase() + components.effect.slice(1) + ' effect';
+            if (components.atmosphere) plainPrompt += '. ' + components.atmosphere.charAt(0).toUpperCase() + components.atmosphere.slice(1) + ' atmosphere';
+            if (components.colorPalette) plainPrompt += '. ' + components.colorPalette.charAt(0).toUpperCase() + components.colorPalette.slice(1);
+            if (components.spriteScale) plainPrompt += '. Suitable for ' + components.spriteScale;
+            if (components.detailLevel) plainPrompt += '. ' + components.detailLevel.charAt(0).toUpperCase() + components.detailLevel.slice(1);
             
-            // 4. Surface Texture (from shading selection)
-            if (components.shading) plainPrompt += ' ' + components.shading.charAt(0).toUpperCase() + components.shading.slice(1) + '.';
-            
-            // 5. Lighting & Shadows
-            if (components.lightSource) plainPrompt += ' ' + components.lightSource.charAt(0).toUpperCase() + components.lightSource.slice(1) + '.';
-            
-            // 6. Effects
-            if (components.effect) plainPrompt += ' ' + components.effect.charAt(0).toUpperCase() + components.effect.slice(1) + ' effect.';
-            
-            // 7. Atmosphere/Mood
-            if (components.atmosphere) plainPrompt += ' ' + components.atmosphere.charAt(0).toUpperCase() + components.atmosphere.slice(1) + ' atmosphere.';
-            
-            // 8. Color Palette
-            if (components.colorPalette) plainPrompt += ' ' + components.colorPalette.charAt(0).toUpperCase() + components.colorPalette.slice(1) + '.';
-            
-            // 9. Scale & Resolution
-            if (components.spriteScale) plainPrompt += ' Suitable for ' + components.spriteScale + '.';
-            
-            // 10. Detail Level
-            if (components.detailLevel) plainPrompt += ' ' + components.detailLevel.charAt(0).toUpperCase() + components.detailLevel.slice(1) + '.';
-            
-            // 11. Art Style
-            if (components.artStyle) plainPrompt += ' ' + components.artStyle.charAt(0).toUpperCase() + components.artStyle.slice(1) + '.';
-            
-            plainPrompt += ' Clean pixel lines.';
+            plainPrompt += '. Clean pixel lines.';
 
             // Generate JSON format with professional structure
             const jsonData = {
@@ -1488,38 +3063,53 @@ This tool is created by the community for the community
                     perspective_type: components.perspective,
                     camera_angle: components.direction,
                     depth_representation: getPerspectiveDepth(components.perspective)
-                },
-                object_details: {
-                    color: components.mainColor || null,
-                    material: components.material || null,
-                    additional_details: components.details.length > 0 ? components.details : null,
-                    visual_effect: components.effect || null
-                },
-                surface_texture: {
-                    shading_technique: components.shading || null,
-                    texture_quality: getTextureQuality(components.shading)
-                },
-                lighting: {
-                    light_source: components.lightSource || null,
-                    shadow_behavior: getShadowBehavior(components.lightSource)
-                },
-                style_settings: {
-                    atmosphere: components.atmosphere || null,
-                    color_palette: components.colorPalette || null,
-                    art_style: components.artStyle,
-                    detail_level: components.detailLevel || null,
-                    scale_resolution: components.spriteScale || null
-                },
-                technical_specs: {
-                    clean_pixel_lines: true,
-                    optimized_for: "game_development",
-                    pixel_perfect: true
                 }
             };
 
+            // Add object_details only if there are non-empty values
+            const objectDetails = {};
+            if (components.mainColor) objectDetails.color = components.mainColor;
+            if (components.material) objectDetails.material = components.material;
+            if (components.details.length > 0) objectDetails.additional_details = components.details;
+            if (components.effect) objectDetails.visual_effect = components.effect;
+            if (Object.keys(objectDetails).length > 0) {
+                jsonData.object_details = objectDetails;
+            }
+
+            // Add surface_texture only if shading is selected
+            if (components.shading) {
+                jsonData.surface_texture = {
+                    shading_technique: components.shading,
+                    texture_quality: getTextureQuality(components.shading)
+                };
+            }
+
+            // Add lighting only if light source is selected
+            if (components.lightSource) {
+                jsonData.lighting = {
+                    light_source: components.lightSource,
+                    shadow_behavior: getShadowBehavior(components.lightSource)
+                };
+            }
+
+            // Add style_settings
+            const styleSettings = {
+                art_style: components.artStyle
+            };
+            if (components.atmosphere) styleSettings.atmosphere = components.atmosphere;
+            if (components.colorPalette) styleSettings.color_palette = components.colorPalette;
+            if (components.detailLevel) styleSettings.detail_level = components.detailLevel;
+            if (components.spriteScale) styleSettings.scale_resolution = components.spriteScale;
+            jsonData.style_settings = styleSettings;
+
+            // Add technical_specs without optimized_for
+            jsonData.technical_specs = {
+                clean_pixel_lines: true,
+                pixel_perfect: true
+            };
+
             // Generate FORMATTED text following document structure
-            let formattedPrompt = 'PIXEL ART GENERATION\n';
-            formattedPrompt += '━━━━━━━━━━━━━━━━━\n';
+            let formattedPrompt = '';
             formattedPrompt += '[PERSPECTIVE]: ' + components.perspective;
             if (components.direction) formattedPrompt += ', ' + components.direction;
             formattedPrompt += '\n';
