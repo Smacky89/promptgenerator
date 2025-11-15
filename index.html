@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ULTIMATE PixelLab Asset Generator - 50,000+ presets! Every possible game asset with special effects, materials, colors, and more!">
+    <meta name="description" content="ULTIMATE PixelLab Prompt Creator 70000+ combinations!">
     <meta name="keywords" content="pixellab, pixel art, game assets, prompt generator, RPG Maker, isometric, dimetric, game development, sprites">
     <meta name="author" content="TheSyntheticFeed">
     <title>ULTIMATE PixelLab Generator - 50,000+ Presets</title>
@@ -495,40 +495,40 @@
                 <div class="form-group">
                     <label class="form-label">Perspective/Projection Type</label>
                     <div class="preset-grid">
-                        <button class="preset-btn active" onclick="setPerspective('top-down')">Top-Down</button>
-                        <button class="preset-btn" onclick="setPerspective('isometric')">Isometric</button>
+                        <button class="preset-btn active" onclick="setPerspective('true top-down 90°')">True Top-Down</button>
+                        <button class="preset-btn" onclick="setPerspective('45° top-down JRPG')">45° JRPG</button>
+                        <button class="preset-btn" onclick="setPerspective('60-70° tilted top-down')">60-70° Tilted</button>
+                        <button class="preset-btn" onclick="setPerspective('isometric 30°x30° 2:1 ratio')">Isometric 2:1</button>
                         <button class="preset-btn" onclick="setPerspective('dimetric 2:1')">Dimetric 2:1</button>
                         <button class="preset-btn" onclick="setPerspective('trimetric')">Trimetric</button>
-                        <button class="preset-btn" onclick="setPerspective('side-view')">Side View</button>
+                        <button class="preset-btn" onclick="setPerspective('side-view platformer')">Side View</button>
                         <button class="preset-btn" onclick="setPerspective('3/4 view')">3/4 View</button>
-                        <button class="preset-btn" onclick="setPerspective('oblique')">Oblique</button>
+                        <button class="preset-btn" onclick="setPerspective('oblique 45° receding')">Oblique 45°</button>
                         <button class="preset-btn" onclick="setPerspective('cabinet projection')">Cabinet</button>
                         <button class="preset-btn" onclick="setPerspective('military projection')">Military</button>
                         <button class="preset-btn" onclick="setPerspective('cavalier projection')">Cavalier</button>
                         <button class="preset-btn" onclick="setPerspective('birds-eye view')">Bird's Eye</button>
                         <button class="preset-btn" onclick="setPerspective('worms-eye view')">Worm's Eye</button>
-                        <button class="preset-btn" onclick="setPerspective('platformer side-scroll')">Platformer</button>
                         <button class="preset-btn" onclick="setPerspective('orthographic')">Orthographic</button>
                         <button class="preset-btn" onclick="setPerspective('axonometric')">Axonometric</button>
                         <button class="preset-btn" onclick="setPerspective('2.5D projection')">2.5D</button>
-                        <button class="preset-btn" onclick="setPerspective('pseudo-3D')">Pseudo-3D</button>
-                        <button class="preset-btn" onclick="setPerspective('RPG Maker perspective')">RPG Maker</button>
+                        <button class="preset-btn" onclick="setPerspective('RPG Maker MV/MZ')">RPG Maker</button>
                     </div>
                 </div>
                 
                 <div class="form-group">
-                    <label class="form-label">Camera Angle/Direction</label>
+                    <label class="form-label">Camera Angle/View Direction</label>
                     <div class="preset-grid">
-                        <button class="preset-btn active" onclick="setDirection('front-facing')">Front-Facing</button>
-                        <button class="preset-btn" onclick="setDirection('back-facing')">Back-Facing</button>
-                        <button class="preset-btn" onclick="setDirection('left-facing')">Left-Facing</button>
-                        <button class="preset-btn" onclick="setDirection('right-facing')">Right-Facing</button>
-                        <button class="preset-btn" onclick="setDirection('corner view 45°')">Corner 45°</button>
-                        <button class="preset-btn" onclick="setDirection('corner view 30°')">Corner 30°</button>
-                        <button class="preset-btn" onclick="setDirection('corner view 60°')">Corner 60°</button>
-                        <button class="preset-btn" onclick="setDirection('diagonal view')">Diagonal</button>
-                        <button class="preset-btn" onclick="setDirection('straight-on')">Straight On</button>
-                        <button class="preset-btn" onclick="setDirection('angled 26.5°')">26.5° Angle</button>
+                        <button class="preset-btn active" onclick="setDirection('viewed from above')">From Above</button>
+                        <button class="preset-btn" onclick="setDirection('front-facing view')">Front View</button>
+                        <button class="preset-btn" onclick="setDirection('3/4 back view')">3/4 Back</button>
+                        <button class="preset-btn" onclick="setDirection('side profile view')">Side Profile</button>
+                        <button class="preset-btn" onclick="setDirection('diagonal corner 45°')">Corner 45°</button>
+                        <button class="preset-btn" onclick="setDirection('diagonal corner 30°')">Corner 30°</button>
+                        <button class="preset-btn" onclick="setDirection('diagonal corner 60°')">Corner 60°</button>
+                        <button class="preset-btn" onclick="setDirection('flat front undistorted')">Flat Front</button>
+                        <button class="preset-btn" onclick="setDirection('depth receding 45°')">Depth 45°</button>
+                        <button class="preset-btn" onclick="setDirection('parallel depth lines')">Parallel Depth</button>
                         <button class="preset-btn" onclick="setDirection('north-facing')">North</button>
                         <button class="preset-btn" onclick="setDirection('south-facing')">South</button>
                         <button class="preset-btn" onclick="setDirection('east-facing')">East</button>
@@ -879,7 +879,8 @@
         <!-- Footer -->
         <footer class="footer">
             <p style="margin-bottom: 15px; color: #888;">
-                <strong>50,000+ Presets!</strong> The most comprehensive pixel art generator ever created!
+                <strong>50,000+ Presets!</strong> Disclaimer: This is a fan-made project. I am not affiliated with, employed by, or officially connected to PixelLab in any way.
+This tool is created by the community for the community
             </p>
             <p>Created by TheSyntheticFeed • <a href="https://www.pixellab.ai" target="_blank">PixelLab</a></p>
         </footer>
@@ -957,6 +958,98 @@
                     town: ['street lamp', 'bench', 'fountain', 'statue', 'sign post', 'mail box', 'trash can', 'flower pot', 'flag pole', 'clock tower', 'bell', 'market stall', 'wagon', 'barrel', 'crate'],
                     nature: ['rock', 'log', 'stump', 'mushroom', 'flower', 'grass patch', 'puddle', 'nest', 'beehive', 'spider web', 'vine', 'root', 'crystal formation', 'ore deposit', 'fossil']
                 }
+            },
+            item: {
+                types: {
+                    potions: ['health potion', 'mana potion', 'stamina potion', 'poison bottle', 'antidote', 'elixir', 'holy water', 'energy drink', 'buff potion', 'speed potion', 'strength potion', 'defense potion', 'invisibility potion', 'fire resistance', 'ice resistance'],
+                    tools: ['pickaxe', 'shovel', 'axe', 'hammer', 'wrench', 'screwdriver', 'saw', 'drill', 'crowbar', 'rope', 'grappling hook', 'torch', 'lantern', 'compass', 'map'],
+                    treasures: ['gold coin', 'silver coin', 'copper coin', 'gem', 'diamond', 'ruby', 'emerald', 'sapphire', 'pearl', 'treasure chest', 'gold bar', 'ancient artifact', 'relic', 'crown', 'scepter'],
+                    consumables: ['bandage', 'medical kit', 'food ration', 'water bottle', 'energy bar', 'herb', 'mushroom', 'berries', 'bread', 'meat', 'fish', 'vegetables', 'fruit', 'cheese', 'wine'],
+                    magical: ['scroll', 'spell book', 'wand', 'staff', 'orb', 'crystal', 'rune', 'talisman', 'amulet', 'ring', 'enchanted stone', 'soul gem', 'magic dust', 'fairy dust', 'dragon scale'],
+                    crafting: ['wood', 'stone', 'iron ore', 'gold ore', 'leather', 'cloth', 'string', 'feather', 'bone', 'claw', 'fang', 'pelt', 'scale', 'essence', 'powder']
+                },
+                details: {
+                    condition: ['pristine', 'worn', 'damaged', 'ancient', 'glowing', 'cursed', 'blessed', 'enchanted', 'rusty', 'polished'],
+                    size: ['tiny', 'small', 'medium', 'large', 'huge', 'pocket-sized', 'handheld', 'two-handed', 'oversized', 'miniature']
+                }
+            },
+            furniture: {
+                types: {
+                    seating: ['chair', 'armchair', 'throne', 'stool', 'bench', 'sofa', 'couch', 'ottoman', 'cushion', 'bean bag', 'rocking chair', 'office chair', 'dining chair', 'bar stool', 'meditation cushion'],
+                    tables: ['dining table', 'coffee table', 'side table', 'desk', 'workbench', 'crafting table', 'alchemy table', 'round table', 'square table', 'console table', 'bedside table', 'picnic table', 'bar counter', 'kitchen island', 'conference table'],
+                    storage: ['chest', 'cabinet', 'wardrobe', 'dresser', 'bookshelf', 'shelf', 'drawer', 'trunk', 'safe', 'locker', 'crate', 'barrel', 'box', 'basket', 'rack'],
+                    beds: ['single bed', 'double bed', 'king bed', 'bunk bed', 'canopy bed', 'futon', 'sleeping bag', 'hammock', 'cot', 'cradle', 'four-poster bed', 'water bed', 'hospital bed', 'daybed', 'sofa bed'],
+                    decor: ['lamp', 'chandelier', 'candelabra', 'mirror', 'painting', 'vase', 'statue', 'clock', 'rug', 'curtains', 'tapestry', 'plant pot', 'aquarium', 'fireplace', 'fountain']
+                },
+                details: {
+                    material: ['wooden', 'metal', 'stone', 'glass', 'crystal', 'marble', 'leather', 'fabric', 'wicker', 'bamboo'],
+                    style: ['modern', 'antique', 'rustic', 'medieval', 'gothic', 'minimalist', 'ornate', 'industrial', 'fantasy', 'sci-fi']
+                }
+            },
+            character: {
+                types: {
+                    heroes: ['knight', 'warrior', 'mage', 'wizard', 'archer', 'ranger', 'rogue', 'thief', 'paladin', 'cleric', 'monk', 'bard', 'druid', 'necromancer', 'samurai'],
+                    npcs: ['villager', 'merchant', 'guard', 'innkeeper', 'blacksmith', 'farmer', 'noble', 'beggar', 'child', 'elder', 'priest', 'scholar', 'sailor', 'miner', 'hunter'],
+                    enemies: ['bandit', 'pirate', 'assassin', 'cultist', 'dark knight', 'evil wizard', 'mercenary', 'thug', 'raider', 'barbarian', 'witch', 'warlock', 'demon', 'undead', 'vampire'],
+                    fantasy: ['elf', 'dwarf', 'orc', 'goblin', 'troll', 'fairy', 'pixie', 'gnome', 'halfling', 'giant', 'centaur', 'minotaur', 'mermaid', 'angel', 'demon'],
+                    modern: ['soldier', 'police', 'doctor', 'scientist', 'hacker', 'spy', 'athlete', 'student', 'teacher', 'chef', 'mechanic', 'pilot', 'astronaut', 'firefighter', 'paramedic']
+                },
+                details: {
+                    pose: ['standing', 'walking', 'running', 'jumping', 'sitting', 'crouching', 'attacking', 'defending', 'casting spell', 'idle'],
+                    equipment: ['sword and shield', 'dual wielding', 'bow and arrow', 'staff', 'heavy armor', 'light armor', 'robes', 'casual clothes', 'uniform', 'cape']
+                }
+            },
+            creature: {
+                types: {
+                    beasts: ['wolf', 'bear', 'lion', 'tiger', 'boar', 'deer', 'fox', 'rabbit', 'bat', 'rat', 'snake', 'spider', 'scorpion', 'eagle', 'crow'],
+                    dragons: ['fire dragon', 'ice dragon', 'earth dragon', 'wind dragon', 'water dragon', 'lightning dragon', 'shadow dragon', 'light dragon', 'ancient dragon', 'wyvern', 'drake', 'wyrm', 'hydra', 'basilisk', 'sea serpent'],
+                    undead: ['skeleton', 'zombie', 'ghost', 'wraith', 'lich', 'mummy', 'vampire', 'ghoul', 'specter', 'banshee', 'revenant', 'death knight', 'bone dragon', 'phantom', 'shade'],
+                    elementals: ['fire elemental', 'water elemental', 'earth elemental', 'air elemental', 'ice elemental', 'lightning elemental', 'nature elemental', 'shadow elemental', 'light elemental', 'crystal golem', 'lava golem', 'stone golem', 'iron golem', 'wood golem', 'sand golem'],
+                    mythical: ['phoenix', 'griffin', 'pegasus', 'unicorn', 'chimera', 'manticore', 'sphinx', 'cerberus', 'kraken', 'leviathan', 'behemoth', 'roc', 'basilisk', 'cockatrice', 'harpy']
+                },
+                details: {
+                    size: ['tiny', 'small', 'medium', 'large', 'huge', 'gigantic', 'colossal', 'boss-sized', 'swarm', 'pack'],
+                    behavior: ['aggressive', 'passive', 'neutral', 'territorial', 'friendly', 'hostile', 'fearful', 'curious', 'predatory', 'protective']
+                }
+            },
+            weapon: {
+                types: {
+                    melee: ['sword', 'axe', 'mace', 'hammer', 'spear', 'lance', 'halberd', 'scythe', 'club', 'staff', 'dagger', 'katana', 'rapier', 'claymore', 'greatsword'],
+                    ranged: ['bow', 'crossbow', 'longbow', 'shortbow', 'sling', 'throwing knife', 'shuriken', 'javelin', 'boomerang', 'dart', 'blowgun', 'chakram', 'throwing axe', 'bolas', 'net'],
+                    firearms: ['pistol', 'revolver', 'rifle', 'shotgun', 'sniper rifle', 'machine gun', 'rocket launcher', 'grenade launcher', 'laser gun', 'plasma rifle', 'ray gun', 'blaster', 'cannon', 'flamethrower', 'freeze ray'],
+                    magical: ['wand', 'staff', 'rod', 'orb', 'crystal', 'tome', 'scroll', 'rune blade', 'enchanted sword', 'cursed dagger', 'holy mace', 'demon axe', 'soul reaper', 'life stealer', 'element blade'],
+                    siege: ['catapult', 'ballista', 'trebuchet', 'battering ram', 'siege tower', 'cannon', 'mortar', 'bomb', 'explosive barrel', 'fire pot', 'oil cauldron', 'spike trap', 'bear trap', 'pit trap', 'arrow trap']
+                },
+                details: {
+                    material: ['iron', 'steel', 'bronze', 'silver', 'gold', 'mithril', 'adamantine', 'obsidian', 'crystal', 'bone'],
+                    enchantment: ['flaming', 'freezing', 'shocking', 'poisoned', 'blessed', 'cursed', 'vampiric', 'holy', 'demonic', 'ethereal']
+                }
+            },
+            food: {
+                types: {
+                    meals: ['steak', 'chicken', 'fish', 'soup', 'stew', 'salad', 'sandwich', 'burger', 'pizza', 'pasta', 'rice bowl', 'sushi', 'tacos', 'curry', 'roast'],
+                    fruits: ['apple', 'banana', 'orange', 'grape', 'strawberry', 'watermelon', 'pineapple', 'mango', 'peach', 'pear', 'cherry', 'blueberry', 'raspberry', 'lemon', 'coconut'],
+                    vegetables: ['carrot', 'potato', 'tomato', 'lettuce', 'cabbage', 'onion', 'corn', 'broccoli', 'pepper', 'mushroom', 'pumpkin', 'cucumber', 'spinach', 'garlic', 'beans'],
+                    desserts: ['cake', 'pie', 'cookie', 'ice cream', 'chocolate', 'candy', 'donut', 'cupcake', 'pudding', 'jelly', 'tart', 'macaron', 'brownie', 'muffin', 'croissant'],
+                    drinks: ['water', 'juice', 'milk', 'coffee', 'tea', 'soda', 'beer', 'wine', 'cocktail', 'smoothie', 'shake', 'energy drink', 'potion', 'elixir', 'nectar']
+                },
+                details: {
+                    preparation: ['raw', 'cooked', 'baked', 'fried', 'grilled', 'steamed', 'boiled', 'roasted', 'frozen', 'fresh'],
+                    quality: ['common', 'fine', 'gourmet', 'exotic', 'magical', 'poisoned', 'spoiled', 'preserved', 'organic', 'enchanted']
+                }
+            },
+            machine: {
+                types: {
+                    industrial: ['generator', 'engine', 'turbine', 'pump', 'compressor', 'conveyor', 'crane', 'forklift', 'drill', 'press', 'furnace', 'reactor', 'refinery', 'assembler', 'fabricator'],
+                    robots: ['android', 'cyborg', 'mech', 'drone', 'automaton', 'golem', 'sentry', 'probe', 'spider bot', 'tank bot', 'flying bot', 'repair bot', 'combat bot', 'service bot', 'nano bot'],
+                    computers: ['terminal', 'mainframe', 'server', 'laptop', 'tablet', 'console', 'hologram projector', 'data pad', 'control panel', 'interface', 'monitor', 'keyboard', 'scanner', 'printer', 'database'],
+                    vehicles: ['spaceship', 'hover car', 'flying car', 'mech suit', 'jet pack', 'teleporter', 'time machine', 'submarine', 'tank', 'helicopter', 'motorcycle', 'bicycle', 'skateboard', 'segway', 'train'],
+                    gadgets: ['laser', 'forcefield', 'scanner', 'detector', 'communicator', 'translator', 'cloaking device', 'shield generator', 'weapon turret', 'portal gun', 'grappling gun', 'jet boots', 'power suit', 'exoskeleton', 'cybernetics']
+                },
+                details: {
+                    condition: ['pristine', 'operational', 'damaged', 'broken', 'rusted', 'overheating', 'sparking', 'smoking', 'glowing', 'humming'],
+                    power: ['solar powered', 'battery powered', 'nuclear powered', 'steam powered', 'magic powered', 'crystal powered', 'fusion powered', 'diesel', 'electric', 'hybrid']
+                }
             }
             // Adding even more categories would continue here...
         };
@@ -964,8 +1057,8 @@
         // Current selections
         let currentAssetType = 'building';
         let selections = {
-            perspective: 'top-down',
-            direction: 'front-facing',
+            perspective: 'true top-down 90°',
+            direction: 'viewed from above',
             mainType: '',
             details: {},
             atmosphere: '',
@@ -975,7 +1068,9 @@
             shading: '',
             detailLevel: '',
             effect: '',
-            material: ''
+            material: '',
+            lightSource: '',
+            spriteScale: ''
         };
 
         // Initialize on load
@@ -1084,30 +1179,82 @@
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label">Shading Style</label>
+                        <label class="form-label">Surface Texture Quality</label>
                         <div class="preset-grid">
-                            <button class="preset-btn" onclick="setShading('flat shading')">Flat</button>
-                            <button class="preset-btn" onclick="setShading('soft shading')">Soft</button>
-                            <button class="preset-btn" onclick="setShading('hard shading')">Hard</button>
-                            <button class="preset-btn" onclick="setShading('cel shading')">Cel</button>
-                            <button class="preset-btn" onclick="setShading('gradient shading')">Gradient</button>
-                            <button class="preset-btn" onclick="setShading('dithered shading')">Dithered</button>
-                            <button class="preset-btn" onclick="setShading('pillow shading')">Pillow</button>
-                            <button class="preset-btn" onclick="setShading('minimal shading')">Minimal</button>
-                            <button class="preset-btn" onclick="setShading('no shading')">None</button>
+                            <button class="preset-btn" onclick="setShading('smooth surface texture')">Smooth Surface</button>
+                            <button class="preset-btn" onclick="setShading('rough texture')">Rough Texture</button>
+                            <button class="preset-btn" onclick="setShading('polished finish')">Polished</button>
+                            <button class="preset-btn" onclick="setShading('pixel clustering')">Pixel Clustering</button>
+                            <button class="preset-btn" onclick="setShading('anti-aliased curves')">Anti-Aliased</button>
+                            <button class="preset-btn" onclick="setShading('jagged edges')">Jagged Edges</button>
+                            <button class="preset-btn" onclick="setShading('minimal pixel noise')">Clean Pixels</button>
+                            <button class="preset-btn" onclick="setShading('gritty surface')">Gritty</button>
+                            <button class="preset-btn" onclick="setShading('chunky detail')">Chunky Detail</button>
+                            <button class="preset-btn" onclick="setShading('visibly textured')">Textured</button>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label">Detail Level</label>
+                        <label class="form-label">Shading Technique</label>
                         <div class="preset-grid">
-                            <button class="preset-btn" onclick="setDetailLevel('minimal detail')">Minimal</button>
-                            <button class="preset-btn" onclick="setDetailLevel('low detail')">Low</button>
+                            <button class="preset-btn" onclick="setShading('cell shading')">Cell Shading</button>
+                            <button class="preset-btn" onclick="setShading('hard shading')">Hard Shading</button>
+                            <button class="preset-btn" onclick="setShading('smooth shading')">Smooth Shading</button>
+                            <button class="preset-btn" onclick="setShading('gradient shading')">Gradient</button>
+                            <button class="preset-btn" onclick="setShading('dithered shading')">Dithered</button>
+                            <button class="preset-btn" onclick="setShading('pillow shading')">Pillow</button>
+                            <button class="preset-btn" onclick="setShading('flat colors no shading')">Flat/None</button>
+                            <button class="preset-btn" onclick="setShading('color ramps')">Color Ramps</button>
+                            <button class="preset-btn" onclick="setShading('minimal shading')">Minimal</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Light Source Type</label>
+                        <div class="preset-grid">
+                            <button class="preset-btn" onclick="setLightSource('directional light from top-left')">Top-Left Light</button>
+                            <button class="preset-btn" onclick="setLightSource('directional light from top-right')">Top-Right Light</button>
+                            <button class="preset-btn" onclick="setLightSource('sunlight from above')">Sunlight Above</button>
+                            <button class="preset-btn" onclick="setLightSource('ambient lighting')">Ambient</button>
+                            <button class="preset-btn" onclick="setLightSource('point light source')">Point Light</button>
+                            <button class="preset-btn" onclick="setLightSource('rim lighting')">Rim Light</button>
+                            <button class="preset-btn" onclick="setLightSource('casts strong shadows')">Strong Shadows</button>
+                            <button class="preset-btn" onclick="setLightSource('soft drop shadow')">Soft Shadow</button>
+                            <button class="preset-btn" onclick="setLightSource('no shadows')">No Shadows</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Sprite Scale/Resolution</label>
+                        <div class="preset-grid">
+                            <button class="preset-btn" onclick="setSpriteScale('8x8 sprite')">8x8</button>
+                            <button class="preset-btn" onclick="setSpriteScale('16x16 sprite')">16x16</button>
+                            <button class="preset-btn" onclick="setSpriteScale('24x24 sprite')">24x24</button>
+                            <button class="preset-btn" onclick="setSpriteScale('32x32 sprite')">32x32</button>
+                            <button class="preset-btn" onclick="setSpriteScale('48x48 sprite')">48x48</button>
+                            <button class="preset-btn" onclick="setSpriteScale('64x64 sprite')">64x64</button>
+                            <button class="preset-btn" onclick="setSpriteScale('128x128 sprite')">128x128</button>
+                            <button class="preset-btn" onclick="setSpriteScale('256x256 sprite')">256x256</button>
+                            <button class="preset-btn" onclick="setSpriteScale('tilemap ready')">Tilemap Ready</button>
+                            <button class="preset-btn" onclick="setSpriteScale('16-bit era')">16-bit Era</button>
+                            <button class="preset-btn" onclick="setSpriteScale('8-bit era')">8-bit Era</button>
+                            <button class="preset-btn" onclick="setSpriteScale('HD pixel art')">HD Pixel</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Detail Level & Form Complexity</label>
+                        <div class="preset-grid">
+                            <button class="preset-btn" onclick="setDetailLevel('minimalist design')">Minimalist</button>
+                            <button class="preset-btn" onclick="setDetailLevel('simple silhouette')">Simple Form</button>
+                            <button class="preset-btn" onclick="setDetailLevel('iconic style')">Iconic</button>
+                            <button class="preset-btn" onclick="setDetailLevel('basic form')">Basic</button>
                             <button class="preset-btn" onclick="setDetailLevel('medium detail')">Medium</button>
-                            <button class="preset-btn" onclick="setDetailLevel('high detail')">High</button>
-                            <button class="preset-btn" onclick="setDetailLevel('ultra detail')">Ultra</button>
-                            <button class="preset-btn" onclick="setDetailLevel('hyper detail')">Hyper</button>
-                            <button class="preset-btn" onclick="setDetailLevel('maximum detail')">Maximum</button>
+                            <button class="preset-btn" onclick="setDetailLevel('highly detailed')">High Detail</button>
+                            <button class="preset-btn" onclick="setDetailLevel('complex form')">Complex Form</button>
+                            <button class="preset-btn" onclick="setDetailLevel('intricate surface detail')">Intricate</button>
+                            <button class="preset-btn" onclick="setDetailLevel('rich textures')">Rich Textures</button>
+                            <button class="preset-btn" onclick="setDetailLevel('multi-tone palette')">Multi-tone</button>
                         </div>
                     </div>
                 </div>
@@ -1184,6 +1331,16 @@
             updateActiveButton(event.target);
         }
 
+        function setLightSource(value) {
+            selections.lightSource = value;
+            updateActiveButton(event.target);
+        }
+
+        function setSpriteScale(value) {
+            selections.spriteScale = value;
+            updateActiveButton(event.target);
+        }
+
         function updateActiveButton(button) {
             if (!button) return;
             const parent = button.parentElement;
@@ -1213,8 +1370,8 @@
         // Reset all selections
         function resetAll() {
             selections = {
-                perspective: 'top-down',
-                direction: 'front-facing',
+                perspective: 'true top-down 90°',
+                direction: 'viewed from above',
                 mainType: '',
                 details: {},
                 atmosphere: '',
@@ -1224,7 +1381,9 @@
                 shading: '',
                 detailLevel: '',
                 effect: '',
-                material: ''
+                material: '',
+                lightSource: '',
+                spriteScale: ''
             };
             
             document.querySelectorAll('.preset-btn.active').forEach(btn => {
@@ -1232,8 +1391,8 @@
             });
             
             document.querySelectorAll('.preset-btn').forEach(btn => {
-                if (btn.textContent === 'Top-Down' || 
-                    btn.textContent === 'Front-Facing' || 
+                if (btn.textContent === 'True Top-Down' || 
+                    btn.textContent === 'From Above' || 
                     btn.textContent === 'SNES') {
                     btn.classList.add('active');
                 }
@@ -1253,10 +1412,10 @@
 
         // Generate prompt
         function generatePrompt() {
-            // Build prompt components
+            // Build prompt components following the Pixel Art Bible structure
             const components = {
-                perspective: selections.perspective || 'top-down',
-                direction: selections.direction || 'front-facing',
+                perspective: selections.perspective || 'true top-down 90°',
+                direction: selections.direction || 'viewed from above',
                 assetType: currentAssetType,
                 mainType: selections.mainType || 'asset',
                 mainColor: selections.mainColor || '',
@@ -1267,81 +1426,134 @@
                 colorPalette: selections.colorPalette || '',
                 shading: selections.shading || '',
                 detailLevel: selections.detailLevel || '',
-                artStyle: selections.artStyle || '16-bit SNES style'
+                artStyle: selections.artStyle || '16-bit SNES style',
+                lightSource: selections.lightSource || '',
+                spriteScale: selections.spriteScale || ''
             };
 
-            // Generate PLAIN TEXT prompt
-            let plainPrompt = 'Pixel art, ';
-            plainPrompt += components.perspective + ' ';
-            plainPrompt += components.direction + ' ';
-            plainPrompt += 'of ' + getArticle(components.mainType) + ' ';
-            if (components.mainColor) plainPrompt += components.mainColor + ' ';
-            plainPrompt += components.mainType;
-            if (components.material) plainPrompt += ' made of ' + components.material;
-            if (components.details.length > 0) plainPrompt += ' with ' + components.details.join(', ');
-            if (components.effect) plainPrompt += ', ' + components.effect + ' effect';
-            plainPrompt += '. ';
-            if (components.atmosphere) plainPrompt += components.atmosphere.charAt(0).toUpperCase() + components.atmosphere.slice(1) + ' atmosphere. ';
-            if (components.colorPalette) plainPrompt += components.colorPalette.charAt(0).toUpperCase() + components.colorPalette.slice(1) + ' colors, ';
-            if (components.shading) plainPrompt += components.shading + ', ';
-            plainPrompt += 'clean pixel lines. ';
-            if (components.detailLevel) plainPrompt += components.detailLevel.charAt(0).toUpperCase() + components.detailLevel.slice(1) + ', ';
-            if (components.artStyle) plainPrompt += components.artStyle + ' style';
+            // Generate PLAIN TEXT prompt following the Pixel Art Bible structure
+            let plainPrompt = 'Pixel art';
+            
+            // 1. Core Subject
+            if (components.mainType) {
+                plainPrompt += ' of ' + getArticle(components.mainType) + ' ';
+                if (components.mainColor) plainPrompt += components.mainColor + ' ';
+                plainPrompt += components.mainType;
+            }
+            
+            // 2. Perspective (CRUCIAL according to the document)
+            plainPrompt += '. Perspective: ' + components.perspective;
+            if (components.direction) plainPrompt += ', ' + components.direction;
             plainPrompt += '.';
+            
+            // 3. Object/Scene Details
+            if (components.material) plainPrompt += ' Made of ' + components.material + '.';
+            if (components.details.length > 0) plainPrompt += ' With ' + components.details.join(', ') + '.';
+            
+            // 4. Surface Texture (from shading selection)
+            if (components.shading) plainPrompt += ' ' + components.shading.charAt(0).toUpperCase() + components.shading.slice(1) + '.';
+            
+            // 5. Lighting & Shadows
+            if (components.lightSource) plainPrompt += ' ' + components.lightSource.charAt(0).toUpperCase() + components.lightSource.slice(1) + '.';
+            
+            // 6. Effects
+            if (components.effect) plainPrompt += ' ' + components.effect.charAt(0).toUpperCase() + components.effect.slice(1) + ' effect.';
+            
+            // 7. Atmosphere/Mood
+            if (components.atmosphere) plainPrompt += ' ' + components.atmosphere.charAt(0).toUpperCase() + components.atmosphere.slice(1) + ' atmosphere.';
+            
+            // 8. Color Palette
+            if (components.colorPalette) plainPrompt += ' ' + components.colorPalette.charAt(0).toUpperCase() + components.colorPalette.slice(1) + '.';
+            
+            // 9. Scale & Resolution
+            if (components.spriteScale) plainPrompt += ' Suitable for ' + components.spriteScale + '.';
+            
+            // 10. Detail Level
+            if (components.detailLevel) plainPrompt += ' ' + components.detailLevel.charAt(0).toUpperCase() + components.detailLevel.slice(1) + '.';
+            
+            // 11. Art Style
+            if (components.artStyle) plainPrompt += ' ' + components.artStyle.charAt(0).toUpperCase() + components.artStyle.slice(1) + '.';
+            
+            plainPrompt += ' Clean pixel lines.';
 
-            // Generate JSON format
+            // Generate JSON format with professional structure
             const jsonData = {
-                prompt: "pixel_art_asset",
-                settings: {
-                    perspective: components.perspective,
-                    camera_angle: components.direction,
+                prompt_type: "pixel_art_asset_generation",
+                core_subject: {
                     asset_category: components.assetType,
                     asset_type: components.mainType,
+                    quantity: 1
+                },
+                perspective_settings: {
+                    perspective_type: components.perspective,
+                    camera_angle: components.direction,
+                    depth_representation: getPerspectiveDepth(components.perspective)
+                },
+                object_details: {
                     color: components.mainColor || null,
                     material: components.material || null,
-                    details: components.details.length > 0 ? components.details : null,
-                    visual_effect: components.effect || null,
+                    additional_details: components.details.length > 0 ? components.details : null,
+                    visual_effect: components.effect || null
+                },
+                surface_texture: {
+                    shading_technique: components.shading || null,
+                    texture_quality: getTextureQuality(components.shading)
+                },
+                lighting: {
+                    light_source: components.lightSource || null,
+                    shadow_behavior: getShadowBehavior(components.lightSource)
+                },
+                style_settings: {
                     atmosphere: components.atmosphere || null,
                     color_palette: components.colorPalette || null,
-                    shading_style: components.shading || null,
+                    art_style: components.artStyle,
                     detail_level: components.detailLevel || null,
-                    art_style: components.artStyle
+                    scale_resolution: components.spriteScale || null
                 },
-                output: {
-                    format: "pixel_art",
-                    clean_lines: true,
-                    optimized_for: "game_development"
+                technical_specs: {
+                    clean_pixel_lines: true,
+                    optimized_for: "game_development",
+                    pixel_perfect: true
                 }
             };
 
-            // Generate FORMATTED text (with sections)
+            // Generate FORMATTED text following document structure
             let formattedPrompt = 'PIXEL ART GENERATION\n';
             formattedPrompt += '━━━━━━━━━━━━━━━━━\n';
-            formattedPrompt += 'View: ' + components.perspective + ' ' + components.direction + '\n';
-            formattedPrompt += 'Asset: ';
+            formattedPrompt += '[PERSPECTIVE]: ' + components.perspective;
+            if (components.direction) formattedPrompt += ', ' + components.direction;
+            formattedPrompt += '\n';
+            formattedPrompt += '[SUBJECT]: ';
             if (components.mainColor) formattedPrompt += components.mainColor + ' ';
-            formattedPrompt += components.mainType;
+            formattedPrompt += components.mainType || 'asset';
             if (components.material) formattedPrompt += ' (' + components.material + ')';
             formattedPrompt += '\n';
             if (components.details.length > 0) {
-                formattedPrompt += 'Details: ' + components.details.join(', ') + '\n';
+                formattedPrompt += '[DETAILS]: ' + components.details.join(', ') + '\n';
+            }
+            if (components.shading) {
+                formattedPrompt += '[SURFACE]: ' + components.shading + '\n';
+            }
+            if (components.lightSource) {
+                formattedPrompt += '[LIGHTING]: ' + components.lightSource + '\n';
             }
             if (components.effect) {
-                formattedPrompt += 'Effect: ' + components.effect + '\n';
+                formattedPrompt += '[EFFECT]: ' + components.effect + '\n';
             }
             if (components.atmosphere || components.colorPalette) {
-                formattedPrompt += 'Style: ';
-                if (components.atmosphere) formattedPrompt += components.atmosphere + ' atmosphere';
+                formattedPrompt += '[STYLE]: ';
+                if (components.atmosphere) formattedPrompt += components.atmosphere;
                 if (components.atmosphere && components.colorPalette) formattedPrompt += ', ';
-                if (components.colorPalette) formattedPrompt += components.colorPalette + ' colors';
+                if (components.colorPalette) formattedPrompt += components.colorPalette;
                 formattedPrompt += '\n';
             }
-            formattedPrompt += 'Quality: ';
-            if (components.shading) formattedPrompt += components.shading + ', ';
-            formattedPrompt += 'clean pixel lines';
-            if (components.detailLevel) formattedPrompt += ', ' + components.detailLevel;
-            formattedPrompt += '\n';
-            formattedPrompt += 'Art Style: ' + components.artStyle;
+            if (components.spriteScale) {
+                formattedPrompt += '[SCALE]: ' + components.spriteScale + '\n';
+            }
+            if (components.detailLevel) {
+                formattedPrompt += '[DETAIL]: ' + components.detailLevel + '\n';
+            }
+            formattedPrompt += '[ART STYLE]: ' + components.artStyle;
 
             // Update all three outputs
             document.getElementById('plainText').textContent = plainPrompt;
@@ -1353,6 +1565,33 @@
             document.getElementById('formattedText').style.whiteSpace = 'pre-wrap';
             document.getElementById('formattedText').textContent = formattedPrompt;
             document.getElementById('copyFormattedBtn').style.display = 'block';
+        }
+
+        // Helper functions for perspective depth and texture quality
+        function getPerspectiveDepth(perspective) {
+            if (perspective.includes('90°')) return 'no vertical depth';
+            if (perspective.includes('45°')) return 'diagonal depth with foreshortening';
+            if (perspective.includes('60-70°')) return 'minimal vertical depth';
+            if (perspective.includes('isometric')) return 'parallel depth lines, no foreshortening';
+            if (perspective.includes('oblique')) return 'flat front with receding depth';
+            return 'standard depth';
+        }
+
+        function getTextureQuality(shading) {
+            if (!shading) return null;
+            if (shading.includes('smooth') || shading.includes('polished')) return 'smooth';
+            if (shading.includes('rough') || shading.includes('gritty')) return 'rough';
+            if (shading.includes('pixel clustering')) return 'textured';
+            return 'standard';
+        }
+
+        function getShadowBehavior(lightSource) {
+            if (!lightSource) return null;
+            if (lightSource.includes('strong shadows')) return 'hard shadows with strong contrast';
+            if (lightSource.includes('soft')) return 'soft diffused shadows';
+            if (lightSource.includes('no shadows')) return 'no shadows';
+            if (lightSource.includes('ambient')) return 'minimal shadows';
+            return 'standard shadows';
         }
 
         function getArticle(word) {
